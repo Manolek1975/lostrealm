@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">LostRealm</string>
+    <string name="app_version">Version: 1.0.0</string>
+    <string name="text_main_button">Touch the Screen</string>
+    <string name="tv_select">Choose a Character</string>
+
 </resources>

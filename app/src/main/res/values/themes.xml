@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.LostRealm" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:fontFamily">@font/jacquard12</item>
+
     </style>
 
-    <style name="Theme.LostRealm" parent="Base.Theme.LostRealm" />
 </resources>

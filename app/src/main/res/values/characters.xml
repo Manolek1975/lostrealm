@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="character_name">
+        <item>Amazon</item>
+        <item>Berserker</item>
+        <item>Black Knight</item>
+        <item>Captain</item>
+        <item>Druid</item>
+        <item>Dwarf</item>
+        <item>Elf</item>
+        <item>Magician</item>
+        <item>Pilgrim</item>
+        <item>Sorcerer</item>
+        <item>Swordsman</item>
+        <item>White Knight</item>
+        <item>Witch</item>
+        <item>Witch King</item>
+        <item>Wizard</item>
+        <item>Woods girl</item>
+    </string-array>
+
+    <string-array name="character_symbol">
+        <item>SWORD AND SHIELD</item>
+        <item>LETOPHORO: Death and Destruction</item>
+        <item>MARS: God of War</item>
+        <item>CHEVRON: Military Leadership</item>
+        <item>WOOD</item>
+        <item>OPPOSITION</item>
+        <item>SEXTILE: Half Human</item>
+        <item>GINNER: Divine and Demonic</item>
+        <item>CROZIER: Shepperd Staff</item>
+        <item>CONTROLED INTELLECT</item>
+        <item>WOLF HOOK</item>
+        <item>CROSS POMMEE: Potent Cross</item>
+        <item>VITRIOLE: Poison</item>
+        <item>CHAOTIC INTELLECT</item>
+        <item>CELESTIAL POWER</item>
+        <item>EROSIA: Love and Earth</item>
+    </string-array>
+
+    <string-array name="character_icon">
+        <item>icon_amazon</item>
+        <item>icon_berserker</item>
+        <item>icon_black_knight</item>
+        <item>icon_captain</item>
+        <item>icon_druid</item>
+        <item>icon_dwarf</item>
+        <item>icon_elf</item>
+        <item>icon_magician</item>
+        <item>icon_pilgrim</item>
+        <item>icon_sorcerer</item>
+        <item>icon_swordsman</item>
+        <item>icon_white_knight</item>
+        <item>icon_witch</item>
+        <item>icon_witch_king</item>
+        <item>icon_wizard</item>
+        <item>icon_woods_girl</item>
+    </string-array>
+
+</resources>

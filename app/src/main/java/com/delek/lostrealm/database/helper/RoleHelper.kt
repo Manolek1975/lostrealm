@@ -2,16 +2,17 @@ package com.delek.lostrealm.database.helper
 
 import android.content.Context
 import com.delek.lostrealm.R
-import com.delek.lostrealm.database.dao.CharactersDAO
-import com.delek.lostrealm.database.model.Characters
+import com.delek.lostrealm.database.dao.RoleDAO
+import com.delek.lostrealm.database.model.Role
 
-class CharactersHelper {
+class RoleHelper {
 
         companion object {
-            const val TABLE_NAME: String = "characters"
+            const val TABLE_NAME: String = "roles"
             const val COLUMN_ID: String = "id"
             const val COLUMN_NAME: String = "name"
             const val COLUMN_SYMBOL: String = "symbol"
+            const val COLUMN_IMAGE: String = "image"
             const val COLUMN_ICON: String = "icon"
             const val COLUMN_WEIGHT: String = "weight"
             const val COLUMN_ADVANTAGES: String = "advantages"
@@ -25,6 +26,7 @@ class CharactersHelper {
                 append("$COLUMN_ID INTEGER PRIMARY KEY AUTOINCREMENT,")
                 append("$COLUMN_NAME TEXT,")
                 append("$COLUMN_SYMBOL TEXT,")
+                append("$COLUMN_IMAGE TEXT,")
                 append("$COLUMN_ICON TEXT,")
                 append("$COLUMN_WEIGHT INTEGER,")
                 append("$COLUMN_ADVANTAGES INTEGER,")
@@ -39,14 +41,15 @@ class CharactersHelper {
             // Load resources from xml files to database
             fun loadCharacters(context: Context){
                 val res = context.resources
-                val name = res.getStringArray(R.array.character_name)
-                val symbol = res.getStringArray(R.array.character_symbol)
-                val icon = res.getStringArray(R.array.character_icon)
+                val name = res.getStringArray(R.array.roles_name)
+                val symbol = res.getStringArray(R.array.roles_symbol)
+                val image = res.getStringArray(R.array.roles_image)
+                val icon = res.getStringArray(R.array.roles_icon)
 
             for (i in name.indices){
-                val character = Characters(0, name[i], symbol[i], icon[i],
+                val role = Role(0, name[i], symbol[i], image[i], icon[i],
                     0,0,0,0,0,0)
-                CharactersDAO(context).insertCharacter(character)
+                RoleDAO(context).insertRole(role)
             }
         }
     }

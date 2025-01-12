@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="character_name">
+    <string-array name="roles_name">
         <item>Amazon</item>
         <item>Berserker</item>
         <item>Black Knight</item>
@@ -19,7 +19,7 @@
         <item>Woods girl</item>
     </string-array>
 
-    <string-array name="character_symbol">
+    <string-array name="roles_symbol">
         <item>SWORD AND SHIELD</item>
         <item>LETOPHORO: Death and Destruction</item>
         <item>MARS: God of War</item>
@@ -38,7 +38,26 @@
         <item>EROSIA: Love and Earth</item>
     </string-array>
 
-    <string-array name="character_icon">
+    <string-array name="roles_image">
+        <item>img_amazon</item>
+        <item>img_berserker</item>
+        <item>img_black_knight</item>
+        <item>img_captain</item>
+        <item>img_druid</item>
+        <item>img_dwarf</item>
+        <item>img_elf</item>
+        <item>img_magician</item>
+        <item>img_pilgrim</item>
+        <item>img_sorcerer</item>
+        <item>img_swordsman</item>
+        <item>img_white_knight</item>
+        <item>img_witch</item>
+        <item>img_witch_king</item>
+        <item>img_wizard</item>
+        <item>img_woods_girl</item>
+    </string-array>
+
+    <string-array name="roles_icon">
         <item>icon_amazon</item>
         <item>icon_berserker</item>
         <item>icon_black_knight</item>

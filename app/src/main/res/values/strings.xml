@@ -4,6 +4,7 @@
     <string name="text_main_button">Touch the Screen</string>
     <string name="tv_select">Choose a Character</string>
     <string name="todo">TODO</string>
+    <string name="test">Test</string>
 
     <string-array name="weight">
         <item>LIGHT</item>

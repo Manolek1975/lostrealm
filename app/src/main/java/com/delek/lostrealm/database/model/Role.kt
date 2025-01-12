@@ -1,9 +1,10 @@
 package com.delek.lostrealm.database.model
 
-data class Characters(
+data class Role(
     val id: Int,
     val name: String,
     val symbol: String,
+    val image: String,
     val icon: String,
     val weight: Int,
     val advantages: Int,

@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.LostRealm" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <item name="android:fontFamily">@font/jacquard12</item>
+        <item name="android:fontFamily">@font/macondo</item>
 
     </style>
 

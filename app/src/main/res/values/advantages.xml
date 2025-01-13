@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="advantages_name">
+        <item>AIM</item>
+        <item>STAMINA</item>
+        <item>ROBUST</item>
+        <item>BERSERK</item>
+        <item>FEAR</item>
+        <item>REPUTATION</item>
+        <item>CONCEALMENT</item>
+        <item>PEACE WITH NATURE</item>
+        <item>SHORT LEGS</item>
+        <item>CAVE KNOWLEDGE</item>
+        <item>ELUSIVENESS</item>
+        <item>ARCHER</item>
+        <item>MAGICAL PARAPHERNALIA</item>
+        <item>KNOWLEDGE</item>
+        <item>HEAVENLY PROTECTION</item>
+        <item>LEARNING</item>
+        <item>LORE</item>
+        <item>AURA OF POWER</item>
+        <item>BARTER</item>
+        <item>CLEVER</item>
+        <item>HEALTH</item>
+        <item>HONOR</item>
+        <item>FAMILIAR</item>
+        <item>DISEMBODIED</item>
+        <item>EXPERIENCE</item>
+        <item>TRACKING SKILLS</item>
+    </string-array>
+
+    <string-array name="advantages_description">
+        <item>Subtracts one from each die roll whenever she
+rolls on the Missile Table to attack with a missile weapon.</item>
+        <item>The Amazon can record and do an extra Move phase
+each turn. She gets this bonus even when she is riding a horse - her
+stamina includes being an excellent horsewoman.</item>
+        <item>The Berserker can record and do an extra Rest phase
+each day.</item>
+        <item>The Berserker can play his Berserk chit to increase
+his vulnerability to Tremendous for the rest of the day. Once he plays
+it, it takes Tremendous harm to kill him. At Midnight he reverts to
+normal.</item>
+        <item>Whenever the Black Knight rolls on the Meeting Table he
+rolls one die instead of two. His deadly reputation makes it easier for
+him to trade and hire natives, and it makes his enemies think twice
+before blocking or battling him.</item>
+        <item>The Captain can record and do an extra phase
+each day he is at a Dwelling (including a campfire). He must be at the
+Dwelling when he starts to do the phase, not when he records it. He
+can use the extra phase to do any normal activity.</item>
+        <item>The Druid rolls one die instead of two each
+time he makes a Hide die roll. </item>
+        <item>When the Druid ends his turn, the
+Warning and Sound chits in his tile do not summon monsters.
+Individuals following the Druid will summon monsters normally.</item>
+        <item>The Dwarf can never use sunlight phases, you rest an extra
+effort asterisk per rest phase, and you can play the DUCK chit to Duck.</item>
+        <item>The Dwarf rolls one die instead of two
+whenever he uses the Hide table, the Meeting Table, or any Search
+table when he is in a cave clearing. This gives him some powerful
+advantages in the caves, somewhat offsetting his short legs.
+Obviously, the Dwarf prefers to spend as much time as possible in
+the caves.</item>
+        <item>The Elf can record and do an extra Hide phase
+each day. </item>
+        <item>Rolls one die Instead of two whenever he rolls
+on the Missile Table to make an attack with a bow or crossbow.</item>
+        <item>The Magician can record and do
+an extra Alert phase each day. This reflects the effects of the magical
+implements he is carrying; the phase is best used to alert Magic chits.</item>
+        <item>Subtracts one from each die he
+rolls when he uses the Reading Runes table. </item>
+        <item>The Demon, Winged Demon and Imp
+cannot block the Pilgrim and they cannot be assigned to attack him:
+he cannot lure them into attacking, and they cannot be assigned to
+him randomly. He can block and attack them normally. His hirelings
+are not protected and can lure and be assigned Demons and Imps. </item>
+        <item>The Pilgrim rolls one die instead of two each time he
+uses the Reading Runes table.
+Starting Location: Inn or Chapel</item>
+        <item>Rolls one die instead of two each time he rolls on the Reading Runes table.</item>
+        <item>Can record and do an extra Enchant phase each turn.</item>
+        <item>The Swordsman rolls one die instead of two whenever
+he uses the Meeting Table during a Trade activity. Note: He gets this
+advantage only during the Trade activity. He does not get it during the
+Hire activity or when he rolls for battling natives.</item>
+        <item>Instead of taking his turn when his Attention chit is
+picked, the Swordsman chooses when he will take his turn.</item>
+        <item>The White Knight can record and do an extra Rest
+phase each day.</item>
+        <item>The White Knight subtracts one from each die he rolls
+whenever he rolls on the Meeting Table; this includes all rolls he
+makes during trading, hiring and rolling to see if the natives will battle
+him. His noble accomplishments and reputation make even his
+enemies less likely to attack him, and all of the native groups are
+likely to give him a little price break when he deals with them.</item>
+        <item>The Witch has an invisible companion that can move
+around the map separately and discover things for her. </item>
+        <item>The Witch King must use Magic Sight.</item>
+        <item>The Wizard knows the location of every hidden
+path and secret passage in the Magic Realm. At the start of the game
+he crosses all of the hidden paths and secret passages off of his
+Discoveries list. He can use them all. </item>
+        <item>The Woods Girl rolls one die instead of two
+whenever she uses the Hide table, the Meeting table or any Search
+table while she is in one of the six tiles labeled “Woods” (specifically,
+the Deep Woods, Linden Woods, Maple Woods, Nut Woods, Oak
+Woods and Pine Woods). She does not get this advantage in other
+tiles, even when she is in woods clearings in those tiles</item>
+
+    </string-array>
+</resources>

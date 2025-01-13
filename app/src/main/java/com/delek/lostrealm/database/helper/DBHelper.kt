@@ -14,12 +14,14 @@ class DBHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null,
 
     override fun onCreate(db: SQLiteDatabase?) {
         db?.execSQL(RoleHelper.SQL_CREATE_ENTRIES)
-        db?.execSQL(WeightHelper.SQL_CREATE_ENTRIES)
+        db?.execSQL(AdvantageHelper.SQL_CREATE_ENTRIES)
+        db?.execSQL(RoleAdvantageHelper.SQL_CREATE_ENTRIES)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, p1: Int, p2: Int) {
         db?.execSQL(RoleHelper.SQL_DELETE_ENTRIES)
-        db?.execSQL(WeightHelper.SQL_DELETE_ENTRIES)
+        db?.execSQL(AdvantageHelper.SQL_DELETE_ENTRIES)
+        db?.execSQL(RoleAdvantageHelper.SQL_DELETE_ENTRIES)
         onCreate(db)
     }
 

@@ -6,6 +6,7 @@
     <string name="todo">TODO</string>
     <string name="test">Test</string>
     <string name="weight_vulnerability">Weight/vulnerability:</string>
+    <string name="special_advantages">Special Advantages</string>
 
     <string-array name="weight">
         <item>LIGHT</item>

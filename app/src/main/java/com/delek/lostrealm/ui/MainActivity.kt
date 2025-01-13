@@ -12,9 +12,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import com.delek.lostrealm.R
-import com.delek.lostrealm.database.helper.RoleHelper
+import com.delek.lostrealm.database.helper.AdvantageHelper
 import com.delek.lostrealm.database.helper.DBHelper
-import com.delek.lostrealm.database.helper.WeightHelper
+import com.delek.lostrealm.database.helper.RoleAdvantageHelper
+import com.delek.lostrealm.database.helper.RoleHelper
 import com.delek.lostrealm.databinding.ActivityMainBinding
 import com.delek.lostrealm.ui.role.RoleActivity
 
@@ -40,7 +41,8 @@ class MainActivity : AppCompatActivity() {
                 val i = Intent(this, RoleActivity::class.java)
                 Toast.makeText(this, "Loading Data...", Toast.LENGTH_SHORT).show()
                 RoleHelper.loadCharacters(this)
-                WeightHelper.loadWeight(this)
+                AdvantageHelper.loadAdvantages(this)
+                RoleAdvantageHelper.loadRoleAdvantages(this)
                 startActivity(i)
             } else {
                 val i = Intent(this, RoleActivity::class.java)

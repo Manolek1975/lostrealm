@@ -7,6 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import com.delek.lostrealm.R
+import com.delek.lostrealm.database.dao.AdvantageDAO
 import com.delek.lostrealm.database.dao.RoleDAO
 import com.delek.lostrealm.databinding.ActivityDetailBinding
 import java.lang.reflect.Field
@@ -26,11 +27,16 @@ class DetailActivity : AppCompatActivity() {
     private fun initUI() {
         val i = intent.getIntExtra("role", 0)
         val role = RoleDAO(this).getRoleById(i)
+        val adv = AdvantageDAO(this).getAdvantagesByRole(i)
+        val id = getResId(role.icon, R.drawable::class.java)
+        binding.roleIcon.setImageResource(id)
         binding.tvName.text = role.name
         binding.tvSymbol.text = role.symbol
         binding.tvWeight.text = role.weight
-        val id = getResId(role.icon, R.drawable::class.java)
-        binding.roleIcon.setImageResource(id)
+        binding.tvAdv1.text = adv[0].name
+        binding.tvAdv1Desc.text = adv[0].description
+        binding.tvAdv2.text = adv[1].name
+        binding.tvAdv2Desc.text = adv[1].description
     }
 
     private fun getResId(resName: String?, c: Class<*>): Int {

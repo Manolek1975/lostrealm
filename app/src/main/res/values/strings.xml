@@ -5,6 +5,7 @@
     <string name="tv_select">Choose a Character</string>
     <string name="todo">TODO</string>
     <string name="test">Test</string>
+    <string name="weight_vulnerability">Weight/vulnerability:</string>
 
     <string-array name="weight">
         <item>LIGHT</item>
@@ -12,5 +13,6 @@
         <item>HEAVY</item>
         <item>TREMENDOUS</item>
     </string-array>
+
 
 </resources>

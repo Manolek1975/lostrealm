@@ -28,7 +28,7 @@ class RoleHelper {
                 append("$COLUMN_SYMBOL TEXT,")
                 append("$COLUMN_IMAGE TEXT,")
                 append("$COLUMN_ICON TEXT,")
-                append("$COLUMN_WEIGHT INTEGER,")
+                append("$COLUMN_WEIGHT TEXT,")
                 append("$COLUMN_ADVANTAGES INTEGER,")
                 append("$COLUMN_DEVELOPMENT INTEGER,")
                 append("$COLUMN_POSITION INTEGER,")
@@ -45,10 +45,11 @@ class RoleHelper {
                 val symbol = res.getStringArray(R.array.roles_symbol)
                 val image = res.getStringArray(R.array.roles_image)
                 val icon = res.getStringArray(R.array.roles_icon)
+                val weight = res.getStringArray(R.array.roles_weight)
 
             for (i in name.indices){
-                val role = Role(0, name[i], symbol[i], image[i], icon[i],
-                    0,0,0,0,0,0)
+                val role = Role(0, name[i], symbol[i], image[i], icon[i], weight[i],
+                    0,0,0,0,0)
                 RoleDAO(context).insertRole(role)
             }
         }

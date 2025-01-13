@@ -6,7 +6,7 @@ data class Role(
     val symbol: String,
     val image: String,
     val icon: String,
-    val weight: Int,
+    val weight: String,
     val advantages: Int,
     val development: Int,
     val position: Int,

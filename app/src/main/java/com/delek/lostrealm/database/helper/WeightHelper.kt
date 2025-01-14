@@ -9,7 +9,7 @@ class WeightHelper {
 
     companion object {
         const val TABLE_NAME: String = "weight"
-        private const val COLUMN_ID: String = "id"
+        const val COLUMN_ID: String = "id"
         const val COLUMN_NAME: String = "name"
 
         val SQL_CREATE_ENTRIES = buildString {

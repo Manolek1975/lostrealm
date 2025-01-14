@@ -1,31 +1,331 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="chit_type">
-        <item>MOVE</item>
-        <item>MOVE</item>
+    <string-array name="chit_names">
         <item>FIGHT</item>
+        <item>FIGHT</item>
+        <item>FIGHT</item>
+        <item>FIGHT</item>
+
+        <item>BERSERK</item>
+        <item>FIGHT</item>
+        <item>FIGHT</item>
+        <item>FIGHT</item>
+
+        <item>FIGHT</item>
+        <item>FIGHT</item>
+        <item>FIGHT</item>
+        <item>FIGHT</item>
+
+        <item>FIGHT</item>
+        <item>FIGHT</item>
+        <item>FIGHT</item>
+        <item>FIGHT</item>
+
+        <item>FIGHT</item>
+        <item>FIGHT</item>
+        <item>MOVE</item>
+        <item>MOVE</item>
+
+        <item>DUCK</item>
+        <item>MOVE</item>
+        <item>MOVE</item>
+        <item>MOVE</item>
+
+        <item>MOVE</item>
+        <item>MOVE</item>
+        <item>MOVE</item>
+        <item>MOVE</item>
+
+        <item>MOVE</item>
+        <item>MOVE</item>
+        <item>MOVE</item>
+        <item>MOVE</item>
+
+        <item>MAGIC</item>
+        <item>MAGIC</item>
+        <item>MAGIC</item>
+        <item>MAGIC</item>
+
+        <item>MAGIC</item>
+        <item>MAGIC</item>
+        <item>MAGIC</item>
+        <item>MAGIC</item>
+
+        <item>MAGIC</item>
+        <item>MAGIC</item>
+        <item>MAGIC</item>
+        <item>MAGIC</item>
+
+        <item>MAGIC</item>
+        <item>MAGIC</item>
+        <item>MAGIC</item>
+        <item>MAGIC</item>
+
+        <item>MAGIC</item>
+        <item>MAGIC</item>
+        <item>MAGIC</item>
+        <item>MAGIC</item>
+
+        <item>MAGIC</item>
+        <item>MAGIC</item>
+        <item>MAGIC</item>
+        <item>MAGIC</item>
+
+        <item>MAGIC</item>
+        <item>MAGIC</item>
+        <item>MAGIC</item>
+        <item>MAGIC</item>
+
+        <item>MAGIC</item>
+        <item>MAGIC</item>
 
     </string-array>
 
-    <string-array name="chit_weight">
+    <string-array name="chit_types">
+        <item>T</item>
+        <item>T</item>
+        <item>T</item>
+        <item>T</item>
+
+        <item>T</item>
+        <item>H</item>
+        <item>H</item>
+        <item>H</item>
+
+        <item>H</item>
+        <item>M</item>
+        <item>M</item>
+        <item>M</item>
+
+        <item>M</item>
         <item>M</item>
         <item>M</item>
         <item>L</item>
 
+        <item>L</item>
+        <item>L</item>
+        <item>T</item>
+        <item>T</item>
+
+        <item>T</item>
+        <item>H</item>
+        <item>H</item>
+        <item>H</item>
+
+        <item>M</item>
+        <item>M</item>
+        <item>M</item>
+        <item>M</item>
+
+        <item>M</item>
+        <item>L</item>
+        <item>L</item>
+        <item>L</item>
+
+        <item>I</item>
+        <item>I</item>
+        <item>I</item>
+        <item>II</item>
+
+        <item>II</item>
+        <item>II</item>
+        <item>II</item>
+        <item>III</item>
+
+        <item>III</item>
+        <item>III</item>
+        <item>IV</item>
+        <item>IV</item>
+
+        <item>IV</item>
+        <item>V</item>
+        <item>V</item>
+        <item>V</item>
+
+        <item>V</item>
+        <item>V</item>
+        <item>VI</item>
+        <item>VI</item>
+
+        <item>VI</item>
+        <item>VI</item>
+        <item>VI</item>
+        <item>VII</item>
+
+        <item>VII</item>
+        <item>VII</item>
+        <item>VII</item>
+        <item>VIII</item>
+
+        <item>VIII</item>
+        <item>VIII</item>
+
     </string-array>
 
     <string-array name="chit_speed">
+        <item>6</item>
+        <item>5</item>
+        <item>5</item>
+        <item>4</item>
+
+        <item>4</item>
+        <item>6</item>
+        <item>5</item>
+        <item>5</item>
+
+        <item>4</item>
+        <item>5</item>
+        <item>4</item>
+        <item>4</item>
+
+        <item>3</item>
+        <item>3</item>
+        <item>2</item>
+        <item>4</item>
+
+        <item>3</item>
+        <item>2</item>
+        <item>6</item>
+        <item>5</item>
+
+        <item>3</item>
+        <item>6</item>
+        <item>5</item>
+        <item>4</item>
+
+        <item>5</item>
+        <item>4</item>
+        <item>4</item>
+        <item>3</item>
+
+        <item>3</item>
+        <item>4</item>
+        <item>3</item>
+        <item>2</item>
+
+        <item>6</item>
+        <item>5</item>
+        <item>4</item>
+        <item>4</item>
+
+        <item>3</item>
+        <item>2</item>
+        <item>2</item>
+        <item>4</item>
+
+        <item>3</item>
+        <item>2</item>
+        <item>5</item>
+        <item>4</item>
+
+        <item>3</item>
+        <item>6</item>
+        <item>5</item>
+        <item>4</item>
+
+        <item>3</item>
+        <item>2</item>
+        <item>6</item>
+        <item>5</item>
+
+        <item>4</item>
+        <item>3</item>
+        <item>2</item>
+        <item>6</item>
+
+        <item>4</item>
         <item>4</item>
         <item>3</item>
         <item>4</item>
 
+        <item>3</item>
+        <item>2</item>
+
+
     </string-array>
 
     <string-array name="chit_effort">
+        <item>*</item>
+        <item>*</item>
+        <item>**</item>
+        <item>**</item>
+
+        <item>**</item>
+        <item />
         <item />
         <item>*</item>
+
+        <item>**</item>
         <item />
+        <item />
+        <item>*</item>
+
+        <item>*</item>
+        <item>**</item>
+        <item>**</item>
+        <item />
+
+        <item>*</item>
+        <item>**</item>
+        <item>*</item>
+        <item>**</item>
+
+        <item>*</item>
+        <item />
+        <item>*</item>
+        <item>**</item>
+
+        <item />
+        <item />
+        <item>*</item>
+        <item>*</item>
+
+        <item>**</item>
+        <item />
+        <item>*</item>
+        <item>**</item>
+
+        <item>*</item>
+        <item>**</item>
+        <item>*</item>
+        <item>*</item>
+
+        <item>*</item>
+        <item>*</item>
+        <item>**</item>
+        <item>*</item>
+
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>**</item>
+
+        <item>*</item>
+        <item>**</item>
+        <item>*</item>
+        <item>*</item>
+
+        <item>*</item>
+        <item>*</item>
+
+
+
 
     </string-array>
 </resources>

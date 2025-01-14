@@ -133,6 +133,35 @@ stamina includes being an excellent horsewoman."
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_development_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="12sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="8sp"
+        android:text="@string/development"
+        app:layout_constraintTop_toBottomOf="@+id/tv_adv2_desc"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_development_head"
+        app:layout_constraintStart_toStartOf="parent" >
+
+        <include android:id="@+id/level1"
+            layout="@layout/development_layout" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+
+
+
 
 
 

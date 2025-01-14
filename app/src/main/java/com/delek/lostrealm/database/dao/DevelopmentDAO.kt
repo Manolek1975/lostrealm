@@ -6,10 +6,12 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.delek.lostrealm.database.helper.ChitHelper
 import com.delek.lostrealm.database.helper.DBHelper
+import com.delek.lostrealm.database.helper.DevelopmentHelper
 import com.delek.lostrealm.database.helper.WeightHelper
 import com.delek.lostrealm.database.model.Chit
+import com.delek.lostrealm.database.model.Development
 
-class ChitDAO(context: Context): SQLiteOpenHelper(context,
+class DevelopmentDAO(context: Context): SQLiteOpenHelper(context,
     DBHelper.DATABASE_NAME, null,
     DBHelper.DATABASE_VERSION
 ) {
@@ -17,26 +19,15 @@ class ChitDAO(context: Context): SQLiteOpenHelper(context,
 
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) { }
 
-    fun insertChit(chit: Chit) {
+    fun insertDeveloment(dev: Development) {
         val db = this.writableDatabase
         val values = ContentValues().apply {
-            put(ChitHelper.COLUMN_NAME, chit.name)
-            put(ChitHelper.COLUMN_TYPE, chit.type)
-            put(ChitHelper.COLUMN_SPEED, chit.speed)
-            put(ChitHelper.COLUMN_EFFORT, chit.effort)
+            put(DevelopmentHelper.COLUMN_NAME, dev.name)
+            put(DevelopmentHelper.COLUMN_LEVEL, dev.level)
+            put(DevelopmentHelper.COLUMN_ROLE_ID, dev.roleId)
+            put(DevelopmentHelper.COLUMN_CHIT_ID, dev.chitId)
         }
-        db.insert(ChitHelper.TABLE_NAME, null, values)
+        db.insert(DevelopmentHelper.TABLE_NAME, null, values)
         db.close()
-    }
-
-    fun getName1(): String{
-        val db = this.readableDatabase
-        val query = "SELECT * FROM weight WHERE id=1"
-        val cursor = db.rawQuery(query, null)
-        cursor.moveToFirst()
-        val name = cursor.getString(cursor.getColumnIndexOrThrow(WeightHelper.COLUMN_NAME))
-        cursor.close()
-        db.close()
-        return name
     }
 }

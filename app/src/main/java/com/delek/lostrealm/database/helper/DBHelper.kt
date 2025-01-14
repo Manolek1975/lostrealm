@@ -17,6 +17,8 @@ class DBHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null,
         db?.execSQL(AdvantageHelper.SQL_CREATE_ENTRIES)
         db?.execSQL(RoleAdvantageHelper.SQL_CREATE_ENTRIES)
         db?.execSQL(ChitHelper.SQL_CREATE_ENTRIES)
+        db?.execSQL(DevelopmentHelper.SQL_CREATE_ENTRIES)
+
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, p1: Int, p2: Int) {
@@ -24,6 +26,7 @@ class DBHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null,
         db?.execSQL(AdvantageHelper.SQL_DELETE_ENTRIES)
         db?.execSQL(RoleAdvantageHelper.SQL_DELETE_ENTRIES)
         db?.execSQL(ChitHelper.SQL_DELETE_ENTRIES)
+        db?.execSQL(DevelopmentHelper.SQL_DELETE_ENTRIES)
         onCreate(db)
     }
 

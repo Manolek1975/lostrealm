@@ -5,8 +5,11 @@
     <string name="tv_select">Choose a Character</string>
     <string name="todo">TODO</string>
     <string name="test">Test</string>
+
+    <!-- Detail Character -->
     <string name="weight_vulnerability">Weight/vulnerability:</string>
     <string name="special_advantages">Special Advantages</string>
+    <string name="development">Development:</string>
 
     <string-array name="weight">
         <item>LIGHT</item>

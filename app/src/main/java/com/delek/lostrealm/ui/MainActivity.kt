@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import com.delek.lostrealm.R
 import com.delek.lostrealm.database.helper.AdvantageHelper
+import com.delek.lostrealm.database.helper.ChitHelper
 import com.delek.lostrealm.database.helper.DBHelper
 import com.delek.lostrealm.database.helper.RoleAdvantageHelper
 import com.delek.lostrealm.database.helper.RoleHelper
@@ -40,9 +41,7 @@ class MainActivity : AppCompatActivity() {
             if (db.isEmpty("roles")) {
                 val i = Intent(this, RoleActivity::class.java)
                 Toast.makeText(this, "Loading Data...", Toast.LENGTH_SHORT).show()
-                RoleHelper.loadCharacters(this)
-                AdvantageHelper.loadAdvantages(this)
-                RoleAdvantageHelper.loadRoleAdvantages(this)
+                loadTables()
                 startActivity(i)
             } else {
                 val i = Intent(this, RoleActivity::class.java)
@@ -55,6 +54,13 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+    }
+
+    private fun loadTables() {
+        RoleHelper.loadCharacters(this)
+        AdvantageHelper.loadAdvantages(this)
+        RoleAdvantageHelper.loadRoleAdvantages(this)
+        ChitHelper.loadChits(this)
     }
 
     private fun View.blink(

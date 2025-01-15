@@ -49,7 +49,7 @@ class ChitDAO(context: Context): SQLiteOpenHelper(context,
         val id = cursor.getInt(cursor.getColumnIndexOrThrow(ChitHelper.COLUMN_ID))
         val name = cursor.getString(cursor.getColumnIndexOrThrow(ChitHelper.COLUMN_NAME))
         val type = cursor.getString(cursor.getColumnIndexOrThrow(ChitHelper.COLUMN_TYPE))
-        val speed = cursor.getInt(cursor.getColumnIndexOrThrow(ChitHelper.COLUMN_SPEED))
+        val speed = cursor.getString(cursor.getColumnIndexOrThrow(ChitHelper.COLUMN_SPEED))
         val effort = cursor.getString(cursor.getColumnIndexOrThrow(ChitHelper.COLUMN_EFFORT))
 
         val chit = Chit(id, name, type, speed, effort)

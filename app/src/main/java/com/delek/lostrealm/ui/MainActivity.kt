@@ -18,6 +18,7 @@ import com.delek.lostrealm.database.helper.DBHelper
 import com.delek.lostrealm.database.helper.DevelopmentHelper
 import com.delek.lostrealm.database.helper.RoleAdvantageHelper
 import com.delek.lostrealm.database.helper.RoleHelper
+import com.delek.lostrealm.database.helper.WeaponHelper
 import com.delek.lostrealm.databinding.ActivityMainBinding
 import com.delek.lostrealm.ui.role.RoleActivity
 
@@ -63,6 +64,7 @@ class MainActivity : AppCompatActivity() {
         RoleAdvantageHelper.loadRoleAdvantages(this)
         ChitHelper.loadChits(this)
         DevelopmentHelper.loadDeveloments(this)
+        WeaponHelper.loadWeapons(this)
     }
 
     private fun View.blink(

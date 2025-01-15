@@ -20,7 +20,7 @@ class ChitHelper {
             append("$COLUMN_ID INTEGER PRIMARY KEY AUTOINCREMENT,")
             append("$COLUMN_NAME TEXT,")
             append("$COLUMN_TYPE TEXT,")
-            append("$COLUMN_SPEED INTEGER,")
+            append("$COLUMN_SPEED TEXT,")
             append("$COLUMN_EFFORT TEXT)")
         }
 
@@ -34,7 +34,7 @@ class ChitHelper {
             val speed = res.getStringArray(R.array.chit_speed)
             val effort = res.getStringArray(R.array.chit_effort)
             for (i in type.indices) {
-                val chit = Chit(0, name[i], type[i], speed[i].toInt(), effort[i])
+                val chit = Chit(0, name[i], type[i], speed[i], effort[i])
                 ChitDAO(context).insertChit(chit)
             }
         }

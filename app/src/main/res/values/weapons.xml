@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="weapon_names">
+        <item>MEDIUM BOW</item>
+        <item>LIGHT BOW</item>
+        <item>CROSSBOW</item>
+        <item>SPEAR</item>
+        <item>STAFF</item>
+        <item>GREAT SWORD</item>
+        <item>BANE SWORD</item>
+        <item>BROADSWORD</item>
+        <item>DEVIL SWORD</item>
+        <item>TRUESTEEL SWORD</item>
+        <item>MORNING STAR</item>
+        <item>GREAT AXE</item>
+        <item>THRUSTING SWORD</item>
+        <item>LIVING SWORD</item>
+        <item>SHORT SWORD</item>
+        <item>AXE</item>
+        <item>MACE</item>
+    </string-array>
+
+    <string-array name="weapon_images">
+        <item>w_medium_bow</item>
+        <item>w_light_bow</item>
+        <item>w_crossbow</item>
+        <item>w_spear</item>
+        <item>w_staff</item>
+        <item>w_great_sword</item>
+        <item>w_bane_sword</item>
+        <item>w_broadsword</item>
+        <item>w_devil_sword</item>
+        <item>w_true_steel_sword</item>
+        <item>w_morning_star</item>
+        <item>w_great_axe</item>
+        <item>w_thrusting_sword</item>
+        <item>w_living_sword</item>
+        <item>w_short_sword</item>
+        <item>w_axe</item>
+        <item>w_mace</item>
+    </string-array>
+
+    <string-array name="weapon_alert">
+        <item>wa_medium_bow</item>
+        <item>wa_light_bow</item>
+        <item>wa_crossbow</item>
+        <item>wa_spear</item>
+        <item>wa_staff</item>
+        <item>wa_great_sword</item>
+        <item>wa_bane_sword</item>
+        <item>wa_broadsword</item>
+        <item>wa_devil_sword</item>
+        <item>wa_true_steel_sword</item>
+        <item>wa_morning_star</item>
+        <item>wa_great_axe</item>
+        <item>wa_thrusting_sword</item>
+        <item>wa_living_sword</item>
+        <item>wa_short_sword</item>
+        <item>wa_axe</item>
+        <item>wa_mace</item>
+    </string-array>
+
+    <string-array name="weapon_damage">
+        <item>M</item>
+        <item>L</item>
+        <item>H</item>
+        <item>M</item>
+        <item>L</item>
+        <item>H</item>
+        <item>T</item>
+        <item>M</item>
+        <item>H</item>
+        <item>M</item>
+        <item>H</item>
+        <item>H</item>
+        <item>L</item>
+        <item>L</item>
+        <item>L</item>
+        <item>M</item>
+        <item>M</item>
+    </string-array>
+
+    <string-array name="weapon_plus">
+        <item />
+        <item />
+        <item />
+        <item />
+        <item />
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>**</item>
+        <item />
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item />
+    </string-array>
+
+    <string-array name="weapon_plus_alert">
+        <item>**</item>
+        <item>**</item>
+        <item>*</item>
+        <item>*</item>
+        <item />
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>**</item>
+        <item />
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item />
+    </string-array>
+
+    <string-array name="weapon_types">
+        <item>missile</item>
+        <item>missile</item>
+        <item>missile</item>
+        <item>striking</item>
+        <item>striking</item>
+        <item>striking</item>
+        <item>striking</item>
+        <item>striking</item>
+        <item>striking</item>
+        <item>striking</item>
+        <item>striking</item>
+        <item>striking</item>
+        <item>striking</item>
+        <item>striking</item>
+        <item>striking</item>
+        <item>striking</item>
+        <item>striking</item>
+    </string-array>
+
+    <string-array name="weapons_length">
+        <item>16</item>
+        <item>14</item>
+        <item>12</item>
+        <item>10</item>
+        <item>9</item>
+        <item>8</item>
+        <item>8</item>
+        <item>7</item>
+        <item>7</item>
+        <item>7</item>
+        <item>6</item>
+        <item>5</item>
+        <item>4</item>
+        <item>4</item>
+        <item>3</item>
+        <item>2</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="weapon_speed">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>6</item>
+        <item>-1</item>
+        <item>6</item>
+        <item>8</item>
+        <item>5</item>
+        <item>4</item>
+        <item>-1</item>
+        <item>6</item>
+        <item>-1</item>
+        <item>4</item>
+        <item>3</item>
+        <item>-1</item>
+        <item>5</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="weapon_speed_alert">
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>2</item>
+        <item>-1</item>
+        <item>3</item>
+        <item>-1</item>
+        <item>3</item>
+        <item>4</item>
+        <item>-1</item>
+        <item>2</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="weapon_prices">
+        <item>8</item>
+        <item>6</item>
+        <item>10</item>
+        <item>6</item>
+        <item>1</item>
+        <item>10</item>
+        <item>20</item>
+        <item>8</item>
+        <item>20</item>
+        <item>25</item>
+        <item>8</item>
+        <item>8</item>
+        <item>6</item>
+        <item>25</item>
+        <item>4</item>
+        <item>4</item>
+        <item>6</item>
+    </string-array>
+
+
+</resources>

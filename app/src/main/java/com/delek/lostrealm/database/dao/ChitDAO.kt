@@ -2,11 +2,11 @@ package com.delek.lostrealm.database.dao
 
 import android.content.ContentValues
 import android.content.Context
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.delek.lostrealm.database.helper.ChitHelper
 import com.delek.lostrealm.database.helper.DBHelper
-import com.delek.lostrealm.database.helper.WeightHelper
 import com.delek.lostrealm.database.model.Chit
 
 class ChitDAO(context: Context): SQLiteOpenHelper(context,
@@ -29,14 +29,31 @@ class ChitDAO(context: Context): SQLiteOpenHelper(context,
         db.close()
     }
 
-    fun getName1(): String{
+    fun getChitsByDevelopment(id: Int): List<Chit> {
         val db = this.readableDatabase
-        val query = "SELECT * FROM weight WHERE id=1"
+        val chitList = mutableListOf<Chit>()
+        val query = "SELECT chits.* FROM chits INNER JOIN development " +
+                "ON chits.id = development.chit_id " +
+                "WHERE development.role_id = $id"
         val cursor = db.rawQuery(query, null)
-        cursor.moveToFirst()
-        val name = cursor.getString(cursor.getColumnIndexOrThrow(WeightHelper.COLUMN_NAME))
+        while (cursor.moveToNext()) {
+            val chit = getColumns(cursor)
+            chitList.add(chit)
+        }
         cursor.close()
         db.close()
-        return name
+        return chitList
+    }
+
+    private fun getColumns(cursor: Cursor): Chit{
+        val id = cursor.getInt(cursor.getColumnIndexOrThrow(ChitHelper.COLUMN_ID))
+        val name = cursor.getString(cursor.getColumnIndexOrThrow(ChitHelper.COLUMN_NAME))
+        val type = cursor.getString(cursor.getColumnIndexOrThrow(ChitHelper.COLUMN_TYPE))
+        val speed = cursor.getInt(cursor.getColumnIndexOrThrow(ChitHelper.COLUMN_SPEED))
+        val effort = cursor.getString(cursor.getColumnIndexOrThrow(ChitHelper.COLUMN_EFFORT))
+
+        val chit = Chit(id, name, type, speed, effort)
+        return chit
+
     }
 }

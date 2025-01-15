@@ -27,13 +27,13 @@ class ChitHelper {
         const val SQL_DELETE_ENTRIES: String = "DROP TABLE IF EXISTS $TABLE_NAME"
 
         // Load resources from xml files to database
-        fun loadChits(context: Context){
+        fun loadChits(context: Context) {
             val res = context.resources
             val name = res.getStringArray(R.array.chit_names)
             val type = res.getStringArray(R.array.chit_types)
             val speed = res.getStringArray(R.array.chit_speed)
             val effort = res.getStringArray(R.array.chit_effort)
-            for (i in type.indices){
+            for (i in type.indices) {
                 val chit = Chit(0, name[i], type[i], speed[i].toInt(), effort[i])
                 ChitDAO(context).insertChit(chit)
             }

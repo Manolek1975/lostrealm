@@ -12,157 +12,148 @@
         android:id="@+id/role_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:background="@drawable/icon_amazon"
         android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        tools:background="@drawable/icon_amazon" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:textColor="@color/black"
         android:textSize="32sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        tools:text="AMAZON"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:text="AMAZON" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_symbol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:textSize="16sp"
         android:textColor="@color/black"
-        tools:text="SWORD AND SHIELD"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_name"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:text="SWORD AND SHIELD" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_weight_head"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:textSize="16sp"
-        android:textColor="@color/black"
         android:text="@string/weight_vulnerability"
-        app:layout_constraintTop_toBottomOf="@id/tv_symbol"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_symbol" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_weight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        tools:text="MEDIUM"
+        app:layout_constraintStart_toEndOf="@id/tv_weight_head"
         app:layout_constraintTop_toBottomOf="@id/tv_symbol"
-        app:layout_constraintStart_toEndOf="@id/tv_weight_head" />
+        tools:text="MEDIUM" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_advantages_head"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
         android:layout_marginTop="8sp"
         android:text="@string/special_advantages"
-        app:layout_constraintTop_toBottomOf="@id/tv_weight_head"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_weight_head" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_adv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        tools:text="AIM"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_advantages_head"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:text="AIM" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_adv1_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constrainedWidth="true"
-        app:layout_constraintHorizontal_bias="0.0"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:textSize="12sp"
         android:textColor="@color/black"
-        tools:text="Subtracts one from each die roll"
-        app:layout_constraintTop_toBottomOf="@id/tv_adv1"
+        android:textSize="12sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tv_adv1"
+        tools:text="Subtracts one from each die roll" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_adv2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        tools:text="STAMINA"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_adv1_desc"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:text="STAMINA" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_adv2_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constrainedWidth="true"
-        app:layout_constraintHorizontal_bias="0.0"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:textSize="12sp"
         android:textColor="@color/black"
-        tools:text="The Amazon can record and do an extra Move phase
-each turn. She gets this bonus even when she is riding a horse - her
-stamina includes being an excellent horsewoman."
-        app:layout_constraintTop_toBottomOf="@id/tv_adv2"
+        android:textSize="12sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tv_adv2"
+        tools:text="The Amazon can record and do an extra Move phase each turn. She gets this bonus even when she is riding a horse." />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_development_head"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:textSize="12sp"
-        android:textColor="@color/black"
         android:layout_marginTop="8sp"
         android:text="@string/development"
-        app:layout_constraintTop_toBottomOf="@+id/tv_adv2_desc"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_adv2_desc" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tv_development_head"
-        app:layout_constraintStart_toStartOf="parent" >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_development_head">
 
-        <include android:id="@+id/level1"
+        <include
+            android:id="@+id/dev"
             layout="@layout/development_layout" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-
-
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

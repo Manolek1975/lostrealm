@@ -2,15 +2,13 @@ package com.delek.lostrealm.database.helper
 
 import android.content.Context
 import com.delek.lostrealm.R
-import com.delek.lostrealm.database.dao.ChitDAO
 import com.delek.lostrealm.database.dao.DevelopmentDAO
-import com.delek.lostrealm.database.model.Chit
 import com.delek.lostrealm.database.model.Development
 
 class DevelopmentHelper {
 
     companion object {
-        const val TABLE_NAME: String = "develoment"
+        const val TABLE_NAME: String = "development"
         const val COLUMN_ID: String = "id"
         const val COLUMN_NAME: String = "name"
         const val COLUMN_LEVEL: String = "level"
@@ -30,14 +28,15 @@ class DevelopmentHelper {
         const val SQL_DELETE_ENTRIES: String = "DROP TABLE IF EXISTS $TABLE_NAME"
 
         // Load resources from xml files to database
-        fun loadDeveloments(context: Context){
+        fun loadDeveloments(context: Context) {
             val res = context.resources
             val name = res.getStringArray(R.array.development_names)
             val level = res.getStringArray(R.array.development_levels)
             val roleId = res.getStringArray(R.array.development_roles)
             val chitId = res.getStringArray(R.array.development_chits)
-            for (i in name.indices){
-                val development = Development(0, name[i], level[i].toInt(), roleId[i].toInt(), chitId[i].toInt())
+            for (i in name.indices) {
+                val development =
+                    Development(0, name[i], level[i].toInt(), roleId[i].toInt(), chitId[i].toInt())
                 DevelopmentDAO(context).insertDeveloment(development)
             }
         }

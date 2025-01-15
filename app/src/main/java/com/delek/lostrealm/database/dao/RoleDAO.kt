@@ -41,25 +41,7 @@ class RoleDAO(context: Context) : SQLiteOpenHelper(
         val query = "SELECT * FROM roles"
         val cursor = db.rawQuery(query, null)
         while (cursor.moveToNext()) {
-            val id = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_ID))
-            val name = cursor.getString(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_NAME))
-            val symbol = cursor.getString(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_SYMBOL))
-            val image = cursor.getString(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_IMAGE))
-            val icon = cursor.getString(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_ICON))
-            val weight = cursor.getString(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_WEIGHT))
-            val advantages =
-                cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_ADVANTAGES))
-            val development =
-                cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_DEVELOPMENT))
-            val position = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_POSITION))
-            val relations = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_RELATIONS))
-            val difficulty =
-                cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_DIFFICULTY))
-
-            val role = Role(
-                id, name, symbol, image, icon, weight,
-                advantages, development, position, relations, difficulty
-            )
+            val role = getColumns(cursor)
             roleList.add(role)
         }
         cursor.close()

@@ -13,5 +13,4 @@ data class Weapon(
     val speed: Int,
     val speedAlert: Int,
     val price: Int
-) {
-}
+)

@@ -56,12 +56,9 @@ class WeaponHelper {
             val price = res.getStringArray(R.array.weapon_prices)
 
             for (i in name.indices) {
-                val weapon = Weapon(0, name[i], image[i], alert[i], damage[i], plus[i], plusAlert[i],
-                    type[i],
-                    length[i].toInt(),
-                    speed[i].toInt(),
-                    speedAlert[i].toInt(),
-                    price[i].toInt())
+                val weapon = Weapon(
+                    0, name[i], image[i], alert[i], damage[i], plus[i], plusAlert[i], type[i],
+                    length[i].toInt(), speed[i].toInt(), speedAlert[i].toInt(), price[i].toInt())
                 WeaponDAO(context).insertWeapon(weapon)
             }
         }

@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import com.delek.lostrealm.R
 import com.delek.lostrealm.database.helper.AdvantageHelper
+import com.delek.lostrealm.database.helper.ArmorHelper
 import com.delek.lostrealm.database.helper.ChitHelper
 import com.delek.lostrealm.database.helper.DBHelper
 import com.delek.lostrealm.database.helper.DevelopmentHelper
@@ -65,6 +66,7 @@ class MainActivity : AppCompatActivity() {
         ChitHelper.loadChits(this)
         DevelopmentHelper.loadDeveloments(this)
         WeaponHelper.loadWeapons(this)
+        ArmorHelper.loadArmor(this)
     }
 
     private fun View.blink(

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="armor_names">
+        <item>SUIT OF ARMOR</item>
+        <item>BREASTPLATE</item>
+        <item>HELMET</item>
+        <item>SHIELD</item>
+        <item>TREMENDOUS ARMOR</item>
+        <item>SILVER BREASTPLATE</item>
+        <item>GOLD HELMET</item>
+        <item>JADE SHIELD</item>
+    </string-array>
+
+    <string-array name="armor_images">
+        <item>a_suit_of_armor</item>
+        <item>a_breastplate</item>
+        <item>a_helmet</item>
+        <item>a_shield</item>
+        <item>a_tremendous_armor</item>
+        <item>a_silver_breastplate</item>
+        <item>a_gold_helmet</item>
+        <item>a_jade_shield</item>
+    </string-array>
+
+    <string-array name="armor_defense">
+        <item>H</item>
+        <item>M</item>
+        <item>M</item>
+        <item>M</item>
+        <item>T</item>
+        <item>H</item>
+        <item>H</item>
+        <item>H</item>
+    </string-array>
+
+    <string-array name="armor_prices">
+        <item>17</item>
+        <item>9</item>
+        <item>5</item>
+        <item>7</item>
+        <item>25</item>
+        <item>25</item>
+        <item>30</item>
+        <item>20</item>
+    </string-array>
+
+    <string-array name="armor_prices_damaged">
+        <item>12</item>
+        <item>6</item>
+        <item>3</item>
+        <item>5</item>
+        <item>18</item>
+        <item>21</item>
+        <item>27</item>
+        <item>16</item>
+    </string-array>
+</resources>

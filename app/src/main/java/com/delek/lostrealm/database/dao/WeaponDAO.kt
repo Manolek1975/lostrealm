@@ -2,6 +2,7 @@ package com.delek.lostrealm.database.dao
 
 import android.content.ContentValues
 import android.content.Context
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.delek.lostrealm.database.helper.DBHelper
@@ -34,6 +35,40 @@ class WeaponDAO(context: Context) : SQLiteOpenHelper(
         }
         db.insert(WeaponHelper.TABLE_NAME, null, values)
         db.close()
+    }
+
+    fun getWeaponsByDevelopment(id: Int): String {
+        val db = this.readableDatabase
+        val query = "SELECT name FROM weapons WHERE id = $id"
+        val cursor = db.rawQuery(query, null)
+        cursor.moveToFirst()
+            val weapon = cursor.getString(cursor.getColumnIndexOrThrow(WeaponHelper.COLUMN_NAME))
+        cursor.close()
+        db.close()
+        return weapon
+    }
+
+    private fun getColumns(cursor: Cursor): Weapon {
+        val id = cursor.getInt(cursor.getColumnIndexOrThrow(WeaponHelper.COLUMN_ID))
+        val name = cursor.getString(cursor.getColumnIndexOrThrow(WeaponHelper.COLUMN_NAME))
+        val image = cursor.getString(cursor.getColumnIndexOrThrow(WeaponHelper.COLUMN_IMAGE))
+        val alert = cursor.getString(cursor.getColumnIndexOrThrow(WeaponHelper.COLUMN_ALERT))
+        val damage = cursor.getString(cursor.getColumnIndexOrThrow(WeaponHelper.COLUMN_DAMAGE))
+        val plus = cursor.getString(cursor.getColumnIndexOrThrow(WeaponHelper.COLUMN_PLUS))
+        val plusAlert =
+            cursor.getString(cursor.getColumnIndexOrThrow(WeaponHelper.COLUMN_PLUS_ALERT))
+        val type = cursor.getString(cursor.getColumnIndexOrThrow(WeaponHelper.COLUMN_TYPE))
+        val length = cursor.getString(cursor.getColumnIndexOrThrow(WeaponHelper.COLUMN_LENGTH))
+        val speed = cursor.getString(cursor.getColumnIndexOrThrow(WeaponHelper.COLUMN_SPEED))
+        val speedAlert =
+            cursor.getString(cursor.getColumnIndexOrThrow(WeaponHelper.COLUMN_SPEED_ALERT))
+        val price = cursor.getString(cursor.getColumnIndexOrThrow(WeaponHelper.COLUMN_PRICE))
+
+        val weapon = Weapon(
+            id, name, image, alert, damage, plus, plusAlert, type,
+            length.toInt(), speed.toInt(), speedAlert.toInt(), price.toInt()
+        )
+        return weapon
     }
 
 }

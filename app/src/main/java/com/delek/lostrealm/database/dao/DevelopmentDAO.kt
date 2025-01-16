@@ -24,6 +24,8 @@ class DevelopmentDAO(context: Context): SQLiteOpenHelper(context,
             put(DevelopmentHelper.COLUMN_LEVEL, dev.level)
             put(DevelopmentHelper.COLUMN_ROLE_ID, dev.roleId)
             put(DevelopmentHelper.COLUMN_CHIT_ID, dev.chitId)
+            put(DevelopmentHelper.COLUMN_WEAPON_ID, dev.weaponId)
+            put(DevelopmentHelper.COLUMN_ARMOR_ID, dev.armorId)
         }
         db.insert(DevelopmentHelper.TABLE_NAME, null, values)
         db.close()
@@ -49,8 +51,10 @@ class DevelopmentDAO(context: Context): SQLiteOpenHelper(context,
         val level = cursor.getInt(cursor.getColumnIndexOrThrow(DevelopmentHelper.COLUMN_LEVEL))
         val roleId = cursor.getInt(cursor.getColumnIndexOrThrow(DevelopmentHelper.COLUMN_ROLE_ID))
         val chitId = cursor.getInt(cursor.getColumnIndexOrThrow(DevelopmentHelper.COLUMN_CHIT_ID))
+        val weaponId = cursor.getInt(cursor.getColumnIndexOrThrow(DevelopmentHelper.COLUMN_WEAPON_ID))
+        val armorId = cursor.getInt(cursor.getColumnIndexOrThrow(DevelopmentHelper.COLUMN_ARMOR_ID))
 
-        val dev = Development(id, name, level, roleId, chitId)
+        val dev = Development(id, name, level, roleId, chitId, weaponId, armorId)
         return dev
     }
 }

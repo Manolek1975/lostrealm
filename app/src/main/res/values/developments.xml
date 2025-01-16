@@ -2,6 +2,7 @@
 <resources>
 
     <string-array name="development_names">
+        <!-- AMAZON -->
         <item>SCOUT</item>
         <item>SCOUT</item>
         <item>SCOUT</item>
@@ -14,7 +15,7 @@
         <item>AMAZON</item>
         <item>AMAZON</item>
         <item>AMAZON</item>
-
+        <!-- BERSERKER -->
         <item>YOUTH</item>
         <item>YOUTH</item>
         <item>YOUTH</item>
@@ -30,6 +31,7 @@
     </string-array>
 
     <string-array name="development_levels">
+        <!-- AMAZON -->
         <item>1</item>
         <item>1</item>
         <item>1</item>
@@ -42,7 +44,7 @@
         <item>4</item>
         <item>4</item>
         <item>4</item>
-
+        <!-- BERSERKER -->
         <item>1</item>
         <item>1</item>
         <item>1</item>
@@ -59,6 +61,7 @@
     </string-array>
 
     <string-array name="development_roles">
+        <!-- AMAZON -->
         <item>1</item>
         <item>1</item>
         <item>1</item>
@@ -71,7 +74,7 @@
         <item>1</item>
         <item>1</item>
         <item>1</item>
-
+        <!-- BERSERKER -->
         <item>2</item>
         <item>2</item>
         <item>2</item>
@@ -92,6 +95,7 @@
     </string-array>
 
     <string-array name="development_chits">
+        <!-- AMAZON -->
         <item>27</item>
         <item>29</item>
         <item>17</item>
@@ -104,7 +108,7 @@
         <item>13</item>
         <item>15</item>
         <item>29</item>
-
+        <!-- BERSERKER -->
         <item>23</item>
         <item>24</item>
         <item>9</item>
@@ -117,6 +121,64 @@
         <item>5</item>
         <item>2</item>
         <item>4</item>
-
     </string-array>
+
+    <string-array name="development_weapons">
+        <!-- AMAZON -->
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>15</item>
+        <item>15</item>
+        <item>15</item>
+        <!-- BERSERKER -->
+        <item>16</item>
+        <item>16</item>
+        <item>16</item>
+        <item>16</item>
+        <item>16</item>
+        <item>16</item>
+        <item>16</item>
+        <item>16</item>
+        <item>16</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+    </string-array>
+
+    <string-array name="development_armor">
+        <!-- AMAZON -->
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>3</item>
+        <item>2</item>
+        <item>4</item>
+        <item>3</item>
+        <item>2</item>
+        <item>4</item>
+        <item>3</item>
+        <item>2</item>
+        <item>4</item>
+        <!-- BERSERKER -->
+        <item>3</item>
+        <item>0</item>
+        <item>0</item>
+        <item>3</item>
+        <item>4</item>
+        <item>0</item>
+        <item>3</item>
+        <item>2</item>
+        <item>4</item>
+        <item>3</item>
+        <item>0</item>
+        <item>0</item>
+    </string-array>
+
 </resources>

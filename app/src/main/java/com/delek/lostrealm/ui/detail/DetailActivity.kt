@@ -9,9 +9,11 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import com.delek.lostrealm.R
 import com.delek.lostrealm.database.dao.AdvantageDAO
+import com.delek.lostrealm.database.dao.ArmorDAO
 import com.delek.lostrealm.database.dao.ChitDAO
 import com.delek.lostrealm.database.dao.DevelopmentDAO
 import com.delek.lostrealm.database.dao.RoleDAO
+import com.delek.lostrealm.database.dao.WeaponDAO
 import com.delek.lostrealm.databinding.ActivityDetailBinding
 import java.lang.reflect.Field
 
@@ -46,72 +48,94 @@ class DetailActivity : AppCompatActivity() {
         binding.tvAdv2.text = adv[1].name
         binding.tvAdv2Desc.text = adv[1].description
 
+        for (dev in devs) {
+            var pieces = ""
+            val weapon = WeaponDAO(this).getWeaponsByDevelopment(dev.weaponId)
+            var equip = weapon
+            val armor = ArmorDAO(this).getArmorByDevelopment(role.id, dev.level)
+            armor.forEach { pieces += ", " + it.name }
+            equip += pieces
+            when (dev.level) {
+                1 -> {
+                    binding.dev.tvDevLevel1.text = dev.name
+                    binding.dev.tvEquipment1.text = equip
+                }
+                2 -> {
+                    binding.dev.tvDevLevel2.text = dev.name
+                    binding.dev.tvEquipment2.text = equip
+                }
+                3 -> {
+                    binding.dev.tvDevLevel3.text = dev.name
+                    binding.dev.tvEquipment3.text = equip
+                }
+                4 -> {
+                    binding.dev.tvDevLevel4.text = dev.name
+                    binding.dev.tvEquipment4.text = equip
+                }
+            }
+        }
         //Level 1
-        binding.dev.tvDevLevel1.text = devs[0].name
         binding.dev.chit1.name.text = chits[0].name
         binding.dev.chit1.type.text = chits[0].type
-        binding.dev.chit1.speed.text = chits[0].speed.toString()
+        binding.dev.chit1.speed.text = chits[0].speed
         binding.dev.chit1.effort.text = chits[0].effort
 
         binding.dev.chit2.name.text = chits[1].name
         binding.dev.chit2.type.text = chits[1].type
-        binding.dev.chit2.speed.text = chits[1].speed.toString()
+        binding.dev.chit2.speed.text = chits[1].speed
         binding.dev.chit2.effort.text = chits[1].effort
 
         binding.dev.chit3.name.text = chits[2].name
         binding.dev.chit3.type.text = chits[2].type
-        binding.dev.chit3.speed.text = chits[2].speed.toString()
+        binding.dev.chit3.speed.text = chits[2].speed
         binding.dev.chit3.effort.text = chits[2].effort
 
         //Level 2
-        binding.dev.tvDevLevel2.text = devs[4].name
         binding.dev.chit4.name.text = chits[3].name
         binding.dev.chit4.type.text = chits[3].type
-        binding.dev.chit4.speed.text = chits[3].speed.toString()
+        binding.dev.chit4.speed.text = chits[3].speed
         binding.dev.chit4.effort.text = chits[3].effort
 
         binding.dev.chit5.name.text = chits[4].name
         binding.dev.chit5.type.text = chits[4].type
-        binding.dev.chit5.speed.text = chits[4].speed.toString()
+        binding.dev.chit5.speed.text = chits[4].speed
         binding.dev.chit5.effort.text = chits[4].effort
 
         binding.dev.chit6.name.text = chits[5].name
         binding.dev.chit6.type.text = chits[5].type
-        binding.dev.chit6.speed.text = chits[5].speed.toString()
+        binding.dev.chit6.speed.text = chits[5].speed
         binding.dev.chit6.effort.text = chits[5].effort
 
         //Level 3
-        binding.dev.tvDevLevel3.text = devs[7].name
         binding.dev.chit7.name.text = chits[6].name
         binding.dev.chit7.type.text = chits[6].type
-        binding.dev.chit7.speed.text = chits[6].speed.toString()
+        binding.dev.chit7.speed.text = chits[6].speed
         binding.dev.chit7.effort.text = chits[6].effort
 
         binding.dev.chit8.name.text = chits[7].name
         binding.dev.chit8.type.text = chits[7].type
-        binding.dev.chit8.speed.text = chits[7].speed.toString()
+        binding.dev.chit8.speed.text = chits[7].speed
         binding.dev.chit8.effort.text = chits[7].effort
 
         binding.dev.chit9.name.text = chits[8].name
         binding.dev.chit9.type.text = chits[8].type
-        binding.dev.chit9.speed.text = chits[8].speed.toString()
+        binding.dev.chit9.speed.text = chits[8].speed
         binding.dev.chit9.effort.text = chits[8].effort
 
         //Level 4
-        binding.dev.tvDevLevel4.text = devs[10].name
         binding.dev.chit10.name.text = chits[9].name
         binding.dev.chit10.type.text = chits[9].type
-        binding.dev.chit10.speed.text = chits[9].speed.toString()
+        binding.dev.chit10.speed.text = chits[9].speed
         binding.dev.chit10.effort.text = chits[9].effort
 
         binding.dev.chit11.name.text = chits[10].name
         binding.dev.chit11.type.text = chits[10].type
-        binding.dev.chit11.speed.text = chits[10].speed.toString()
+        binding.dev.chit11.speed.text = chits[10].speed
         binding.dev.chit11.effort.text = chits[10].effort
 
         binding.dev.chit12.name.text = chits[11].name
         binding.dev.chit12.type.text = chits[11].type
-        binding.dev.chit12.speed.text = chits[11].speed.toString()
+        binding.dev.chit12.speed.text = chits[11].speed
         binding.dev.chit12.effort.text = chits[11].effort
 
 

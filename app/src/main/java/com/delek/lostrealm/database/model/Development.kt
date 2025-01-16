@@ -5,5 +5,7 @@ data class Development(
     val name: String,
     val level: Int,
     val roleId: Int,
-    val chitId: Int
+    val chitId: Int,
+    val weaponId: Int,
+    val armorId: Int
 )

@@ -2,7 +2,7 @@
 <resources>
 
     <string-array name="armor_names">
-        <item>SUIT OF ARMOR</item>
+        <item>ARMOR</item>
         <item>BREASTPLATE</item>
         <item>HELMET</item>
         <item>SHIELD</item>

@@ -22,8 +22,9 @@ class RoleDAO(context: Context) : SQLiteOpenHelper(
         val values = ContentValues().apply {
             put(RoleHelper.COLUMN_NAME, role.name)
             put(RoleHelper.COLUMN_SYMBOL, role.symbol)
-            put(RoleHelper.COLUMN_IMAGE, role.image)
             put(RoleHelper.COLUMN_ICON, role.icon)
+            put(RoleHelper.COLUMN_IMAGE, role.image)
+            put(RoleHelper.COLUMN_DETAIL, role.detail)
             put(RoleHelper.COLUMN_WEIGHT, role.weight)
             put(RoleHelper.COLUMN_ADVANTAGES, role.advantages)
             put(RoleHelper.COLUMN_DEVELOPMENT, role.development)
@@ -65,6 +66,7 @@ class RoleDAO(context: Context) : SQLiteOpenHelper(
         val name = cursor.getString(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_NAME))
         val symbol = cursor.getString(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_SYMBOL))
         val image = cursor.getString(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_IMAGE))
+        val detail = cursor.getString(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_DETAIL))
         val icon = cursor.getString(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_ICON))
         val weight = cursor.getString(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_WEIGHT))
         val advantages = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_ADVANTAGES))
@@ -74,7 +76,7 @@ class RoleDAO(context: Context) : SQLiteOpenHelper(
         val difficulty = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_DIFFICULTY))
 
         val role = Role(
-            id, name, symbol, image, icon, weight,
+            id, name, symbol, icon, image, detail, weight,
             advantages, development, position, relations, difficulty
         )
         return role

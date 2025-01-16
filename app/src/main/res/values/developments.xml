@@ -28,6 +28,32 @@
         <item>BERSERKER</item>
         <item>BERSERKER</item>
         <item>BERSERKER</item>
+        <!-- BLACK KNIGHT -->
+        <item>SPEARMAN</item>
+        <item>SPEARMAN</item>
+        <item>SPEARMAN</item>
+        <item>MERCENARY</item>
+        <item>MERCENARY</item>
+        <item>MERCENARY</item>
+        <item>HEAVY FOOTMAN</item>
+        <item>HEAVY FOOTMAN</item>
+        <item>HEAVY FOOTMAN</item>
+        <item>BLACK KNIGHT</item>
+        <item>BLACK KNIGHT</item>
+        <item>BLACK KNIGHT</item>
+        <!-- CAPTAIN -->
+        <item>SPEARMAN</item>
+        <item>SPEARMAN</item>
+        <item>SPEARMAN</item>
+        <item>SOLDIER</item>
+        <item>SOLDIER</item>
+        <item>SOLDIER</item>
+        <item>LIEUTENANT</item>
+        <item>LIEUTENANT</item>
+        <item>LIEUTENANT</item>
+        <item>CAPTAIN</item>
+        <item>CAPTAIN</item>
+        <item>CAPTAIN</item>
     </string-array>
 
     <string-array name="development_levels">
@@ -57,7 +83,32 @@
         <item>4</item>
         <item>4</item>
         <item>4</item>
-
+        <!-- BLACK KNIGHT -->
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>3</item>
+        <item>3</item>
+        <item>3</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <!-- CAPTAIN -->
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>3</item>
+        <item>3</item>
+        <item>3</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
     </string-array>
 
     <string-array name="development_roles">
@@ -87,10 +138,32 @@
         <item>2</item>
         <item>2</item>
         <item>2</item>
-        <item>2</item>
-        <item>2</item>
-        <item>2</item>
-        <item>2</item>
+        <!-- BLACK KNIGHT -->
+        <item>3</item>
+        <item>3</item>
+        <item>3</item>
+        <item>3</item>
+        <item>3</item>
+        <item>3</item>
+        <item>3</item>
+        <item>3</item>
+        <item>3</item>
+        <item>3</item>
+        <item>3</item>
+        <item>3</item>
+        <!-- CAPTAIN -->
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
 
     </string-array>
 
@@ -121,6 +194,32 @@
         <item>5</item>
         <item>2</item>
         <item>4</item>
+        <!-- BLACK KNIGHT -->
+        <item>26</item>
+        <item>24</item>
+        <item>8</item>
+        <item>23</item>
+        <item>28</item>
+        <item>6</item>
+        <item>13</item>
+        <item>13</item>
+        <item>11</item>
+        <item>25</item>
+        <item>10</item>
+        <item>15</item>
+        <!-- CAPTAIN -->
+        <item>28</item>
+        <item>26</item>
+        <item>8</item>
+        <item>11</item>
+        <item>15</item>
+        <item>30</item>
+        <item>28</item>
+        <item>8</item>
+        <item>13</item>
+        <item>28</item>
+        <item>6</item>
+        <item>13</item>
     </string-array>
 
     <string-array name="development_weapons">
@@ -150,6 +249,32 @@
         <item>12</item>
         <item>12</item>
         <item>12</item>
+        <!-- BLACK KNIGHT -->
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>3</item>
+        <item>3</item>
+        <item>3</item>
+        <item>17</item>
+        <item>17</item>
+        <item>17</item>
+        <item>17</item>
+        <item>17</item>
+        <item>17</item>
+        <!-- CAPTAIN -->
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>15</item>
+        <item>15</item>
+        <item>15</item>
+        <item>15</item>
+        <item>15</item>
+        <item>15</item>
+        <item>15</item>
+        <item>15</item>
+        <item>15</item>
     </string-array>
 
     <string-array name="development_armor">
@@ -179,6 +304,32 @@
         <item>3</item>
         <item>0</item>
         <item>0</item>
+        <!-- BLACK KNIGHT -->
+        <item>3</item>
+        <item>2</item>
+        <item>0</item>
+        <item>3</item>
+        <item>2</item>
+        <item>0</item>
+        <item>3</item>
+        <item>2</item>
+        <item>4</item>
+        <item>1</item>
+        <item>4</item>
+        <item>0</item>
+        <!-- CAPTAIN -->
+        <item>4</item>
+        <item>0</item>
+        <item>0</item>
+        <item>3</item>
+        <item>2</item>
+        <item>4</item>
+        <item>3</item>
+        <item>2</item>
+        <item>4</item>
+        <item>3</item>
+        <item>2</item>
+        <item>4</item>
     </string-array>
 
 </resources>

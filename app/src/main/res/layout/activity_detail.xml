@@ -9,151 +9,33 @@
     tools:context=".ui.detail.DetailActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/role_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:background="@drawable/icon_amazon" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
-        android:textColor="@color/black"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="AMAZON" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_symbol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_name"
-        tools:text="SWORD AND SHIELD" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_weight_head"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="@string/weight_vulnerability"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_symbol" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_weight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/tv_weight_head"
-        app:layout_constraintTop_toBottomOf="@id/tv_symbol"
-        tools:text="MEDIUM" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_advantages_head"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8sp"
-        android:text="@string/special_advantages"
-        android:textColor="@color/black"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_weight_head" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_adv1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_advantages_head"
-        tools:text="AIM" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_adv1_desc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:textColor="@color/black"
-        android:textSize="12sp"
-        app:layout_constrainedWidth="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_adv1"
-        tools:text="Subtracts one from each die roll" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_adv2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_adv1_desc"
-        tools:text="STAMINA" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_adv2_desc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:textColor="@color/black"
-        android:textSize="12sp"
-        app:layout_constrainedWidth="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_adv2"
-        tools:text="The Amazon can record and do an extra Move phase each turn. She gets this bonus even when she is riding a horse." />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_development_head"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8sp"
-        android:text="@string/development"
-        android:textColor="@color/black"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_adv2_desc" />
-
-    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        tools:background="@drawable/detail_amazon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@android:string/cancel"
+        android:src="@drawable/cancel"
+        app:layout_constraintEnd_toStartOf="@id/check_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_development_head">
+        app:layout_constraintTop_toBottomOf="@+id/detail"
+        tools:ignore="ImageContrastCheck" />
 
-        <include
-            android:id="@+id/dev"
-            layout="@layout/development_layout" />
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/check_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@android:string/yes"
+        android:src="@drawable/check"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cancel_button"
+        app:layout_constraintTop_toBottomOf="@+id/detail"
+        tools:ignore="ImageContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

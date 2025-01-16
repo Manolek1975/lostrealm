@@ -57,6 +57,25 @@
         <item>img_woods_girl</item>
     </string-array>
 
+    <string-array name="roles_detail">
+        <item>detail_amazon</item>
+        <item>detail_berserker</item>
+        <item>detail_black_knight</item>
+        <item>detail_captain</item>
+        <item>detail_druid</item>
+        <item>detail_dwarf</item>
+        <item>detail_elf</item>
+        <item>detail_magician</item>
+        <item>detail_pilgrim</item>
+        <item>detail_sorcerer</item>
+        <item>detail_swordsman</item>
+        <item>detail_white_knight</item>
+        <item>detail_witch</item>
+        <item>detail_witch_king</item>
+        <item>detail_wizard</item>
+        <item>detail_woods_girl</item>
+    </string-array>
+
     <string-array name="roles_icon">
         <item>icon_amazon</item>
         <item>icon_berserker</item>

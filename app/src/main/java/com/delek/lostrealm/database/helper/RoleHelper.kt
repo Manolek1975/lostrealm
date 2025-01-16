@@ -12,8 +12,9 @@ class RoleHelper {
             const val COLUMN_ID: String = "id"
             const val COLUMN_NAME: String = "name"
             const val COLUMN_SYMBOL: String = "symbol"
-            const val COLUMN_IMAGE: String = "image"
             const val COLUMN_ICON: String = "icon"
+            const val COLUMN_IMAGE: String = "image"
+            const val COLUMN_DETAIL: String = "detail"
             const val COLUMN_WEIGHT: String = "weight"
             const val COLUMN_ADVANTAGES: String = "advantages"
             const val COLUMN_DEVELOPMENT: String = "development"
@@ -26,8 +27,9 @@ class RoleHelper {
                 append("$COLUMN_ID INTEGER PRIMARY KEY AUTOINCREMENT,")
                 append("$COLUMN_NAME TEXT,")
                 append("$COLUMN_SYMBOL TEXT,")
-                append("$COLUMN_IMAGE TEXT,")
                 append("$COLUMN_ICON TEXT,")
+                append("$COLUMN_IMAGE TEXT,")
+                append("$COLUMN_DETAIL TEXT,")
                 append("$COLUMN_WEIGHT TEXT,")
                 append("$COLUMN_ADVANTAGES INTEGER,")
                 append("$COLUMN_DEVELOPMENT INTEGER,")
@@ -43,12 +45,13 @@ class RoleHelper {
                 val res = context.resources
                 val name = res.getStringArray(R.array.roles_name)
                 val symbol = res.getStringArray(R.array.roles_symbol)
-                val image = res.getStringArray(R.array.roles_image)
                 val icon = res.getStringArray(R.array.roles_icon)
+                val image = res.getStringArray(R.array.roles_image)
+                val detail = res.getStringArray(R.array.roles_detail)
                 val weight = res.getStringArray(R.array.roles_weight)
 
             for (i in name.indices){
-                val role = Role(0, name[i], symbol[i], image[i], icon[i], weight[i],
+                val role = Role(0, name[i], symbol[i], icon[i], image[i], detail[i], weight[i],
                     0,0,0,0,0)
                 RoleDAO(context).insertRole(role)
             }

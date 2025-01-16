@@ -10,6 +10,7 @@
     <string name="weight_vulnerability">Weight/vulnerability:</string>
     <string name="special_advantages">Special Advantages</string>
     <string name="development">Development:</string>
+    <string name="options">%1$s Options</string>
 
     <string-array name="weight">
         <item>LIGHT</item>

@@ -21,6 +21,8 @@ class DBHelper(context: Context) :
         db?.execSQL(DevelopmentHelper.SQL_CREATE_ENTRIES)
         db?.execSQL(WeaponHelper.SQL_CREATE_ENTRIES)
         db?.execSQL(ArmorHelper.SQL_CREATE_ENTRIES)
+        db?.execSQL(DwellingHelper.SQL_CREATE_ENTRIES)
+        db?.execSQL(RoleDwellingHelper.SQL_CREATE_ENTRIES)
 
     }
 
@@ -32,6 +34,8 @@ class DBHelper(context: Context) :
         db?.execSQL(DevelopmentHelper.SQL_DELETE_ENTRIES)
         db?.execSQL(WeaponHelper.SQL_DELETE_ENTRIES)
         db?.execSQL(ArmorHelper.SQL_DELETE_ENTRIES)
+        db?.execSQL(DwellingHelper.SQL_DELETE_ENTRIES)
+        db?.execSQL(RoleDwellingHelper.SQL_DELETE_ENTRIES)
         onCreate(db)
     }
 

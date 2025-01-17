@@ -1,14 +1,18 @@
 package com.delek.lostrealm.ui.init
 
+
 import android.os.Bundle
+import android.widget.RadioButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import com.delek.lostrealm.R
+import com.delek.lostrealm.database.dao.DwellingDAO
 import com.delek.lostrealm.database.dao.RoleDAO
 import com.delek.lostrealm.databinding.ActivityInitBinding
+
 
 class InitActivity : AppCompatActivity() {
 
@@ -19,11 +23,24 @@ class InitActivity : AppCompatActivity() {
         binding = ActivityInitBinding.inflate(layoutInflater)
         setContentView(binding.root)
         hideSystemBars()
+        initUI()
+    }
 
+    private fun initUI() {
         val i = intent.getIntExtra("role", 0)
         val role = RoleDAO(this).getRoleById(i)
 
-        binding.optionHead.text = getString(R.string.options, role.name)
+        val dwelling = DwellingDAO(this).getRoleDwellings(i)
+
+        binding.tvHead.text = getString(R.string.options, role.name)
+        for (d in dwelling) {
+            binding.rgDwelling.addView(RadioButton(this).apply {
+                id = d.id
+                text = d.name
+                textSize = 20F
+                isChecked = true
+            })
+        }
 
     }
 

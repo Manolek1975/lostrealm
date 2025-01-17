@@ -17,7 +17,9 @@ import com.delek.lostrealm.database.helper.ArmorHelper
 import com.delek.lostrealm.database.helper.ChitHelper
 import com.delek.lostrealm.database.helper.DBHelper
 import com.delek.lostrealm.database.helper.DevelopmentHelper
+import com.delek.lostrealm.database.helper.DwellingHelper
 import com.delek.lostrealm.database.helper.RoleAdvantageHelper
+import com.delek.lostrealm.database.helper.RoleDwellingHelper
 import com.delek.lostrealm.database.helper.RoleHelper
 import com.delek.lostrealm.database.helper.WeaponHelper
 import com.delek.lostrealm.databinding.ActivityMainBinding
@@ -67,6 +69,8 @@ class MainActivity : AppCompatActivity() {
         DevelopmentHelper.loadDeveloments(this)
         WeaponHelper.loadWeapons(this)
         ArmorHelper.loadArmor(this)
+        DwellingHelper.loadDwelling(this)
+        RoleDwellingHelper.loadRoleDwellings(this)
     }
 
     private fun View.blink(

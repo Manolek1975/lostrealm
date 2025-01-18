@@ -12,6 +12,12 @@
     <string name="development">Development:</string>
     <string name="options">%1$s Options</string>
     <string name="start_dwelling">Start Dwelling</string>
+    <string name="vp_treasures">Great Treasures</string>
+    <string name="vp_spells">Usable Spells</string>
+    <string name="vp_fame">Fame</string>
+    <string name="vp_notoriety">Notoriety</string>
+    <string name="vp_gold">Great Gold</string>
+    <string name="victory_points">Victory Points %1$s/5</string>
 
     <string-array name="weight">
         <item>LIGHT</item>

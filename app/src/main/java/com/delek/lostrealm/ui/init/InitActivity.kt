@@ -12,6 +12,7 @@ import com.delek.lostrealm.R
 import com.delek.lostrealm.database.dao.DwellingDAO
 import com.delek.lostrealm.database.dao.RoleDAO
 import com.delek.lostrealm.databinding.ActivityInitBinding
+import com.delek.lostrealm.databinding.ItemVpButtonBinding
 
 
 class InitActivity : AppCompatActivity() {
@@ -27,6 +28,7 @@ class InitActivity : AppCompatActivity() {
     }
 
     private fun initUI() {
+        // Start Dwellings
         val i = intent.getIntExtra("role", 0)
         val role = RoleDAO(this).getRoleById(i)
         val dwelling = DwellingDAO(this).getRoleDwellings(i)
@@ -41,110 +43,45 @@ class InitActivity : AppCompatActivity() {
             })
         }
 
-        binding.itemVpTreasures.tvName.text = getString(R.string.vp_treasures)
-        binding.itemVpSpells.tvName.text = getString(R.string.vp_spells)
-        binding.itemVpFame.tvName.text = getString(R.string.vp_fame)
-        binding.itemVpNotoriety.tvName.text = getString(R.string.vp_notoriety)
-        binding.itemVpGold.tvName.text = getString(R.string.vp_gold)
-        binding.itemVpTreasures.tvValue.text = "0"
-        binding.itemVpSpells.tvValue.text = "0"
-        binding.itemVpFame.tvValue.text = "0"
-        binding.itemVpNotoriety.tvValue.text = "0"
-        binding.itemVpGold.tvValue.text = "0"
-
-        calculateVpValues()
-    }
-
-    private fun calculateVpValues() {
+        // Victory Points
         var total = 0
         binding.tvVictoryPoints.text = getString(R.string.victory_points, total.toString())
-        var gt = 0
-        var sp = 0
-        var fm = 0
-        var nt = 0
-        var go = 0
-        binding.itemVpTreasures.ibLeft.setOnClickListener {
-            if (gt > 0) {
-                gt -= 1
-                total -= 1
+        val vp = setVpNames()
+        vp.forEach { v ->
+            v.ibLeft.setOnClickListener {
+                var dec = v.tvValue.text.toString().toInt()
+                if (dec > 0) {
+                    dec -= 1
+                    total -= 1
+                }
+                v.tvValue.text = "$dec"
+                binding.tvVictoryPoints.text = getString(R.string.victory_points, total.toString())
             }
-            binding.itemVpTreasures.tvValue.text = "$gt"
-            binding.tvVictoryPoints.text = getString(R.string.victory_points, total.toString())
-        }
-        binding.itemVpTreasures.ibRight.setOnClickListener {
-            if (gt < 5 && total < 5) {
-                gt += 1
-                total += 1
+            v.ibRight.setOnClickListener {
+                var inc = v.tvValue.text.toString().toInt()
+                if (inc < 5 && total < 5) {
+                    inc += 1
+                    total += 1
+                }
+                v.tvValue.text = "$inc"
+                binding.tvVictoryPoints.text = getString(R.string.victory_points, total.toString())
             }
-            binding.itemVpTreasures.tvValue.text = "$gt"
-            binding.tvVictoryPoints.text = getString(R.string.victory_points, total.toString())
-        }
-        binding.itemVpSpells.ibLeft.setOnClickListener {
-            if (sp > 0) {
-                sp -= 1
-                total -= 1
-            }
-            binding.itemVpSpells.tvValue.text = "$sp"
-            binding.tvVictoryPoints.text = getString(R.string.victory_points, total.toString())
-        }
-        binding.itemVpSpells.ibRight.setOnClickListener {
-            if (sp < 5 && total < 5) {
-                sp += 1
-                total += 1
-            }
-            binding.itemVpSpells.tvValue.text = "$sp"
-            binding.tvVictoryPoints.text = getString(R.string.victory_points, total.toString())
-        }
-        binding.itemVpFame.ibLeft.setOnClickListener {
-            if (fm > 0) {
-                fm -= 1
-                total -= 1
-            }
-            binding.itemVpFame.tvValue.text = "$fm"
-            binding.tvVictoryPoints.text = getString(R.string.victory_points, total.toString())
-        }
-        binding.itemVpFame.ibRight.setOnClickListener {
-            if (fm < 5 && total < 5) {
-                fm += 1
-                total += 1
-            }
-            binding.itemVpFame.tvValue.text = "$fm"
-            binding.tvVictoryPoints.text = getString(R.string.victory_points, total.toString())
-        }
-        binding.itemVpNotoriety.ibLeft.setOnClickListener {
-            if (nt > 0) {
-                nt -= 1
-                total -= 1
-            }
-            binding.itemVpNotoriety.tvValue.text = "$nt"
-            binding.tvVictoryPoints.text = getString(R.string.victory_points, total.toString())
-        }
-        binding.itemVpNotoriety.ibRight.setOnClickListener {
-            if (nt < 5 && total < 5) {
-                nt += 1
-                total += 1
-            }
-            binding.itemVpNotoriety.tvValue.text = "$nt"
-            binding.tvVictoryPoints.text = getString(R.string.victory_points, total.toString())
-        }
-        binding.itemVpGold.ibLeft.setOnClickListener {
-            if (go > 0) {
-                go -= 1
-                total -= 1
-            }
-            binding.itemVpGold.tvValue.text = "$go"
-            binding.tvVictoryPoints.text = getString(R.string.victory_points, total.toString())
-        }
-        binding.itemVpGold.ibRight.setOnClickListener {
-            if (go < 5 && total < 5) {
-                go += 1
-                total += 1
-            }
-            binding.itemVpGold.tvValue.text = "$go"
-            binding.tvVictoryPoints.text = getString(R.string.victory_points, total.toString())
         }
 
+    }
 
+    private fun setVpNames(): List<ItemVpButtonBinding> {
+        val treasures = binding.itemVpTreasures
+        val spells = binding.itemVpSpells
+        val fame = binding.itemVpFame
+        val notoriety = binding.itemVpNotoriety
+        val gold = binding.itemVpGold
+        treasures.tvName.text = getString(R.string.vp_treasures)
+        spells.tvName.text = getString(R.string.vp_spells)
+        fame.tvName.text = getString(R.string.vp_fame)
+        notoriety.tvName.text = getString(R.string.vp_notoriety)
+        gold.tvName.text = getString(R.string.vp_gold)
+        return listOf(treasures, spells, fame, notoriety, gold)
     }
 
     private fun hideSystemBars() {

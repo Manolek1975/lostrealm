@@ -37,6 +37,7 @@
         android:textColor="@color/primary"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:text="@string/_0"
         app:layout_constraintStart_toEndOf="@id/ib_left"
         app:layout_constraintTop_toTopOf="parent"
         tool:text="0" />

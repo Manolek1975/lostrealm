@@ -1,4 +1,4 @@
-package com.delek.lostrealm.ui
+package com.delek.lostrealm.ui.main
 
 import android.content.Intent
 import android.os.Bundle
@@ -21,6 +21,8 @@ import com.delek.lostrealm.database.helper.DwellingHelper
 import com.delek.lostrealm.database.helper.RoleAdvantageHelper
 import com.delek.lostrealm.database.helper.RoleDwellingHelper
 import com.delek.lostrealm.database.helper.RoleHelper
+import com.delek.lostrealm.database.helper.SpellHelper
+import com.delek.lostrealm.database.helper.StartSpellHelper
 import com.delek.lostrealm.database.helper.WeaponHelper
 import com.delek.lostrealm.databinding.ActivityMainBinding
 import com.delek.lostrealm.ui.role.RoleActivity
@@ -71,6 +73,8 @@ class MainActivity : AppCompatActivity() {
         ArmorHelper.loadArmor(this)
         DwellingHelper.loadDwelling(this)
         RoleDwellingHelper.loadRoleDwellings(this)
+        SpellHelper.loadSpells(this)
+        StartSpellHelper.loadAdvantages(this)
     }
 
     private fun View.blink(

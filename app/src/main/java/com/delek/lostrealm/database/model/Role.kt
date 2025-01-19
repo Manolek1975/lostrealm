@@ -13,6 +13,7 @@ data class Role(
     val advantages: Int,
     val development: Int,
     val position: Int,
+    val spells: Int,
     val relations: Int,
     val difficulty: Int
 ): Serializable

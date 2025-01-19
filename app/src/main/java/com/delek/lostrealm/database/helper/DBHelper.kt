@@ -23,6 +23,8 @@ class DBHelper(context: Context) :
         db?.execSQL(ArmorHelper.SQL_CREATE_ENTRIES)
         db?.execSQL(DwellingHelper.SQL_CREATE_ENTRIES)
         db?.execSQL(RoleDwellingHelper.SQL_CREATE_ENTRIES)
+        db?.execSQL(SpellHelper.SQL_CREATE_ENTRIES)
+        db?.execSQL(StartSpellHelper.SQL_CREATE_ENTRIES)
 
     }
 
@@ -36,6 +38,8 @@ class DBHelper(context: Context) :
         db?.execSQL(ArmorHelper.SQL_DELETE_ENTRIES)
         db?.execSQL(DwellingHelper.SQL_DELETE_ENTRIES)
         db?.execSQL(RoleDwellingHelper.SQL_DELETE_ENTRIES)
+        db?.execSQL(SpellHelper.SQL_DELETE_ENTRIES)
+        db?.execSQL(StartSpellHelper.SQL_DELETE_ENTRIES)
         onCreate(db)
     }
 

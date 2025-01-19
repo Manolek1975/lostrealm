@@ -8,9 +8,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.delek.lostrealm.R
 import com.delek.lostrealm.database.dao.DwellingDAO
 import com.delek.lostrealm.database.dao.RoleDAO
+import com.delek.lostrealm.database.dao.SpellDAO
 import com.delek.lostrealm.databinding.ActivityInitBinding
 import com.delek.lostrealm.databinding.ItemVpButtonBinding
 
@@ -18,6 +21,7 @@ import com.delek.lostrealm.databinding.ItemVpButtonBinding
 class InitActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityInitBinding
+    private lateinit var adapter: SpellAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +46,15 @@ class InitActivity : AppCompatActivity() {
                 isChecked = true
             })
         }
+
+        // Spells
+        adapter = SpellAdapter(SpellDAO(this).getSpellsByRole(role.id))
+        //binding.spellRecyclerView.layoutManager = LinearLayoutManager(this)
+
+        binding.spellRecyclerView.setHasFixedSize(true)
+        binding.spellRecyclerView.layoutManager =
+            LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
+        binding.spellRecyclerView.adapter = adapter
 
         // Victory Points
         var total = 0

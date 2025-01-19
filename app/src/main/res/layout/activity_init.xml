@@ -45,6 +45,30 @@
     </RadioGroup>
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_spells"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/spells"
+        android:textColor="@color/primary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rg_dwelling" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/spell_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/tv_spells"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_victory_points"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -55,7 +79,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rg_dwelling" />
+        app:layout_constraintTop_toBottomOf="@id/spell_recycler_view" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="wrap_content"

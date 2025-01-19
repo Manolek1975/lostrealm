@@ -38,14 +38,11 @@ class AdvantageDAO(context: Context): SQLiteOpenHelper(context,
         db.close()
     }
 
-    fun getAdvantagesByRole(role: Int): List<Advantage> {
+/*    fun getAdvantagesByRole(role: Int): List<Advantage> {
         val db = this.readableDatabase
-
         val query = "SELECT advantages.* FROM advantages INNER JOIN role_advantages " +
                 "ON advantages.id = role_advantages.advantage_id " +
                 "WHERE role_advantages.role_id = $role"
-
-        //val query = "SELECT * FROM role_advantages WHERE role_id = $role"
         val cursor = db.rawQuery(query, null)
         val advantageList = mutableListOf<Advantage>()
         while (cursor.moveToNext()) {
@@ -58,6 +55,6 @@ class AdvantageDAO(context: Context): SQLiteOpenHelper(context,
         cursor.close()
         db.close()
         return advantageList
-    }
+    }*/
 
 }

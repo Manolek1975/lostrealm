@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="spell_name">
+        <item>Exorcise</item>
+        <item>Make Whole</item>
+        <item>Peace</item>
+        <item>Small Blessing</item>
+        <item>Blend into Background</item>
+        <item>Fog</item>
+        <item>Prophecy</item>
+        <item>Stones Fly</item>
+        <item>Talk to Wise Bird</item>
+        <item>Witch Brew</item>
+        <item>Elven Grace</item>
+        <item>Faerie Lights</item>
+        <item>Illusion</item>
+        <item>Lost</item>
+        <item>Persuade</item>
+        <item>See Hidden Signs</item>
+        <item>Blazing Lights</item>
+        <item>Elemental Spirit</item>
+        <item>Fiery Blast</item>
+        <item>Hurricane Winds</item>
+        <item>Lighting Bolt</item>
+        <item>Roof Collapses</item>
+        <item>Violent Storm</item>
+        <item>Absorb Essence</item>
+        <item>Ask Demon</item>
+        <item>Broomstick</item>
+        <item>Curse</item>
+        <item>Pentangle</item>
+        <item>Power of the Pit</item>
+        <item>Dissolve Spell</item>
+        <item>Enchant Artifact</item>
+        <item>Melt into Mist</item>
+        <item>Phantasm</item>
+        <item>Transform</item>
+        <item>Unleash Power</item>
+        <item>World Fades</item>
+        <item>Control Bats</item>
+        <item>Peace with Nature</item>
+        <item>Premonition</item>
+        <item>Protection from Magic</item>
+        <item>Sense Danger</item>
+        <item>Bad Luck</item>
+        <item>Deal with Goblins</item>
+        <item>Guide Spider or Octopus</item>
+        <item>Poison</item>
+        <item>Remedy</item>
+        <item>Whistle for Monsters</item>
+    </string-array>
+
+    <string-array name="spell_type">
+        <item>I</item>
+        <item>I</item>
+        <item>I</item>
+        <item>I</item>
+        <item>II</item>
+        <item>II</item>
+        <item>II</item>
+        <item>II</item>
+        <item>II</item>
+        <item>II</item>
+        <item>III</item>
+        <item>III</item>
+        <item>III</item>
+        <item>III</item>
+        <item>III</item>
+        <item>III</item>
+        <item>IV</item>
+        <item>IV</item>
+        <item>IV</item>
+        <item>IV</item>
+        <item>IV</item>
+        <item>IV</item>
+        <item>IV</item>
+        <item>V</item>
+        <item>V</item>
+        <item>V</item>
+        <item>V</item>
+        <item>V</item>
+        <item>V</item>
+        <item>VI</item>
+        <item>VI</item>
+        <item>VI</item>
+        <item>VI</item>
+        <item>VI</item>
+        <item>VI</item>
+        <item>VI</item>
+        <item>VII</item>
+        <item>VII</item>
+        <item>VII</item>
+        <item>VII</item>
+        <item>VII</item>
+        <item>VIII</item>
+        <item>VIII</item>
+        <item>VIII</item>
+        <item>VIII</item>
+        <item>VIII</item>
+        <item>VIII</item>
+    </string-array>
+
+    <string-array name="spell_color">
+        <item>WHITE</item>
+        <item>WHITE</item>
+        <item>WHITE</item>
+        <item>WHITE</item>
+        <item>GREY</item>
+        <item>GREY</item>
+        <item>GREY</item>
+        <item>GREY</item>
+        <item>GREY</item>
+        <item>GREY</item>
+        <item>GOLD</item>
+        <item>GOLD</item>
+        <item>GOLD</item>
+        <item>GOLD</item>
+        <item>GOLD</item>
+        <item>GOLD</item>
+        <item>PURPLE</item>
+        <item>PURPLE</item>
+        <item>PURPLE</item>
+        <item>PURPLE</item>
+        <item>PURPLE</item>
+        <item>PURPLE</item>
+        <item>PURPLE</item>
+        <item>BLACK</item>
+        <item>BLACK</item>
+        <item>BLACK</item>
+        <item>GREY</item>
+        <item>BLACK</item>
+        <item>BLACK</item>
+        <item>PURPLE</item>
+        <item>PURPLE</item>
+        <item>PURPLE</item>
+        <item>PURPLE</item>
+        <item>PURPLE</item>
+        <item>PURPLE</item>
+        <item>BLACK</item>
+        <item>ANY</item>
+        <item>GOLD</item>
+        <item>GREY</item>
+        <item>GOLD</item>
+        <item>PURPLE</item>
+        <item>ANY</item>
+        <item>BLACK</item>
+        <item>GREY</item>
+        <item>GREY</item>
+        <item>GREY</item>
+        <item>PURPLE</item>
+    </string-array>
+
+    <string-array name="spell_target">
+        <item>clearing</item>
+        <item>character</item>
+        <item>attacker</item>
+        <item>character</item>
+        <item>leader</item>
+        <item>tile</item>
+        <item>character</item>
+        <item>multiple</item>
+        <item>character</item>
+        <item>magic(II,VIII)</item>
+        <item>individual</item>
+        <item>magic(III,VII)</item>
+        <item>character,tile</item>
+        <item>character,tile</item>
+        <item>human group</item>
+        <item>character</item>
+        <item>clearing</item>
+        <item>magic(IV,VI)</item>
+        <item>multiple</item>
+        <item>individual</item>
+        <item>attacker</item>
+        <item>clearing</item>
+        <item>tile</item>
+        <item>monster</item>
+        <item>demon</item>
+        <item>character</item>
+        <item>character</item>
+        <item>individual</item>
+        <item>individual</item>
+        <item>spell</item>
+        <item>artifact</item>
+        <item>individual</item>
+        <item>character</item>
+        <item>individual</item>
+        <item>magic(all)</item>
+        <item>character</item>
+        <item>bats</item>
+        <item>leader</item>
+        <item>character</item>
+        <item>character</item>
+        <item>character</item>
+        <item>character</item>
+        <item>goblins</item>
+        <item>spider, octopus</item>
+        <item>weapon</item>
+        <item>spell, curse</item>
+        <item>sound</item>
+    </string-array>
+
+    <string-array name="spell_duration">
+        <item>Instant</item>
+        <item>Instant</item>
+        <item>Combat</item>
+        <item>Instant</item>
+        <item>Day</item>
+        <item>Day</item>
+        <item>Day</item>
+        <item>Attack</item>
+        <item>Instant</item>
+        <item>Day</item>
+        <item>Combat</item>
+        <item>Day</item>
+        <item>Permanent</item>
+        <item>Permanent</item>
+        <item>Day</item>
+        <item>Day</item>
+        <item>Day</item>
+        <item>Day</item>
+        <item>Attack</item>
+        <item>Move</item>
+        <item>Attack</item>
+        <item>Attack</item>
+        <item>Day</item>
+        <item>Permanent</item>
+        <item>Instant</item>
+        <item>Move</item>
+        <item>Instant</item>
+        <item>Combat</item>
+        <item>Instant</item>
+        <item>Instant</item>
+        <item>Permanent</item>
+        <item>Permanent</item>
+        <item>Day</item>
+        <item>Permanent</item>
+        <item>Day</item>
+        <item>Permanent</item>
+        <item>Day</item>
+        <item>Permanent</item>
+        <item>Day</item>
+        <item>Phase</item>
+        <item>Permanent</item>
+        <item>Permanent</item>
+        <item>Day</item>
+        <item>Day</item>
+        <item>Combat</item>
+        <item>Instant</item>
+        <item>Instant</item>
+    </string-array>
+
+    <string-array name="spell_description">
+        <!-- TYPE I -->
+        <item>EXORCISE (I/WHITE), the spellcaster\'s clearing, Instant: Every Demon
+and Imp in the clearing is killed. Every spell and Curse that is in effect in the
+clearing or that is being cast In the clearing this round is instantly broken. All
+color chits in the clearing instantly fatigue. This spell is the strongest of all,
+and it nullifies and breaks all other spells.</item>
+        <item>MAKE WHOLE (I/WHITE), one character, Instant: This spell activates all of
+the target\'s fatigued and wounded action chits and repairs all of his damaged
+armor (including his inactive armor). It affects only those chits that are
+already inactive and only that armor that is already damaged - it does not
+affect fatigue, wounds and damage that are inflicted during the current round
+of combat. This spell\'s strength is equal to the Power of the Pit results that
+affect action chits and armor (it does not conflict with the other Power of the
+Pit results). Special: This spell breaks the Wither Curse on the target. <color name="blue">Note:
+Make Whole does not repair the Magic chit used to cast the spell, because it
+                fatigues after the spell takes effect.</color></item>
+        <item> PEACE (I/WHITE), one character, native or monster, Combat: When this
+spell goes into effect, it is instantly broken if its target is currently the target of
+any other character or denizen. If he is not someone else\'s target, the spell
+goes into effect.\n
+1. If the target is a denizen, whether hired, controlled or not, it is instantly
+unassigned. While the spell remains in effect, it cannot be assigned to a new
+target. If it is hired or controlled, it cannot lure attackers.\n
+2. If the target is a character, he takes back his Attention chit and any spell
+or attack he is playing is cancelled. While the spell remains in effect, he
+cannot charge or specify a target for an attack or spell. He can maneuver, run
+away and do other actions. He cannot lure attackers into attacking him, but
+attackers can be assigned to him randomly.\n
+3. The spell is instantly broken when the bewitched target is named as the
+target of a spell or attack. The spell is broken only if the target himself is
+named as a target - he is not released by spells aimed at other targets, even
+if the results affect him.</item>
+        <item>SMALL BLESSING (I/WHITE), one character, Instant: The target character
+immediately rolls the dice and consults the Wishes table. See Rule 4.6.8 and
+the Wishes table for information on specific Wish results.</item>
+
+        <!-- TYPE II -->
+        <item>BLEND INTO BACKGROUND (II/GREY), one character, hired leader or
+controlled monster, Day: The target can record and do an extra Hide phase
+during his turn.</item>
+        <item>FOG (II/GREY), the spellcaster\'s hex tile, Day: This spell prevents an
+individual who is doing the Search activity from using the Peer table. The
+spell affects every character, hired leader and controlled monster who is in
+the target tile or who is trying to search a clearing in the target tile (he cannot
+Peer into the tile from a mountain in an adjacent tile). This spell affects only
+the Search activity. It does not prevent an individual from using spells or
+Treasure cards to do the Peer activity in the tile.</item>
+        <item>PROPHECY (II/PURPLE), one character, Day: The target character ignores
+his recorded turn and chooses what to do on each phase of his turn as he
+does the phase. He gets the same number of phases and types of activities
+he is normally allowed, except that he can use an extra or enhanced activity
+caused by a belonging as soon as he activates that belonging, whether it was
+active during Birdsong or not. Only one horse per day can provide him with
+extra phases - once he has used an extra phase caused by one horse, for
+the rest of that day he cannot use extra phases caused by other horses. If
+this spell is broken before he finishes his turn, he is instantly blocked. Note:
+His hired leaders, controlled monsters, familiars, and phantasms must still do
+the turns recorded for them.</item>
+        <item>STONES FLY (II/GREY), any number of character(s), native(s), and/or
+monster(s), Attack: This spell attacks each target like a missile weapon with
+a length of 15, and it inflicts Light damage with one sharpness star. Special:
+This spell always makes at least four attacks. If the spellcaster specifies one
+target, all four attacks are made against that target. If he specifies two
+targets, two attacks are made against each target. If he specifies three
+targets, two attacks are made against the target where he put his Attention
+chit, and one attack is made against each other target. If he specifies four or
+more targets, one attack is made against each target. The spellcaster rolls
+separately on the Missile Table for each hit.</item>
+        <item>TALK TO WISE BIRD (II/GOLD), one character, Instant: The target
+character immediately does a remote Peer activity. He specifies any clearing
+on the map and uses the Peer table to search that clearing. </item>
+        <item>WITCH’S BREW (II/GREY), any of the spellcaster\'s type II and type VIII
+MAGIC chits that he chooses, Day: Each targeted Type II chit is
+transformed into a Type IV chit, and each targeted Type VIII chit is
+transformed into a Type Ill chit (see Rule 4.6.10c). </item>
+        <!-- TYPE III -->
+        <item>ELVEN GRACE (III/GOLD), one character, monster or native, Combat: If
+the target is a character, this spell alters the time numbers on all of his Move
+chits. The strength on each Move chit defines its time number: each Light chit
+has a time of 1, each Medium chit has a time of 2, each Heavy chit has a
+time of 3, and each Tremendous chit has a time of 4. If the target is a
+monster or native, his size redefines the Move time on both sides of his
+counter: a Light target has a move time of 1 on both sides of his counter, a
+Medium target has a move time of 2, and so on. This Spell affects only move
+times. It does not affect attack times, Duck chits, horses or Boots cards, and
+it does not affect "Move/Fight" chits created by the Unleash Power Spell.
+1. Elven Grace ignores any strength changes caused by the Belt of Strength;
+it always uses the strength that is actually printed on each Move chit to define
+that chit’s time number.
+2. The Draught of Speed and Garb of Speed nullify Elven Grace. When the
+target has one of these Treasure cards active, the card defines the time
+number on each chit and the Elven Grace is ignored. </item>
+        <item>FAERIE LIGHTS (III/GOLD), any of the spellcaster\'s type Ill and type VII
+MAGIC chits that he chooses, Day:Each targeted Type Ill chit is
+transformed into a Type II chit, and each targeted Type VII chit is transformed
+into a Type VI chit (see Rule 4.6.10c).</item>
+        <item>ILLUSION (III/GOLD), one character or the spellcaster\'s hex tile,
+Permanent:  Each affected individual adds one to his result whenever he uses
+any Search table. If the target is a tile, the spell affects every character, hired
+leader, controlled monster or phantasm in that tile.</item>
+        <item>LOST (III/GOLD), one character or the spellcaster\’s hex tile, Permanent: Each affected individual moves randomly whenever he uses the Move activity
+to leave a clearing: instead of moving to the clearing he recorded, he must
+use the Lost table to determine which adjacent clearing he moves to.
+1. This spell affects an individual only when he uses the Move activity to
+leave a clearing. It does not affect him when he runs out of a clearing or
+when he starts a move between clearings, and it does not affect him when he
+flies.
+2. If the target is a tile, the spell affects every character, hired leader,
+controlled monster or phantasm who starts a Move activity in any clearing on
+that tile. The spell does not affect Move activities that start in other tiles. </item>
+        <item>PERSUADE (III/GOLD), one native group, or all of the Giants in the
+spellcaster\'s clearing, or all of the Ogres in his clearing, Day: The
+spellcaster pacifies the targets. To hire them, he uses the Friendly column of
+the Meeting table. Special: When this spell is cast by an Artifact or Spell
+Book, the character who holds the item is the one who has pacified the
+denizens. If no character holds the item, the spell is nullified.</item>
+        <item>SEE HIDDEN SIGNS (III/GOLD), one character, Day: The target can record
+and do one extra Search phase during his turn. </item>
+        <!-- TYPE IV -->
+        <item>BLAZING LIGHT (IV/PURPLE), cave clearing, Day: The spellcaster must be
+in a cave clearing to cast this spell, and his target is that clearing. Each
+character, hired leader or controlled monster in that clearing during Birdsong
+has the option to record an extra phase to do any normal activity. He must
+also be in the clearing when he starts the phase or the activity is cancelled.</item>
+        <item>ELEMENTAL SPIRIT (IV/PURPLE), any of the spellcaster\’s type IV and
+type VI MAGIC chits he chooses, Day: Each targeted Type IV chit Is
+transformed into a Type VIII chit, and each targeted Type VI chit is
+transformed into a Type V chit (see Rule 4.6.10c). </item>
+        <item>FIERY BLAST (IV/PURPLE), any number of character(s), monster(s)
+and/or native(s), Attack: This spell attacks each target like a missile weapon
+with a length of 13, and it inflicts Light damage plus three sharpness stars.</item>
+        <item>HURRICANE WINDS (IV/PURPLE), one character, monster or native, Fly:
+This spell can be cast only in a mountain clearing. It creates a Fly chit with
+Tremendous strength and a time number of “1". The target must use this chit
+to fly away just before the next encounter step begins; the Fly chit overrules
+the target's normal behavior. When this spell is cast on a red-side-up T
+monster or its target, the monster immediately drops its target and turns redside-down,
+and the target of the spell flies away. When the target flies out of
+the clearing, all of his belongings, including his horses, fly and land with him.
+The spellcaster chooses which adjacent tile the target flies to. If the target is
+a denizen that does not record turns, it lands at the beginning of Daylight, just
+before the first attention chit is chosen. Otherwise, the target lands during his
+turn, as usual. </item>
+        <item>LIGHTNING BOLT (IV/PURPLE), one character, monster or native,
+Attack: This spell can be used only in a mountain clearing. It attacks like a
+missile weapon with a length of 18, and it inflicts Medium damage plus three
+sharpness stars.</item>
+        <item>ROOF COLLAPSES (IV/PURPLE), the spellcaster\’s (cave) clearing,
+Attack: This spell can be used only in a cave clearing. It automatically attacks
+every character, monster and native in the cave clearing, including the
+spellcaster. Hidden individuals in the clearing are also attacked, and can play
+maneuvers without becoming unhidden. It attacks like a striking weapon with
+a length of 18, and it inflicts Heavy damage with no sharpness stars.
+Important: This spell always attacks each target in the Smash direction with a
+time number of "4", regardless of the chit or card that was used to cast it.</item>
+        <item>VIOLENT STORM (IV/PURPLE), the spellcaster\’s hex tile, Day: The
+spellcaster rolls the dice and consults the Violent Storm table. The result is
+the number of phases each character, hired leader and controlled monster
+must cancel when he ends a phase in a woods or mountain clearing in that
+tile. He pays this penalty only once per turn, and he can choose which
+activities to cancel. He can cancel only those activities that remain in his
+current turn - if he loses more activities than he has remaining, the excess
+losses are ignored.
+* Violent Storm affects only the target tile, and it affects only woods and
+mountain clearings that do not contain the Inn, House, Chapel or
+Guardhouse (campfires are affected). A character is not affected until he is in
+an affected clearing - he is not affected between clearings, in caves (or
+buildings), or when he is flying.</item>
+        <!-- TYPE V -->
+        <item>ABSORB ESSENCE (V/BLACK), one monster, Permanent: This spell can
+            be cast on any monster, even if it is controlled or hired. It cannot be cast on a
+            character who has been transmorphized into a monster (he would be a
+            "character” target, not a monster). This spell transmorphizes the spellcaster
+            into the monster he named as target. His items and horses are not
+            transmorphized.
+            1. The spellcaster and monster become one entity, even when the spell is
+            inert. The spellcaster continues to be represented by his character counter,
+            but the absorbed monster simply ceases to exist - it is removed from play and
+            is put in the spell's spell box, where it remains until the spell ends. The
+            monster no longer functions as a monster: any denizens and Attention chits
+            assigned to it become unassigned, and it is released from any spells
+            bewitching it. It is not killed and cannot regenerate.
+            1.1 If the spellcaster is killed the monster is also killed. The killer gets the
+            spellcaster's points plus the monster's bounty points, without multiplication,
+            and both the spellcaster and the monster count as kills towards the killer's
+            daily total.
+            1.2 If the spell is broken without killing the spellcaster, the monster instantly
+            appears in the spellcaster's clearing.
+            2. When the spell is energized, the spellcaster plays dummy chits and uses
+            the monster's combat values instead of his own. He must always use the
+            combat values that are on the face-up side of the monster's counter. If the
+            monster is Medium or Heavy, he can turn it either side up whenever he plays
+            a chit (it does not change tactics). If it is Tremendous, it turns red side up only
+            when it gets a hit; once it is red side up, he can turn it red side down
+            whenever he plays a chit. The counter automatically turns red side down
+            when he changes targets, or when his target is killed.
+            2.1 If the monster has a head or club, the spellcaster can play it during
+            combat as a second attack against his target. Heads and Clubs can be
+            played either side up, even when the body is red-side-up.
+            2.2 If the monster is a Demon or Imp with red side down, he casts its spell as
+            an attack (like a monster, not a character). He cannot change the spell it
+            casts. Special: When the spell is energized, the spellcaster can use the
+            monster's Magic type to record spells.
+            3. If a spellcaster has duplicate Absorb Essence spells, he can absorb one
+            monster per spell. As each spell is energized, he transmorphizes into its
+            monster (so he will always be transmorphized into the monster that belongs
+            to the most recently energized spell). When the spells are energized
+            simultaneously, the spellcaster chooses which one transmorphizes him.
+            4. When Absorb Essence is cast by an Artifact or Spell Book, the item
+            transmorphizes when the spell becomes energized. The character holding
+            the item transmorphizes into the monster; if the item is not held by a
+            character, the item itself becomes the monster, and it functions like a normal
+            monster in all respects. When the monster is killed the spell is broken and the
+            item reappears.</item>
+        <item>ASK DEMON (V/BLACK), one Demon or Winged Demon, Instant: The
+            spellcaster can ask one question of any other player (in the context of the
+            game he is asking the Demon, who knows all about the character), and the
+            other player must answer truthfully. The question must be answerable by
+            yes, no, or a number, it must be about recorded information or one or
+            more game pieces and it must be about the present or past - the spellcaster
+            cannot ask about ideas or future intentions (except that he can ask about
+            Victory Requirements). Question and answer must be kept secret from the
+            other players. Note: The spell has no effect on how the Demon fights. </item>
+        <item>BROOMSTICK (V/BLACK), one Light character, Fly: This spell creates a
+            Fly chit that the target can use to fly. This Fly chit has Light strength and a
+            time number of "1". It can be cast only on a target with Light weight. The
+            spellcaster controls when this chit is used, but it can be used only when the
+            target uses a Light Move chit. Exception: If the spell caster plays this spell on
+            himself, he can play the Fly chit directly, without playing a Move chit.
+            Example: The Witch King can cast Broomstick on himself and play the Fly
+            chit even though he does not own a Light Move chit.
+            1. When the target plays a Light Move chit during the encounter step, the
+            spellcaster can interrupt his play and force him to use the Fly chit to charge
+            or fly away, as the spellcaster chooses. When the target plays a Light Move
+            chit to maneuver, when the final maneuvers are revealed the spellcaster can
+            invoke the Fly chit. He cannot change the direction of the target maneuver.
+            2. When the target starts to do a Fly phase, the spellcaster can invoke the
+            Fly chit and allow him to fly. If he does not invoke the Fly chit, the activity is
+            cancelled (unless the target has another source of flying strength).
+            3. If the target does a Move phase and plays a Light Move chit to carry
+            items, then the spellcaster can invoke the Fly chit and force him to Fly to the
+            tile he is moving to instead of moving to a particular clearing.
+            4. Any time the target uses a Move chit that is stronger than Light, the
+            spellcaster can invoke the Fly chit. When this happens, the Fly chit has no
+            effect and the spell is broken. </item>
+        <item>CURSE (V/GREY), one character, Instant: The spellcaster rolls on the
+            Curses table and applies the Curse to the target. See Rule 4.6.8 and the
+            Curses table for information on specific Curse results.</item>
+        <item>PENTANGLE (V/BLACK), one character, native or monster, CombatThe
+            Demon, Winged Demon, and Imp cannot attack the target, all spells and
+            Curses that are bewitching him are temporarily nullified, and no new spells
+            can go into effect against him. Pentangle stops only those spells that are
+            aimed specifically against the target. He is still affected normally by spells
+            that are aimed at other targets, such as Roof Collapses. </item>
+        <item>POWER OF THE PIT (V/BLACK), one character, native or monster,
+Instant: The spellcaster rolls on the Power of the Pit table and applies the
+result to the target. See Rule 4.6.8 and the Power of the Pit table for
+information on specific Power of the Pit results.</item>
+        <!-- TYPE VI -->
+        <item>DISSOLVE SPELL (VI/PURPLE), one spell in the spellcaster\’s clearing,
+Instant: The target spell must already exist when it Is specified as a target - it
+cannot be a spell that is being cast during the current round. When Dissolve
+Spell goes into effect, the target spell is broken. Duplicates of the target spell
+are not affected. Note: This spell cannot break Curses. </item>
+        <item>ENCHANT ARTIFACT (VI/PURPLE), one Artifact or Spell Book that the
+spellcaster has active, Permanent: When the spellcaster names his target,
+he must also name one of his recorded spells. This spell and its Magic type
+are added to the target. The Magic type and Spell can be new or the same as
+the artifact already has.
+1. Whenever the Enchant Artifact spell is energized, the target contains the
+added type and spell in addition to its own type and spell(s). The character
+who is holding the target item can read runes to learn the spell, and he can
+play the item to cast the spell (which is automatically awakened). He must
+specify which Magic type and spell he is using when he plays the item.
+2. A new Magic type can also be used to cast Spell cards of the same type
+that belong to the item. Example: If Enchant Artifact is used to add Type VII
+to the Good Book, the Good Book can be used to cast its Type VII spells.
+3. Each Magic type on the target item can be used once per day, so an item
+with two Magic types can be used twice per day - once with each Magic type.
+Similarly, when one Magic type is committed to a target, the item can still be
+played to use the other Magic type.
+4. The same item can be enchanted any number of times, adding a new
+Magic type and spell with each casting, but each casting ties up one Enchant
+Artifact Spell and the chit or card used to cast it.</item>
+        <item>MELT INTO MIST (VI/PURPLE), one character, native or monster,
+Permanent: This spell transmorphizes the target into mist. His horses and
+items are all transmorphized with him. He cannot carry untransmorphized
+items while turned into mist.
+1. If the target is a character or hired or controlled denizen, he can do only
+the Move, Hide and Follow activities. Special: The target can move along
+hidden paths and secret passages that he has not discovered. He does not
+discover them as he moves.
+2. The target is not affected by spells. Any other spells and curses that are
+currently bewitching him are nullified, new spells cannot go into effect against
+him and he is not affected by spells aimed at other targets (he is immune to
+Power of the Pit results, for example). Important: The Melt into Mist spell itself
+is not immune to spells. It can be broken while energized (or inert).
+3. The target cannot block or be blocked. The target takes no part in combat -
+he cannot charge or attack, and he cannot be charged or attacked. If he is a
+character, he has a T4 Move chit that he can use only to run away.</item>
+        <item>PHANTASM (VI/PURPLE), one character, Day: This spell creates an
+ethereal being (or "phantasm") that the target controls.
+1. During Birdsong of the next day he puts an unused piece with himself to
+represent the phantasm, and he records a separate turn for the phantasm.
+The phantasm gets the same number of basic and sunlight phases as other
+characters. It can do only the Move, Peer and Enchant activities.
+2. The phantasm takes its turn just before the target character, when the
+target characters Attention chit is picked, and it does its Peer and Enchant
+activities in the clearing it is in. It uses the target character Magic chits to do
+the Enchant activity, and it shares his discoveries list; it can use his
+discoveries, and he discovers what it discovers, even if they are in different
+clearings. If the Phantasm discovers Hidden Enemies, the controlling
+character can only see Hidden Enemies if he is in the same clearing as the
+Phantasm.
+3. The phantasm cannot carry belongings or recorded Gold, it cannot follow
+or be followed, it cannot spy or be spied on, it cannot block nor be blocked,
+and it does not summon denizens or cause monsters to move.</item>
+        <item>TRANSFORM (VI/PURPLE), one character, monster or native,
+Permanent: The spellcaster rolls the dice and consults the Transform table,
+and the target is transmorphized into the creature (monster or beast)
+indicated by the result. Each time he energizes the spell, he is transformed
+into the same creature; he does not roll again.
+1. All of the recorded Gold and belongings (Including horses) the target has
+with him are transmorphized with him.
+2. If the target is a character, hired native or controlled monster, he can gain
+new recorded Gold and belongings which are not transmorphized. He must
+keep his transmorphized Gold and belongings separate from those that are
+untransmorphized; when the spell falls inert, he merges the two groups. Note:
+If he ends the day in a location where the color magic needed to energize the
+spell is supplied automatically, the Transform spell does not fall inert - it
+remains energized without a break. </item>
+        <item>UNLEASH POWER (VI/PURPLE), any number of the spellcaster\’s Magic
+chits that he chooses, Day: Each Magic chit that is specified as a target is
+transformed into a "Move/Fight” chit that can be used as both a Move chit
+and a Fight chit, but not both at the same time (it can carry items like a Move
+chit, and in combat it can be used once per round, as either a Move chit or a
+Fight chit). It has the effort asterisks and time number printed on it, and its
+time number defines its strength: each chit with a time of 2 or 3 has Light
+strength, each chit with a time of 4 has Medium strength, each chit with a
+time of 5 has Heavy strength, and each chit with a time of 6 or more has
+Tremendous strength. These chits cannot be used as Magic chits while they
+are transformed.
+1. Unleash Power ignores any changes in time numbers caused by the
+Draught of Speed or Garb of Speed; it always uses the time number printed
+on the Magic chit to define that chit's strength.
+2. When the target has the Belt of Strength active, it overrides Unleash
+Power. The Belt of Strength defines the final strength of each Move/Fight
+chit. </item>
+        <item>WORLD FADES (VI/BLACK), one character, Permanent: If the target
+character is unhidden and there are no denizens on his Melee Section at the
+end of a round of combat, he rolls on the Hide table. If he hides successfully,
+he remains hidden until he is revealed normally (he can hide and be
+discovered repeatedly). The target character must also start (or stop) using
+Magic Sight when he does the Search activity. See Rule 7.5.7. </item>
+        <!-- TYPE VII -->
+        <item>CONTROL BATS (VII/any), all of the Bats In the spellcaster clearing,
+Day: The spellcaster controls all of the Bats in his clearing. Special: When
+this spell is cast by an Artifact or Spell Book, the Bats are controlled by the
+character who holds the item. When no character holds the item, the spell is
+nullified.</item>
+        <item>PEACE WITH NATURE (VII/GOLD), one character, hired leader or
+controlled monster, Permanent: This spell prevents Warning and Sound
+chits from summoning monsters when the target ends his turn. If the chits are
+face down he reveals them as usual but turns the Warning and Sound chits
+face down again to show they have not summoned monsters yet (chits are
+face up only if they have had the opportunity to summon monsters). The chits
+react normally when anyone else ends his turn in the tile, including followers.
+This spell does not affect Site chits, Dwellings, Site cards or the Dragon
+Essence card, which continue to summon denizens normally, and it does not
+affect prowling monsters that are already in the tile, who still move to the
+target\'s clearing. Note: If the target is a hired or controlled denizen, he
+remains bewitched when he becomes unhired and uncontrolled. </item>
+        <item>PREMONITION (VII/GREY), one character, Day: The target character
+chooses when he takes his turn during Daylight. He keeps his Attention chit
+instead of mixing it with the others, and each time a new chit is about to be
+picked he can either preempt and take his turn or pass and let the next chit
+be drawn. When no chits are left, he cannot pass - he must take his turn. He
+still gets only one turn per day. If this spell is broken before he preempts, his
+Attention chit is immediately mixed in with the remaining chits and is picked
+normally to determine when he takes his turn. Special: If several characters
+can preempt, they must preempt or pass in turn, going clockwise from the
+last character to take a turn and skipping anyone who cannot preempt. </item>
+        <item>PROTECTION FROM MAGIC (VII/GOLD), one character, Phase: The target
+character is protected from spells and curses for one round of combat or one
+phase of his turn. He keeps the spell Magic chit to represent its effect, and
+he activates it like an item. When he activates it, it nullifies all spells and
+curses that are bewitching him, and prevents new spells from being cast on
+him; he is still vulnerable to spells aimed at other targets. At the end of the
+phase or round, the spell expires. </item>
+        <item>SENSE DANGER (VII/PURPLE), one character, Permanent: The target can
+record and do an extra Alert phase on his turn.</item>
+        <!-- TYPE VIII -->
+        <item>BAD LUCK (VIII/any), one character, Permanent: The target character adds
+one to his result whenever he uses any table (except where specified in the
+rules or table descriptions). </item>
+        <item>DEAL WITH GOBLINS (VIII/BLACK), all of the Goblins in the
+spellcaster\’s clearing, Day: The spellcaster pacifies the Goblins. To hire
+them, he uses the Neutral column of the Meeting Table. Special: When this
+spell is cast by an Artifact or Spell Book, the Goblins are pacified by the
+character who holds the item. When no character holds the item, the spell is
+nullified. </item>
+        <item>GUIDE SPIDER OR OCTOPUS (VIII/GREY), one Spider or Octopus, Day:
+The spellcaster controls the monster. Special: When this spell is cast by an
+Artifact or Spell Book, the monster is controlled by the character who holds
+the item. When no character holds the item, the spell is nullified. </item>
+        <item>POISON (VIII/GREY), one weapon counter, native counter, Goblin
+counter, Ogre counter or Giant\'s club, Day: Add one sharpness star to the
+harm the target counter inflicts when it hits. This spell cannot be cast on the
+Alchemist\’s Mixture or a Dagger. </item>
+        <item>REMEDY (VIII/GREY), one spell or curse in the spellcaster\'s clearing,
+Instant: The target spell or curse must already exist when it is specified as a
+target - it cannot be a spell that is being cast during the current round. The
+target can be one Curse on one character, or one spell. The target spell or
+curse is broken. Duplicates of the spell are not affected.</item>
+        <item>WHISTLE FOR MONSTERS (VIII/PURPLE), one face-up Sound chit
+anywhere on the map, Instant: This spell cannot be cast in a tile that
+contains less than six clearings, and it cannot be cast on a chit that is facedown.
+If the target chit is not in the spellcaster’s tile, then it is moved to his
+tile. If it is already in his tile, then he can move it to any other tile that contains
+six clearings. Thereafter, the Sound chit summons monsters to its new tile.</item>
+
+    </string-array>
+
+    <string-array name="spell_short_description">
+        <item>Remove all magic demons and imp</item>
+        <item>Repair damage, wounds and fatigued</item>
+        <item>Cannot attack until attacked</item>
+        <item>Get one wish (roll)</item>
+        <item>Extra HIDE phase</item>
+        <item>Cannot PEER normally in hex</item>
+        <item>Do no write move in advance</item>
+        <item>MISSILE Attack on each target\n(specify)\L*</item>
+        <item>Immediate PEER in any hex</item>
+        <item>Change MAGIC II to IV and VIII to III</item>
+        <item>Change MOVE L1=1, M1=2, H1=3, T1=4</item>
+        <item>Change MAGIC III to II and VII to VI</item>
+        <item>Add one to all SEARCH die rolls</item>
+        <item>MOVE randomly</item>
+        <item>Group becomes FRIENDLY (work on giants and ogres too)</item>
+        <item>Extra SEARCH phase</item>
+        <item>Extra phase (cave only)</item>
+        <item>Change MAGIC IV to VIII and VI to V</item>
+        <item>MISSILE Attack on each target\n(specify)\L***</item>
+        <item>Must FLY T1 one hex (mountain only)</item>
+        <item>MISSILE Attack mountain only\M***</item>
+        <item>All attacked SMASH H4 (cave only)</item>
+        <item>Roll to see number of phases lost</item>
+        <item>Become monster</item>
+        <item>Ask question with yes, no or number</item>
+        <item>Can FLY L1 in encounter combat and movement</item>
+        <item>Gets one curse (roll)</item>
+        <item>Not affected by spells, curses, demons or imp</item>
+        <item>Roll for Power of the Pit attack</item>
+        <item>Cancel Spell</item>
+        <item>Add spell and MAGIC chit to artifact</item>
+        <item>Can only MOVE t4 (no fight)</item>
+        <item>Move unseen searcher (PEER only) can SPELL</item>
+        <item>Become Beast (roll for TRANSFORM)</item>
+        <item>MOVE/FIGHT 2,3=L, 4=M, 5=H, 6=T</item>
+        <item>Roll HIDE each round - Use MAGIC SIGHT</item>
+        <item>MOVE and FIGHT with bats</item>
+        <item>Not attacked by warning and sound chits</item>
+        <item>Choose when you written move is executed</item>
+        <item>Immune to spells for one phase</item>
+        <item>Extra ALERT phase/turn</item>
+        <item>Add one to all die rolls</item>
+        <item>Group becomes NEUTRAL (can TRADE/HIRE)</item>
+        <item>MOVE and FIGHT with one monster</item>
+        <item>Add one sharpness to damage caused by weapon</item>
+        <item>Cancels one spell or curse</item>
+        <item>Move sound chit to or from your hex</item>
+    </string-array>
+
+</resources>

@@ -19,6 +19,7 @@ class RoleHelper {
             const val COLUMN_ADVANTAGES: String = "advantages"
             const val COLUMN_DEVELOPMENT: String = "development"
             const val COLUMN_POSITION: String = "position"
+            const val COLUMN_SPELLS: String = "spells"
             const val COLUMN_RELATIONS: String = "relations"
             const val COLUMN_DIFFICULTY: String = "difficulty"
 
@@ -34,6 +35,7 @@ class RoleHelper {
                 append("$COLUMN_ADVANTAGES INTEGER,")
                 append("$COLUMN_DEVELOPMENT INTEGER,")
                 append("$COLUMN_POSITION INTEGER,")
+                append("$COLUMN_SPELLS INTEGER,")
                 append("$COLUMN_RELATIONS INTEGER,")
                 append("$COLUMN_DIFFICULTY INTEGER)")
             }
@@ -49,10 +51,11 @@ class RoleHelper {
                 val image = res.getStringArray(R.array.roles_image)
                 val detail = res.getStringArray(R.array.roles_detail)
                 val weight = res.getStringArray(R.array.roles_weight)
+                val spell = res.getStringArray(R.array.role_spells)
 
             for (i in name.indices){
                 val role = Role(0, name[i], symbol[i], icon[i], image[i], detail[i], weight[i],
-                    0,0,0,0,0)
+                    0,0,0, spell[i].toInt(),0,0)
                 RoleDAO(context).insertRole(role)
             }
         }

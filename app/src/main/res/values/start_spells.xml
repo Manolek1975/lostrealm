@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="start_role_id">
+        <item>5</item>
+        <item>5</item>
+        <item>7</item>
+        <item>7</item>
+        <item>8</item>
+        <item>8</item>
+        <item>8</item>
+        <item>8</item>
+        <item>8</item>
+        <item>8</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>10</item>
+        <item>12</item>
+        <item>13</item>
+        <item>13</item>
+        <item>13</item>
+        <item>14</item>
+        <item>14</item>
+        <item>14</item>
+        <item>15</item>
+        <item>15</item>
+        <item>15</item>
+        <item>16</item>
+    </string-array>
+
+    <string-array name="start_type">
+        <item>II</item>
+        <item>VIII</item>
+        <item>III</item>
+        <item>VII</item>
+        <item>II</item>
+        <item>III</item>
+        <item>IV</item>
+        <item>V</item>
+        <item>VI</item>
+        <item>VII</item>
+        <item>VIII</item>
+        <item>I</item>
+        <item>IV</item>
+        <item>VI</item>
+        <item>I</item>
+        <item>II</item>
+        <item>V</item>
+        <item>VIII</item>
+        <item>IV</item>
+        <item>V</item>
+        <item>VI</item>
+        <item>II</item>
+        <item>III</item>
+        <item>IV</item>
+        <item>VII</item>
+    </string-array>
+
+
+</resources>

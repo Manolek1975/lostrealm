@@ -7,7 +7,9 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.delek.lostrealm.database.helper.DBHelper
 import com.delek.lostrealm.database.helper.RoleHelper
+import com.delek.lostrealm.database.helper.StartSpellHelper
 import com.delek.lostrealm.database.model.Role
+import com.delek.lostrealm.database.model.StartSpell
 
 class RoleDAO(context: Context) : SQLiteOpenHelper(
     context,
@@ -29,10 +31,21 @@ class RoleDAO(context: Context) : SQLiteOpenHelper(
             put(RoleHelper.COLUMN_ADVANTAGES, role.advantages)
             put(RoleHelper.COLUMN_DEVELOPMENT, role.development)
             put(RoleHelper.COLUMN_POSITION, role.position)
+            put(RoleHelper.COLUMN_SPELLS, role.spells)
             put(RoleHelper.COLUMN_RELATIONS, role.relations)
             put(RoleHelper.COLUMN_DIFFICULTY, role.difficulty)
         }
         db.insert(RoleHelper.TABLE_NAME, null, values)
+        db.close()
+    }
+
+    fun insertStartSpell(startSpell: StartSpell) {
+        val db = this.writableDatabase
+        val values = ContentValues().apply {
+            put(StartSpellHelper.COLUMN_ROLE_ID, startSpell.roleId)
+            put(StartSpellHelper.COLUMN_TYPE, startSpell.type)
+        }
+        db.insert(StartSpellHelper.TABLE_NAME, null, values)
         db.close()
     }
 
@@ -72,17 +85,14 @@ class RoleDAO(context: Context) : SQLiteOpenHelper(
         val advantages = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_ADVANTAGES))
         val development = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_DEVELOPMENT))
         val position = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_POSITION))
+        val spell = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_SPELLS))
         val relations = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_RELATIONS))
         val difficulty = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_DIFFICULTY))
 
         val role = Role(
             id, name, symbol, icon, image, detail, weight,
-            advantages, development, position, relations, difficulty
+            advantages, development, position, spell, relations, difficulty
         )
         return role
     }
-
-
-
-
 }

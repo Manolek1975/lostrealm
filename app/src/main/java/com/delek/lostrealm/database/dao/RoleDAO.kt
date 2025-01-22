@@ -19,6 +19,28 @@ class RoleDAO(context: Context) : SQLiteOpenHelper(
     override fun onCreate(p0: SQLiteDatabase?) {}
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {}
 
+    private fun getColumns(cursor: Cursor): Role {
+        val id = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_ID))
+        val name = cursor.getString(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_NAME))
+        val symbol = cursor.getString(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_SYMBOL))
+        val image = cursor.getString(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_IMAGE))
+        val detail = cursor.getString(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_DETAIL))
+        val icon = cursor.getString(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_ICON))
+        val weight = cursor.getString(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_WEIGHT))
+        val advantages = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_ADVANTAGES))
+        val development = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_DEVELOPMENT))
+        val position = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_POSITION))
+        val spell = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_SPELLS))
+        val relations = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_RELATIONS))
+        val difficulty = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_DIFFICULTY))
+
+        val role = Role(
+            id, name, symbol, icon, image, detail, weight,
+            advantages, development, position, spell, relations, difficulty
+        )
+        return role
+    }
+
     fun insertRole(role: Role) {
         val db = this.writableDatabase
         val values = ContentValues().apply {
@@ -74,25 +96,4 @@ class RoleDAO(context: Context) : SQLiteOpenHelper(
         return role
     }
 
-    private fun getColumns(cursor: Cursor): Role {
-        val id = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_ID))
-        val name = cursor.getString(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_NAME))
-        val symbol = cursor.getString(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_SYMBOL))
-        val image = cursor.getString(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_IMAGE))
-        val detail = cursor.getString(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_DETAIL))
-        val icon = cursor.getString(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_ICON))
-        val weight = cursor.getString(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_WEIGHT))
-        val advantages = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_ADVANTAGES))
-        val development = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_DEVELOPMENT))
-        val position = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_POSITION))
-        val spell = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_SPELLS))
-        val relations = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_RELATIONS))
-        val difficulty = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_DIFFICULTY))
-
-        val role = Role(
-            id, name, symbol, icon, image, detail, weight,
-            advantages, development, position, spell, relations, difficulty
-        )
-        return role
-    }
 }

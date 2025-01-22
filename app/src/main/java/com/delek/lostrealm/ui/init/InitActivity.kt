@@ -1,15 +1,21 @@
 package com.delek.lostrealm.ui.init
 
 
+
+
+import android.content.Context
+import android.content.res.ColorStateList
+import android.graphics.Typeface
 import android.os.Bundle
 import android.widget.RadioButton
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.core.view.setPadding
+import androidx.recyclerview.widget.GridLayoutManager
 import com.delek.lostrealm.R
 import com.delek.lostrealm.database.dao.DwellingDAO
 import com.delek.lostrealm.database.dao.RoleDAO
@@ -23,6 +29,7 @@ class InitActivity : AppCompatActivity() {
     private lateinit var binding: ActivityInitBinding
     private lateinit var adapter: SpellAdapter
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityInitBinding.inflate(layoutInflater)
@@ -32,6 +39,9 @@ class InitActivity : AppCompatActivity() {
     }
 
     private fun initUI() {
+        val data = this.getSharedPreferences("data", Context.MODE_PRIVATE)
+        data.edit().putInt("num_spells", 0).apply()
+        println("INIT")
         // Start Dwellings
         val i = intent.getIntExtra("role", 0)
         val role = RoleDAO(this).getRoleById(i)
@@ -43,18 +53,11 @@ class InitActivity : AppCompatActivity() {
                 id = d.id
                 text = d.name
                 textSize = 20F
+                setTextColor(getColor(R.color.primary))
                 isChecked = true
+                buttonTintList = ColorStateList.valueOf(getColor(R.color.primary))
             })
         }
-
-        // Spells
-        adapter = SpellAdapter(SpellDAO(this).getSpellsByRole(role.id))
-        //binding.spellRecyclerView.layoutManager = LinearLayoutManager(this)
-
-        binding.spellRecyclerView.setHasFixedSize(true)
-        binding.spellRecyclerView.layoutManager =
-            LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
-        binding.spellRecyclerView.adapter = adapter
 
         // Victory Points
         var total = 0
@@ -80,6 +83,53 @@ class InitActivity : AppCompatActivity() {
                 binding.tvVictoryPoints.text = getString(R.string.victory_points, total.toString())
             }
         }
+
+        // Spells
+        val numSpells = role.spells
+        val selected = 0
+        val spells = mutableListOf<String>()
+        data.edit().putStringSet("spells", spells.toSet()).apply()
+        data.edit().putInt("num_spells", numSpells).apply()
+        data.edit().putInt("selected", selected).apply()
+        val types = SpellDAO(this).getTypesByRole(role.id)
+        if (numSpells > 0) {
+            for (t in types) {
+                binding.tvSpellsHead.text = getString(R.string.spells, numSpells.toString())
+                val type = TextView(this)
+                type.text = t
+                type.textSize = 24f
+                type.setTypeface(type.typeface, Typeface.BOLD)
+                type.setPadding(32)
+                type.setTextColor(getColor(R.color.red_dark))
+                type.setBackgroundResource(R.drawable.layout_border)
+                binding.typesLayout.addView(type)
+
+                type.setOnClickListener {
+                    type.setBackgroundResource(R.drawable.layout_type)
+                    adapter = SpellAdapter(SpellDAO(this).getSpellsByRoleAndType(role.id, t))
+                    binding.spellRecyclerView.setHasFixedSize(true)
+                    binding.spellRecyclerView.layoutManager = GridLayoutManager(this, 4)
+                    binding.spellRecyclerView.adapter = adapter
+                }
+            }
+        }
+
+
+/*        val spells = mutableListOf<String>()
+        data.edit().putStringSet("spells", spells.toSet()).apply()
+
+        if (role.spells > 0) {
+            val selectedSpells = 0
+            val numSpells = role.spells.toString()
+            binding.tvSpellsHead.text =
+                getString(R.string.spells, selectedSpells.toString(), numSpells)
+            adapter = SpellAdapter(SpellDAO(this).getSpellsByRoleAndType(role.id))
+            binding.spellRecyclerView.setHasFixedSize(true)
+            binding.spellRecyclerView.layoutManager = GridLayoutManager(this, 4)
+            binding.spellRecyclerView.adapter = adapter
+        }*/
+
+
 
     }
 

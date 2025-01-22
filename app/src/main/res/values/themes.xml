@@ -19,5 +19,13 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="Base.Theme.Spell" parent="Base.Theme.LostRealm">
+        <item name="android:layout_width">wrap_content</item>"
+        <item name="android:layout_height">wrap_content</item>"
+        <item name="android:layout_gravity">center</item>">
+        <item name="android:gravity">center</item>">
+        <item name="android:fontFamily">@font/agdasima</item>
+        <item name="android:textSize">10sp</item>
+    </style>
 
 </resources>

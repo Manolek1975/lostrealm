@@ -7,8 +7,8 @@ import com.delek.lostrealm.R
 import com.delek.lostrealm.database.model.Spell
 
 class SpellAdapter(private var spellList: List<Spell>):
-    RecyclerView.Adapter<SpellViewHolder>()
-{
+    RecyclerView.Adapter<SpellViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SpellViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_spell, parent, false)
         return SpellViewHolder(view)

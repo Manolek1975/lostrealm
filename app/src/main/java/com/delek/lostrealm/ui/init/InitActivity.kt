@@ -1,9 +1,7 @@
 package com.delek.lostrealm.ui.init
 
-
-
-
 import android.content.Context
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Typeface
 import android.os.Bundle
@@ -22,6 +20,7 @@ import com.delek.lostrealm.database.dao.RoleDAO
 import com.delek.lostrealm.database.dao.SpellDAO
 import com.delek.lostrealm.databinding.ActivityInitBinding
 import com.delek.lostrealm.databinding.ItemVpButtonBinding
+import com.delek.lostrealm.ui.player.PlayerActivity
 
 
 class InitActivity : AppCompatActivity() {
@@ -88,9 +87,9 @@ class InitActivity : AppCompatActivity() {
         val numSpells = role.spells
         val selected = 0
         val spells = mutableListOf<String>()
-        data.edit().putStringSet("spells", spells.toSet()).apply()
         data.edit().putInt("num_spells", numSpells).apply()
         data.edit().putInt("selected", selected).apply()
+        data.edit().putStringSet("spells", spells.toSet()).apply()
         val types = SpellDAO(this).getTypesByRole(role.id)
         if (numSpells > 0) {
             for (t in types) {
@@ -114,23 +113,10 @@ class InitActivity : AppCompatActivity() {
             }
         }
 
-
-/*        val spells = mutableListOf<String>()
-        data.edit().putStringSet("spells", spells.toSet()).apply()
-
-        if (role.spells > 0) {
-            val selectedSpells = 0
-            val numSpells = role.spells.toString()
-            binding.tvSpellsHead.text =
-                getString(R.string.spells, selectedSpells.toString(), numSpells)
-            adapter = SpellAdapter(SpellDAO(this).getSpellsByRoleAndType(role.id))
-            binding.spellRecyclerView.setHasFixedSize(true)
-            binding.spellRecyclerView.layoutManager = GridLayoutManager(this, 4)
-            binding.spellRecyclerView.adapter = adapter
-        }*/
-
-
-
+        binding.checkButton.setOnClickListener {
+            val i = Intent(this, PlayerActivity::class.java)
+            startActivity(i)
+        }
     }
 
     private fun setVpNames(): List<ItemVpButtonBinding> {
@@ -156,10 +142,10 @@ class InitActivity : AppCompatActivity() {
         controller.systemBarsBehavior =
             WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+/*        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-        }
+        }*/
     }
 }

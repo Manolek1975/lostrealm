@@ -8,18 +8,19 @@ import com.delek.lostrealm.R
 import com.delek.lostrealm.database.model.Spell
 import com.delek.lostrealm.databinding.ItemSpellBinding
 
-class SpellViewHolder(view: View): RecyclerView.ViewHolder(view) {
+class SpellViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private val binding = ItemSpellBinding.bind(view)
     val context: Context = binding.itemSpell.context
 
     fun render(spell: Spell) {
         val data = context.getSharedPreferences("data", Context.MODE_PRIVATE)
-        var spellListSet = data.getStringSet("spells", emptySet())?.toMutableList()?: mutableListOf()
+        var spellListSet =
+            data.getStringSet("spells", emptySet())?.toMutableList() ?: mutableListOf()
         val numSpells = data.getInt("num_spells", 0)
-        //val selected = data.getInt("selected", 0)
         if (spellListSet.contains(spell.id.toString())) {
-            binding.lyItemSpell.background = AppCompatResources.getDrawable(context, R.drawable.layout_head)
+            binding.lyItemSpell.background =
+                AppCompatResources.getDrawable(context, R.drawable.layout_head)
         }
         binding.duration.text = spell.duration
         binding.target.text = spell.target
@@ -31,7 +32,8 @@ class SpellViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
         binding.itemSpell.setOnClickListener {
             var selected = data.getInt("selected", 0)
-            spellListSet = data.getStringSet("spells", emptySet())?.toMutableList()?: mutableListOf()
+            spellListSet =
+                data.getStringSet("spells", emptySet())?.toMutableList() ?: mutableListOf()
             if (spellListSet.contains(spell.id.toString())) {
                 binding.lyItemSpell.background =
                     AppCompatResources.getDrawable(context, R.drawable.layout_item_no_border)

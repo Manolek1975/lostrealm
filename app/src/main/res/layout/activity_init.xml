@@ -135,13 +135,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-<!--    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/spell_layout"
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/cancel_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/types_layout"
+        android:contentDescription="@android:string/cancel"
+        android:background="@drawable/cancel"
+        app:layout_constraintEnd_toStartOf="@id/check_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-    </androidx.appcompat.widget.LinearLayoutCompat>-->
+        app:layout_constraintTop_toBottomOf="@+id/spell_recycler_view"
+        tools:ignore="ImageContrastCheck" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/check_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@android:string/yes"
+        android:background="@drawable/check"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cancel_button"
+        app:layout_constraintTop_toBottomOf="@+id/spell_recycler_view"
+        tools:ignore="ImageContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

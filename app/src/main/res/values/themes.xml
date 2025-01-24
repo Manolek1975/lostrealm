@@ -1,15 +1,17 @@
 <resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.LostRealm" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@color/transparent</item>
         <!-- Customize your light theme here. -->
         <item name="android:fontFamily">@font/macondo</item>
+    </style>
 
-    </style>
-    <!-- Base application theme. -->
-    <style name="Base.Base.Theme.LostRealm" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    </style>
 
     <style name="Base.Theme.Chit" parent="Base.Theme.LostRealm">
         <item name="android:layout_width">wrap_content</item>"
@@ -27,5 +29,15 @@
         <item name="android:fontFamily">@font/agdasima</item>
         <item name="android:textSize">10sp</item>
     </style>
+
+    <style name="Base.Theme.LostRealm.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+    </style>
+
+    <style name="Base.Theme.LostRealm.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Base.Theme.LostRealm.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

@@ -1,13 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.LostRealm" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
+        <!-- Status bar color. -->
+        <item name="android:windowTranslucentStatus">true</item>
+        <!-- Customize your light theme here. -->
         <item name="android:fontFamily">@font/macondo</item>
-    </style>
-    <!-- Base application theme. -->
-    <style name="Base.Base.Theme.LostRealm" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-<!--         <item name="colorPrimary">@color/black</item>-->
     </style>
 
     <style name="Base.Theme.Chit" parent="Base.Theme.LostRealm">
@@ -28,5 +25,15 @@
         <item name="android:textSize">10sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
+
+    <style name="Base.Theme.LostRealm.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+    </style>
+
+    <style name="Base.Theme.LostRealm.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Base.Theme.LostRealm.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

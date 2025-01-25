@@ -9,9 +9,9 @@ import android.widget.RadioButton
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import androidx.core.view.children
 import androidx.core.view.setPadding
 import androidx.recyclerview.widget.GridLayoutManager
 import com.delek.lostrealm.R
@@ -93,8 +93,8 @@ class InitActivity : AppCompatActivity() {
         val types = SpellDAO(this).getTypesByRole(role.id)
         if (numSpells > 0) {
             for (t in types) {
-                binding.tvSpellsHead.text = getString(R.string.spells, numSpells.toString())
                 val type = TextView(this)
+                binding.tvSpellsHead.text = getString(R.string.spells, numSpells.toString())
                 type.text = t
                 type.textSize = 24f
                 type.setTypeface(type.typeface, Typeface.BOLD)
@@ -102,8 +102,10 @@ class InitActivity : AppCompatActivity() {
                 type.setTextColor(getColor(R.color.red_dark))
                 type.setBackgroundResource(R.drawable.layout_border)
                 binding.typesLayout.addView(type)
-
                 type.setOnClickListener {
+                    for (sel in binding.typesLayout.children){
+                        sel.setBackgroundResource(R.drawable.layout_border)
+                    }
                     type.setBackgroundResource(R.drawable.layout_type)
                     adapter = SpellAdapter(SpellDAO(this).getSpellsByRoleAndType(role.id, t))
                     binding.spellRecyclerView.setHasFixedSize(true)
@@ -114,8 +116,8 @@ class InitActivity : AppCompatActivity() {
         }
 
         binding.checkButton.setOnClickListener {
-            val i = Intent(this, PlayerActivity::class.java)
-            startActivity(i)
+            val intent = Intent(this, PlayerActivity::class.java)
+            startActivity(intent)
         }
     }
 

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.delek.lostrealm.database.dao.PlayerDAO
 import com.delek.lostrealm.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -23,12 +24,18 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+            ViewModelProvider(this)[HomeViewModel::class.java]
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
+        val player = PlayerDAO(requireContext()).getAllPlayers()
+        for (p in player) {
+            binding.textPlayer.text = p.name
+        }
+
+
+        val textView: TextView = binding.playerHead
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }

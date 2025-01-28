@@ -16,8 +16,10 @@ import androidx.core.view.setPadding
 import androidx.recyclerview.widget.GridLayoutManager
 import com.delek.lostrealm.R
 import com.delek.lostrealm.database.dao.DwellingDAO
+import com.delek.lostrealm.database.dao.PlayerDAO
 import com.delek.lostrealm.database.dao.RoleDAO
 import com.delek.lostrealm.database.dao.SpellDAO
+import com.delek.lostrealm.database.model.Player
 import com.delek.lostrealm.databinding.ActivityInitBinding
 import com.delek.lostrealm.databinding.ItemVpButtonBinding
 import com.delek.lostrealm.ui.player.PlayerActivity
@@ -117,6 +119,8 @@ class InitActivity : AppCompatActivity() {
 
         binding.checkButton.setOnClickListener {
             val intent = Intent(this, PlayerActivity::class.java)
+            val player = Player(0, role.name, role.id, 0, 0, 0, 0, 0,0)
+            PlayerDAO(this).insertPlayer(player)
             startActivity(intent)
         }
     }
@@ -143,11 +147,5 @@ class InitActivity : AppCompatActivity() {
         controller.hide(WindowInsetsCompat.Type.systemBars())
         controller.systemBarsBehavior =
             WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
-
-/*        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }*/
     }
 }

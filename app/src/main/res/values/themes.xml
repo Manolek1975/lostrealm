@@ -4,6 +4,7 @@
         <!-- Status bar color. -->
         <item name="android:windowTranslucentStatus">true</item>
         <!-- Customize your light theme here. -->
+        <item name="android:textColor">@color/primary</item>
         <item name="android:fontFamily">@font/macondo</item>
     </style>
 

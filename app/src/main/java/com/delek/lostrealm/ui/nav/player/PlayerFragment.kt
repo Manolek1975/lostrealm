@@ -1,4 +1,4 @@
-package com.delek.lostrealm.ui.player.ui.home
+package com.delek.lostrealm.ui.nav.player
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.delek.lostrealm.database.dao.PlayerDAO
 import com.delek.lostrealm.databinding.FragmentHomeBinding
 
-class HomeFragment : Fragment() {
+class PlayerFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
 
@@ -24,7 +24,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val homeViewModel =
-            ViewModelProvider(this)[HomeViewModel::class.java]
+            ViewModelProvider(this)[PlayerViewModel::class.java]
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root

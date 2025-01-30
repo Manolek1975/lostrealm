@@ -7,6 +7,7 @@ import android.graphics.Typeface
 import android.os.Bundle
 import android.widget.RadioButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowInsetsCompat
@@ -20,34 +21,55 @@ import com.delek.lostrealm.database.dao.PlayerDAO
 import com.delek.lostrealm.database.dao.RoleDAO
 import com.delek.lostrealm.database.dao.SpellDAO
 import com.delek.lostrealm.database.model.Player
+import com.delek.lostrealm.database.model.Role
 import com.delek.lostrealm.databinding.ActivityInitBinding
 import com.delek.lostrealm.databinding.ItemVpButtonBinding
-import com.delek.lostrealm.ui.player.PlayerActivity
+import com.delek.lostrealm.ui.nav.PlayerActivity
 
 
 class InitActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityInitBinding
     private lateinit var adapter: SpellAdapter
+    private lateinit var data: android.content.SharedPreferences
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityInitBinding.inflate(layoutInflater)
+        data = this.getSharedPreferences("data", Context.MODE_PRIVATE)
         setContentView(binding.root)
         hideSystemBars()
         initUI()
     }
 
     private fun initUI() {
-        val data = this.getSharedPreferences("data", Context.MODE_PRIVATE)
-        data.edit().putInt("num_spells", 0).apply()
-        println("INIT")
-        // Start Dwellings
         val i = intent.getIntExtra("role", 0)
         val role = RoleDAO(this).getRoleById(i)
-        val dwelling = DwellingDAO(this).getRoleDwellings(i)
+        data.edit().putInt("num_spells", 0).apply()
+        initDwellings(role)
+        initSpells(role)
+        initVP()
 
+        binding.checkButton.setOnClickListener {
+            val selected = data.getInt("selected", 0)
+            val totalVP = data.getInt("total_vp", 0)
+            println("selected: $selected TotalVp: $totalVP")
+            if (role.spells == selected && totalVP == 5){
+                val intent = Intent(this, PlayerActivity::class.java)
+                val player = Player(0, role.name, role.id, 0, 0, 0, 0, 0,0)
+                PlayerDAO(this).insertPlayer(player)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "You must select your spells and VP", Toast.LENGTH_LONG).show()
+            }
+
+        }
+    }
+
+    // Start Dwellings
+    private fun initDwellings(role: Role) {
+        val dwelling = DwellingDAO(this).getRoleDwellings(role.id)
         binding.tvHead.text = getString(R.string.options, role.name)
         for (d in dwelling) {
             binding.rgDwelling.addView(RadioButton(this).apply {
@@ -59,33 +81,10 @@ class InitActivity : AppCompatActivity() {
                 buttonTintList = ColorStateList.valueOf(getColor(R.color.primary))
             })
         }
+    }
 
-        // Victory Points
-        var total = 0
-        binding.tvVictoryPoints.text = getString(R.string.victory_points, total.toString())
-        val vp = setVpNames()
-        vp.forEach { v ->
-            v.ibLeft.setOnClickListener {
-                var dec = v.tvValue.text.toString().toInt()
-                if (dec > 0) {
-                    dec -= 1
-                    total -= 1
-                }
-                v.tvValue.text = "$dec"
-                binding.tvVictoryPoints.text = getString(R.string.victory_points, total.toString())
-            }
-            v.ibRight.setOnClickListener {
-                var inc = v.tvValue.text.toString().toInt()
-                if (inc < 5 && total < 5) {
-                    inc += 1
-                    total += 1
-                }
-                v.tvValue.text = "$inc"
-                binding.tvVictoryPoints.text = getString(R.string.victory_points, total.toString())
-            }
-        }
-
-        // Spells
+    // Start Spells
+    private fun initSpells(role: Role) {
         val numSpells = role.spells
         val selected = 0
         val spells = mutableListOf<String>()
@@ -116,12 +115,35 @@ class InitActivity : AppCompatActivity() {
                 }
             }
         }
+    }
 
-        binding.checkButton.setOnClickListener {
-            val intent = Intent(this, PlayerActivity::class.java)
-            val player = Player(0, role.name, role.id, 0, 0, 0, 0, 0,0)
-            PlayerDAO(this).insertPlayer(player)
-            startActivity(intent)
+    // Victory Points
+    private fun initVP() {
+        var total = 0
+        binding.tvVictoryPoints.text = getString(R.string.victory_points, total.toString())
+        val vp = setVpNames()
+        vp.forEach { v ->
+            v.ibLeft.setOnClickListener {
+                var dec = v.tvValue.text.toString().toInt()
+                if (dec > 0) {
+                    dec -= 1
+                    total -= 1
+                }
+                v.tvValue.text = "$dec"
+                binding.tvVictoryPoints.text = getString(R.string.victory_points, total.toString())
+                data.edit().putInt("total_vp", total).apply()
+            }
+            v.ibRight.setOnClickListener {
+                var inc = v.tvValue.text.toString().toInt()
+                if (inc < 5 && total < 5) {
+                    inc += 1
+                    total += 1
+                }
+                v.tvValue.text = "$inc"
+                binding.tvVictoryPoints.text = getString(R.string.victory_points, total.toString())
+                data.edit().putInt("total_vp", total).apply()
+            }
+
         }
     }
 

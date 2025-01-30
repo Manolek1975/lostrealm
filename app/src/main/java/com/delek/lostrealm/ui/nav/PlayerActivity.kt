@@ -1,4 +1,4 @@
-package com.delek.lostrealm.ui.player
+package com.delek.lostrealm.ui.nav
 
 import android.os.Bundle
 import android.view.Menu
@@ -35,7 +35,7 @@ class PlayerActivity : AppCompatActivity() {
         }
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
-        val navController = findNavController(R.id.nav_host_fragment_content_player)
+        val navController = findNavController(R.id.nav_host)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
@@ -54,7 +54,7 @@ class PlayerActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_player)
+        val navController = findNavController(R.id.nav_host)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 

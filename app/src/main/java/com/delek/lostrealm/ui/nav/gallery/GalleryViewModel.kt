@@ -1,13 +1,13 @@
-package com.delek.lostrealm.ui.player.ui.home
+package com.delek.lostrealm.ui.nav.gallery
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class GalleryViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "List of Characters"
+        value = "This is gallery Fragment"
     }
     val text: LiveData<String> = _text
 }

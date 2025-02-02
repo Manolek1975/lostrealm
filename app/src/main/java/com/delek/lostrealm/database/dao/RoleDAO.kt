@@ -32,7 +32,7 @@ class RoleDAO(context: Context) : SQLiteOpenHelper(
         val position = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_POSITION))
         val spell = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_SPELLS))
         val relations = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_RELATIONS))
-        val difficulty = cursor.getInt(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_DIFFICULTY))
+        val difficulty = cursor.getString(cursor.getColumnIndexOrThrow(RoleHelper.COLUMN_DIFFICULTY))
 
         val role = Role(
             id, name, symbol, icon, image, detail, weight,

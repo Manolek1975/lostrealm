@@ -15,5 +15,5 @@ data class Role(
     val position: Int,
     val spells: Int,
     val relations: Int,
-    val difficulty: Int
+    val difficulty: String
 ): Serializable

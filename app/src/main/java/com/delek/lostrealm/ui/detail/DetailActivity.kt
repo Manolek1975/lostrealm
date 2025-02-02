@@ -34,6 +34,7 @@ class DetailActivity : AppCompatActivity() {
         val id = getResId(role.detail, R.drawable::class.java)
 
         binding.detail.setImageResource(id)
+        binding.dificulty.text = role.difficulty
         binding.cancelButton.setOnClickListener {
             val intent = Intent(this, RoleActivity::class.java)
             startActivity(intent)

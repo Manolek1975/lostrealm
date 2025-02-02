@@ -37,7 +37,7 @@ class RoleHelper {
                 append("$COLUMN_POSITION INTEGER,")
                 append("$COLUMN_SPELLS INTEGER,")
                 append("$COLUMN_RELATIONS INTEGER,")
-                append("$COLUMN_DIFFICULTY INTEGER)")
+                append("$COLUMN_DIFFICULTY TEXT)")
             }
 
             const val SQL_DELETE_ENTRIES: String = "DROP TABLE IF EXISTS $TABLE_NAME"
@@ -52,10 +52,11 @@ class RoleHelper {
                 val detail = res.getStringArray(R.array.roles_detail)
                 val weight = res.getStringArray(R.array.roles_weight)
                 val spell = res.getStringArray(R.array.role_spells)
+                val difficulty = res.getStringArray(R.array.roles_difficulty)
 
             for (i in name.indices){
                 val role = Role(0, name[i], symbol[i], icon[i], image[i], detail[i], weight[i],
-                    0,0,0, spell[i].toInt(),0,0)
+                    0,0,0, spell[i].toInt(),0,difficulty[i])
                 RoleDAO(context).insertRole(role)
             }
         }

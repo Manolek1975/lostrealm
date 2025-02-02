@@ -14,7 +14,6 @@ import androidx.navigation.ui.setupWithNavController
 import com.delek.lostrealm.R
 import com.delek.lostrealm.databinding.ActivityPlayerBinding
 import com.google.android.material.navigation.NavigationView
-import com.google.android.material.snackbar.Snackbar
 
 class PlayerActivity : AppCompatActivity() {
 
@@ -28,11 +27,11 @@ class PlayerActivity : AppCompatActivity() {
         hideSystemBars()
         //setSupportActionBar(binding.appBarPlayer.toolbar)
 
-        binding.appBarPlayer.fab.setOnClickListener { view ->
+/*        binding.appBarPlayer.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null)
                 .setAnchorView(R.id.fab).show()
-        }
+        }*/
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host)

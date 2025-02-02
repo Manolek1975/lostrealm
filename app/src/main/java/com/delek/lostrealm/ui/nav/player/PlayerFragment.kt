@@ -1,5 +1,6 @@
 package com.delek.lostrealm.ui.nav.player
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.delek.lostrealm.database.dao.PlayerDAO
 import com.delek.lostrealm.databinding.FragmentHomeBinding
+import com.delek.lostrealm.ui.role.RoleActivity
 
 class PlayerFragment : Fragment() {
 
@@ -34,10 +36,14 @@ class PlayerFragment : Fragment() {
             binding.textPlayer.text = p.name
         }
 
-
         val textView: TextView = binding.playerHead
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
+        }
+
+        binding.fab.setOnClickListener {
+            val intent = Intent(requireContext(), RoleActivity::class.java)
+            startActivity(intent)
         }
         return root
     }

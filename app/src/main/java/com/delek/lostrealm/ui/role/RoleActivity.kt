@@ -7,8 +7,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.delek.lostrealm.R
+import com.delek.lostrealm.database.dao.PlayerDAO
 import com.delek.lostrealm.database.dao.RoleDAO
 import com.delek.lostrealm.databinding.ActivityRoleBinding
 
@@ -27,7 +27,12 @@ class RoleActivity : AppCompatActivity() {
     }
 
     private fun initUI() {
-        adapter = RoleAdapter(RoleDAO(this).getAll())
+        val playersLeft = PlayerDAO(this).getAllPlayers()
+        val roles = RoleDAO(this).getAll().toMutableList()
+        for (player in playersLeft) {
+            roles.removeAll { it.name == player.name }
+        }
+        adapter = RoleAdapter(roles)
         binding.roleRecyclerView.layoutManager = GridLayoutManager(this, 2)
         binding.roleRecyclerView.adapter = adapter
     }

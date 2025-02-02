@@ -47,6 +47,7 @@ class InitActivity : AppCompatActivity() {
         val i = intent.getIntExtra("role", 0)
         val role = RoleDAO(this).getRoleById(i)
         data.edit().putInt("num_spells", 0).apply()
+        data.edit().putInt("total_vp", 0).apply()
         initDwellings(role)
         initSpells(role)
         initVP()

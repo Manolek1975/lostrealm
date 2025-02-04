@@ -25,6 +25,7 @@ import com.delek.lostrealm.database.helper.SpellHelper
 import com.delek.lostrealm.database.helper.StartSpellHelper
 import com.delek.lostrealm.database.helper.WeaponHelper
 import com.delek.lostrealm.databinding.ActivityMainBinding
+import com.delek.lostrealm.ui.nav.PlayerActivity
 import com.delek.lostrealm.ui.role.RoleActivity
 
 class MainActivity : AppCompatActivity() {
@@ -51,7 +52,7 @@ class MainActivity : AppCompatActivity() {
                 loadTables()
                 startActivity(i)
             } else {
-                val i = Intent(this, RoleActivity::class.java)
+                val i = Intent(this, PlayerActivity::class.java)
                 startActivity(i)
             }
         }

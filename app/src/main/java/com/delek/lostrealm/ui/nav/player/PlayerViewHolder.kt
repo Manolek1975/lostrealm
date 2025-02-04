@@ -16,8 +16,10 @@ class PlayerViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     fun render(player: Player){
         val role = RoleDAO(context).getRoleById(player.roleId)
-        val id = getResId(role.icon, R.drawable::class.java)
-        binding.iconImage.setImageResource(id)
+        val icon = getResId(role.icon, R.drawable::class.java)
+        val thumb = getResId(role.thumb, R.drawable::class.java)
+        binding.iconImage.setImageResource(icon)
+        binding.thumbImage.setImageResource(thumb)
         binding.roleName.text = player.name
 
     }

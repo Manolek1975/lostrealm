@@ -13,6 +13,7 @@ class RoleHelper {
             const val COLUMN_NAME: String = "name"
             const val COLUMN_SYMBOL: String = "symbol"
             const val COLUMN_ICON: String = "icon"
+            const val COLUMN_THUMB: String = "thumb"
             const val COLUMN_IMAGE: String = "image"
             const val COLUMN_DETAIL: String = "detail"
             const val COLUMN_WEIGHT: String = "weight"
@@ -29,6 +30,7 @@ class RoleHelper {
                 append("$COLUMN_NAME TEXT,")
                 append("$COLUMN_SYMBOL TEXT,")
                 append("$COLUMN_ICON TEXT,")
+                append("$COLUMN_THUMB TEXT,")
                 append("$COLUMN_IMAGE TEXT,")
                 append("$COLUMN_DETAIL TEXT,")
                 append("$COLUMN_WEIGHT TEXT,")
@@ -48,6 +50,7 @@ class RoleHelper {
                 val name = res.getStringArray(R.array.roles_name)
                 val symbol = res.getStringArray(R.array.roles_symbol)
                 val icon = res.getStringArray(R.array.roles_icon)
+                val thumb = res.getStringArray(R.array.roles_thumbs)
                 val image = res.getStringArray(R.array.roles_image)
                 val detail = res.getStringArray(R.array.roles_detail)
                 val weight = res.getStringArray(R.array.roles_weight)
@@ -55,8 +58,8 @@ class RoleHelper {
                 val difficulty = res.getStringArray(R.array.roles_difficulty)
 
             for (i in name.indices){
-                val role = Role(0, name[i], symbol[i], icon[i], image[i], detail[i], weight[i],
-                    0,0,0, spell[i].toInt(),0,difficulty[i])
+                val role = Role(0, name[i], symbol[i], icon[i], thumb[i], image[i], detail[i],
+                    weight[i],0,0,0, spell[i].toInt(),0,difficulty[i])
                 RoleDAO(context).insertRole(role)
             }
         }

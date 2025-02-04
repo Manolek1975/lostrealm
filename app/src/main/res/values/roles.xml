@@ -95,6 +95,25 @@
         <item>icon_woods_girl</item>
     </string-array>
 
+    <string-array name="roles_thumbs">
+        <item>thumb_amazon</item>
+        <item>thumb_berserker</item>
+        <item>thumb_black_knight</item>
+        <item>thumb_captain</item>
+        <item>thumb_druid</item>
+        <item>thumb_dwarf</item>
+        <item>thumb_elf</item>
+        <item>thumb_magician</item>
+        <item>thumb_pilgrim</item>
+        <item>thumb_sorcerer</item>
+        <item>thumb_swordsman</item>
+        <item>thumb_white_knight</item>
+        <item>thumb_witch</item>
+        <item>thumb_witch_king</item>
+        <item>thumb_wizard</item>
+        <item>thumb_woods_girl</item>
+    </string-array>
+
     <string-array name="roles_weight">
         <item>MEDIUM</item>
         <item>HEAVY</item>

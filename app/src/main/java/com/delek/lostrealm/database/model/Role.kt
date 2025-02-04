@@ -7,6 +7,7 @@ data class Role(
     val name: String,
     val symbol: String,
     val icon: String,
+    val thumb: String,
     val image: String,
     val detail: String,
     val weight: String,

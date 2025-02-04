@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.delek.lostrealm.database.dao.PlayerDAO
 import com.delek.lostrealm.databinding.FragmentHomeBinding
 import com.delek.lostrealm.ui.role.RoleActivity
@@ -15,10 +16,12 @@ import com.delek.lostrealm.ui.role.RoleActivity
 class PlayerFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-
+    private lateinit var adapter: PlayerAdapter
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,19 +35,25 @@ class PlayerFragment : Fragment() {
         val root: View = binding.root
 
         val player = PlayerDAO(requireContext()).getAllPlayers()
-        for (p in player) {
+        adapter = PlayerAdapter(player)
+        binding.playerRecyclerView.setHasFixedSize(true)
+        binding.playerRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.playerRecyclerView.adapter = adapter
+
+/*        for (p in player) {
             binding.textPlayer.text = p.name
-        }
+        }*/
 
         val textView: TextView = binding.playerHead
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
 
-        binding.fab.setOnClickListener {
+        binding.addPlayer.setOnClickListener {
             val intent = Intent(requireContext(), RoleActivity::class.java)
             startActivity(intent)
         }
+
         return root
     }
 

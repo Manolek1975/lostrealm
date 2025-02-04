@@ -27,11 +27,14 @@ class PlayerActivity : AppCompatActivity() {
         hideSystemBars()
         //setSupportActionBar(binding.appBarPlayer.toolbar)
 
-/*        binding.appBarPlayer.fab.setOnClickListener { view ->
+/*
+        binding.appBarPlayer.fab.setOnClickListener {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null)
                 .setAnchorView(R.id.fab).show()
-        }*/
+        }
+*/
+
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host)
@@ -45,6 +48,7 @@ class PlayerActivity : AppCompatActivity() {
         //setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.

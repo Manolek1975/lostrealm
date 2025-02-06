@@ -27,6 +27,7 @@ import com.delek.lostrealm.database.helper.WeaponHelper
 import com.delek.lostrealm.databinding.ActivityMainBinding
 import com.delek.lostrealm.ui.nav.PlayerActivity
 import com.delek.lostrealm.ui.role.RoleActivity
+import com.delek.lostrealm.ui.settings.SettingsActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -45,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         binding.tvVersion.text = getString(R.string.app_version)
         binding.tvHome.blink()
 
-        binding.root.setOnClickListener {
+        binding.tvHome.setOnClickListener {
             if (db.isEmpty("roles")) {
                 val i = Intent(this, RoleActivity::class.java)
                 Toast.makeText(this, "Loading Data...", Toast.LENGTH_SHORT).show()
@@ -55,6 +56,11 @@ class MainActivity : AppCompatActivity() {
                 val i = Intent(this, PlayerActivity::class.java)
                 startActivity(i)
             }
+        }
+
+        binding.settings.setOnClickListener {
+            val i = Intent(this, SettingsActivity::class.java)
+            startActivity(i)
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

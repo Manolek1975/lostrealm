@@ -1,6 +1,7 @@
 package com.delek.lostrealm.ui.main
 
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
 import android.view.animation.AlphaAnimation
@@ -29,9 +30,11 @@ import com.delek.lostrealm.ui.nav.PlayerActivity
 import com.delek.lostrealm.ui.role.RoleActivity
 import com.delek.lostrealm.ui.settings.SettingsActivity
 
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var player: MediaPlayer
     private lateinit var db: DBHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,11 +43,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         hideSystemBars()
 
+        player = MediaPlayer.create(applicationContext, R.raw.danza_macabra)
+        player.isLooping = true // Set looping
+        player.setVolume(100f, 100f)
+        player.start()
+
+
         db = DBHelper(this)
         //db.onCreate(db.writableDatabase)
         binding.tvHome.text = getString(R.string.text_main_button)
         binding.tvVersion.text = getString(R.string.app_version)
         binding.tvHome.blink()
+
 
         binding.tvHome.setOnClickListener {
             if (db.isEmpty("roles")) {

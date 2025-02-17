@@ -1,46 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@drawable/bg_papiro"
     tools:context=".ui.settings.SettingsActivity">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/title_activity_settings"
-        android:layout_width="wrap_content"
+        android:id="@+id/title_settings"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:text="@string/menu_settings"
         android:textAlignment="center"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        android:text="@string/settings"
-        app:layout_constraintVertical_bias="0.45"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="36sp"/>
 
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/chip_music"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:text="@string/music"
-android:backgroundTint="@color/blue"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-        app:layout_constraintTop_toBottomOf="@id/title_activity_settings"
-        app:layout_constraintStart_toStartOf="parent"/>
+        <ImageView
+            android:id="@+id/icon_music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/todo"
+            app:tint="@color/primary"
+            android:src="@drawable/ic_music"/>
 
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/chip_sound"
-        android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="@string/music"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/desc_music"/>
+
+        </LinearLayout>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switch_music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:thumbTint="@color/primary"
+            android:checked="true"
+            android:layout_marginHorizontal="16dp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:text="@string/sound"
-        app:layout_constraintTop_toBottomOf="@id/chip_music"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/todo"
+            app:tint="@color/primary"
+            android:src="@drawable/ic_volume"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="@string/volume"/>
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:thumbTint="@color/primary"
+                android:progressTint="@color/primary"
+                android:progress="20"
+                android:max="100"
+                android:layout_marginEnd="16dp"/>
+
+        </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

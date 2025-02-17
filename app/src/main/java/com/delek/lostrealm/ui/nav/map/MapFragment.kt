@@ -1,4 +1,4 @@
-package com.delek.lostrealm.ui.nav.gallery
+package com.delek.lostrealm.ui.nav.map
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.delek.lostrealm.databinding.FragmentGalleryBinding
+import com.delek.lostrealm.databinding.FragmentMapBinding
 
-class GalleryFragment : Fragment() {
+class MapFragment : Fragment() {
 
-    private var _binding: FragmentGalleryBinding? = null
+    private var _binding: FragmentMapBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -23,12 +23,12 @@ class GalleryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val galleryViewModel =
-            ViewModelProvider(this).get(GalleryViewModel::class.java)
+            ViewModelProvider(this).get(MapViewModel::class.java)
 
-        _binding = FragmentGalleryBinding.inflate(inflater, container, false)
+        _binding = FragmentMapBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textGallery
+        val textView: TextView = binding.textMap
         galleryViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }

@@ -42,7 +42,7 @@ class PlayerActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+                R.id.nav_home, R.id.nav_map, R.id.nav_settings
             ), drawerLayout
         )
         //setupActionBarWithNavController(navController, appBarConfiguration)
@@ -66,7 +66,6 @@ class PlayerActivity : AppCompatActivity() {
         val controller = WindowInsetsControllerCompat(
             window, window.decorView
         )
-
         controller.hide(WindowInsetsCompat.Type.systemBars())
         controller.systemBarsBehavior =
             WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE

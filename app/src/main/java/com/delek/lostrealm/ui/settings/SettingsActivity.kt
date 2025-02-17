@@ -5,6 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import com.delek.lostrealm.R
 import com.delek.lostrealm.database.helper.DBHelper
 import com.delek.lostrealm.databinding.ActivitySettingsBinding
 
@@ -18,6 +19,14 @@ class SettingsActivity : AppCompatActivity() {
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         hideSystemBars()
+
+        binding.switchMusic.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                binding.iconMusic.setImageResource(R.drawable.ic_music)// Music is turned on
+            } else {
+                binding.iconMusic.setImageResource(R.drawable.ic_mute)// Music is turned off
+            }
+        }
     }
 
     private fun hideSystemBars() {

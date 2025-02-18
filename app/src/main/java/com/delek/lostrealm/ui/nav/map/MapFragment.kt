@@ -12,9 +12,6 @@ import com.delek.lostrealm.databinding.FragmentMapBinding
 class MapFragment : Fragment() {
 
     private var _binding: FragmentMapBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(

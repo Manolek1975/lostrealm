@@ -72,7 +72,8 @@
 
 
     <string name="menu_map">Map</string>
-
+    <string name="vibrate">Vibrate</string>
+    <string name="desc_vibrate">Vibrate when new character joins</string>
 
 
 </resources>

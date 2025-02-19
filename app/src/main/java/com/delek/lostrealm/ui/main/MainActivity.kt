@@ -9,7 +9,6 @@ import android.view.animation.Animation
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import com.delek.lostrealm.R
@@ -32,8 +31,14 @@ import com.delek.lostrealm.ui.role.RoleActivity
 
 class MainActivity : AppCompatActivity() {
 
+    companion object {
+        private lateinit var player: MediaPlayer
+        fun stopPlayer() {
+            player.stop()
+        }
+    }
+
     private lateinit var binding: ActivityMainBinding
-    private lateinit var player: MediaPlayer
     private lateinit var db: DBHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,20 +46,21 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         hideSystemBars()
+        initUI()
 
+    }
 
-            player = MediaPlayer.create(applicationContext, R.raw.danza_macabra)
-            player.isLooping = true // Set looping
-            player.setVolume(100f, 100f)
-            player.start()
-
-
-
-        db = DBHelper(this)
+    private fun initUI() {
         binding.tvHome.text = getString(R.string.text_main_button)
         binding.tvVersion.text = getString(R.string.app_version)
         binding.tvHome.blink()
 
+        player = MediaPlayer.create(applicationContext, R.raw.danza_macabra)
+        player.isLooping = true // Set looping
+        player.setVolume(100f, 100f)
+        player.start()
+
+        db = DBHelper(this)
         binding.root.setOnClickListener {
             if (db.isEmpty("roles")) {
                 val i = Intent(this, RoleActivity::class.java)
@@ -65,17 +71,6 @@ class MainActivity : AppCompatActivity() {
                 val i = Intent(this, PlayerActivity::class.java)
                 startActivity(i)
             }
-        }
-
-/*        binding.settings.setOnClickListener {
-            val i = Intent(this, SettingsActivity::class.java)
-            startActivity(i)
-        }*/
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
         }
     }
 

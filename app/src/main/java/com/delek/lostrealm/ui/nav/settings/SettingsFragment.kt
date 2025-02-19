@@ -22,7 +22,6 @@ import com.delek.lostrealm.database.helper.DBHelper
 import com.delek.lostrealm.database.model.SettingsModel
 import com.delek.lostrealm.databinding.FragmentSettingsBinding
 import com.delek.lostrealm.ui.main.MainActivity
-import com.delek.lostrealm.ui.role.RoleActivity
 import com.delek.lostrealm.ui.settings.SettingsActivity
 import com.delek.lostrealm.ui.settings.dataStore
 import kotlinx.coroutines.CoroutineScope
@@ -142,6 +141,7 @@ class SettingsFragment : Fragment() {
         dialogBuilder.setPositiveButton("DELETE") { _, _: Int ->
             db.onDelete()
             val i = Intent(activity, MainActivity::class.java)
+            MainActivity.stopPlayer()
             startActivity(i) // To Main Activity
         }.show()
     }

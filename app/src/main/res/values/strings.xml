@@ -76,6 +76,7 @@
     <string name="desc_vibrate">Vibrate when new character joins</string>
     <string name="new_game">Restart - New Game</string>
     <string name="go"><![CDATA[>]]></string>
+    <string name="desc_sound">Volume of sound effects</string>
 
 
 </resources>

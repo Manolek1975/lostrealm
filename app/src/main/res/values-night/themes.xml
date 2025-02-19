@@ -30,7 +30,16 @@
     <style name="Base.Theme.LostRealm.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
 
+    <style name="AppTheme.AlertDialogStyle.NoActionBar" parent="@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="android:windowBackground">@drawable/dialog_bg</item>
+        <!-- Used for the buttons -->
+        <item name="colorPrimary">#F7FB00</item>
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <!-- Used for the background -->
+        <item name="android:background">@color/primary</item>
     </style>
 
     <style name="Base.Theme.LostRealm.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

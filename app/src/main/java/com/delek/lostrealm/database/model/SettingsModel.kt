@@ -1,4 +1,4 @@
-package com.delek.lostrealm.ui.settings
+package com.delek.lostrealm.database.model
 
 data class SettingsModel(
     val volume: Int,

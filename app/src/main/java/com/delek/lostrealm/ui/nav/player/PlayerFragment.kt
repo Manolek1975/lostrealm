@@ -10,17 +10,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.delek.lostrealm.database.dao.PlayerDAO
-import com.delek.lostrealm.databinding.FragmentHomeBinding
+import com.delek.lostrealm.databinding.FragmentPlayerBinding
 import com.delek.lostrealm.ui.role.RoleActivity
 
 class PlayerFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentPlayerBinding? = null
     private lateinit var adapter: PlayerAdapter
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,7 +27,7 @@ class PlayerFragment : Fragment() {
         val homeViewModel =
             ViewModelProvider(this)[PlayerViewModel::class.java]
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentPlayerBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val player = PlayerDAO(requireContext()).getAllPlayers()
@@ -38,10 +35,6 @@ class PlayerFragment : Fragment() {
         binding.playerRecyclerView.setHasFixedSize(true)
         binding.playerRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.playerRecyclerView.adapter = adapter
-
-/*        for (p in player) {
-            binding.textPlayer.text = p.name
-        }*/
 
         val textView: TextView = binding.playerHead
         homeViewModel.text.observe(viewLifecycleOwner) {
@@ -53,7 +46,15 @@ class PlayerFragment : Fragment() {
             startActivity(intent)
         }
 
+        binding.fab.setOnClickListener {
+            createMap()
+        }
+
         return root
+    }
+
+    private fun createMap() {
+        TODO("Not yet implemented")
     }
 
     override fun onDestroyView() {

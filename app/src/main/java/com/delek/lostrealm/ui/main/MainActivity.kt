@@ -28,7 +28,6 @@ import com.delek.lostrealm.database.helper.WeaponHelper
 import com.delek.lostrealm.databinding.ActivityMainBinding
 import com.delek.lostrealm.ui.nav.PlayerActivity
 import com.delek.lostrealm.ui.role.RoleActivity
-import com.delek.lostrealm.ui.settings.SettingsActivity
 
 
 class MainActivity : AppCompatActivity() {
@@ -43,17 +42,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         hideSystemBars()
 
-        player = MediaPlayer.create(applicationContext, R.raw.danza_macabra)
-        player.isLooping = true // Set looping
-        player.setVolume(100f, 100f)
-        player.start()
+
+            player = MediaPlayer.create(applicationContext, R.raw.danza_macabra)
+            player.isLooping = true // Set looping
+            player.setVolume(100f, 100f)
+            player.start()
+
+
 
         db = DBHelper(this)
         binding.tvHome.text = getString(R.string.text_main_button)
         binding.tvVersion.text = getString(R.string.app_version)
         binding.tvHome.blink()
 
-        binding.tvHome.setOnClickListener {
+        binding.root.setOnClickListener {
             if (db.isEmpty("roles")) {
                 val i = Intent(this, RoleActivity::class.java)
                 Toast.makeText(this, "Loading Data...", Toast.LENGTH_SHORT).show()
@@ -65,10 +67,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        binding.settings.setOnClickListener {
+/*        binding.settings.setOnClickListener {
             val i = Intent(this, SettingsActivity::class.java)
             startActivity(i)
-        }
+        }*/
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

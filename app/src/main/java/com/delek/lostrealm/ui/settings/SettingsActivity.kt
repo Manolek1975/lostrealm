@@ -17,6 +17,7 @@ import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import com.delek.lostrealm.R
 import com.delek.lostrealm.database.helper.DBHelper
+import com.delek.lostrealm.database.model.SettingsModel
 import com.delek.lostrealm.databinding.ActivitySettingsBinding
 import com.delek.lostrealm.ui.main.MainActivity
 import kotlinx.coroutines.CoroutineScope
@@ -68,7 +69,7 @@ class SettingsActivity : AppCompatActivity() {
 
         binding.volumeBar.addOnChangeListener { _, value, _ ->
             CoroutineScope(Dispatchers.IO).launch {
-                audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, value.toInt(), 0)
+                audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, value.toInt()*2, 0)
                 runOnUiThread {
                     if (value.toInt() == 0) {
                         binding.iconMusic.setImageResource(R.drawable.ic_music_off)
@@ -114,7 +115,7 @@ class SettingsActivity : AppCompatActivity() {
     private fun getSettings(): Flow<SettingsModel?> {
         return dataStore.data.map {
             SettingsModel(
-                volume = it[intPreferencesKey(VOLUME_LVL)] ?: 0,
+                volume = it[intPreferencesKey(VOLUME_LVL)] ?: 40,
                 vibrate = it[booleanPreferencesKey(KEY_VIBRATE)] ?: true
             )
         }
@@ -124,8 +125,8 @@ class SettingsActivity : AppCompatActivity() {
         val dialogBuilder = AlertDialog.Builder(this, R.style.AppTheme_AlertDialogStyle_NoActionBar)
         val db = DBHelper(this)
         dialogBuilder.setIcon(android.R.drawable.stat_sys_warning)
-        dialogBuilder.setTitle("ATENCIÓN")
-        dialogBuilder.setMessage("All data for the current game will be deleted. Do you want to continue?")
+        dialogBuilder.setTitle("CAUTION")
+        dialogBuilder.setMessage("Creating new game, ALL data for the current game will be deleted. Do you want to continue?")
         dialogBuilder.setNegativeButton("NO") { _, _ -> }
         dialogBuilder.setPositiveButton("DELETE") { _, _: Int ->
             db.onDelete()

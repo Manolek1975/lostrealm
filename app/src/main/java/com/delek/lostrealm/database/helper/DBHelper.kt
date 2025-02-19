@@ -45,6 +45,23 @@ class DBHelper(context: Context) :
         onCreate(db)
     }
 
+    fun onDelete() {
+        val db = writableDatabase
+        db?.execSQL(RoleHelper.SQL_DELETE_ENTRIES)
+        db?.execSQL(AdvantageHelper.SQL_DELETE_ENTRIES)
+        db?.execSQL(RoleAdvantageHelper.SQL_DELETE_ENTRIES)
+        db?.execSQL(ChitHelper.SQL_DELETE_ENTRIES)
+        db?.execSQL(DevelopmentHelper.SQL_DELETE_ENTRIES)
+        db?.execSQL(WeaponHelper.SQL_DELETE_ENTRIES)
+        db?.execSQL(ArmorHelper.SQL_DELETE_ENTRIES)
+        db?.execSQL(DwellingHelper.SQL_DELETE_ENTRIES)
+        db?.execSQL(RoleDwellingHelper.SQL_DELETE_ENTRIES)
+        db?.execSQL(SpellHelper.SQL_DELETE_ENTRIES)
+        db?.execSQL(StartSpellHelper.SQL_DELETE_ENTRIES)
+        db?.execSQL(PlayerHelper.SQL_DELETE_ENTRIES)
+        onCreate(db)
+    }
+
     fun isEmpty(table: String?): Boolean {
         val database = this.readableDatabase
         val numRows = DatabaseUtils.queryNumEntries(database, table)

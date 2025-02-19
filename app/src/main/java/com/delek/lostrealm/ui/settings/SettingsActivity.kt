@@ -1,9 +1,11 @@
 package com.delek.lostrealm.ui.settings
 
 import android.content.Context
+import android.content.Intent
 import android.media.AudioManager
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
@@ -14,7 +16,9 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import com.delek.lostrealm.R
+import com.delek.lostrealm.database.helper.DBHelper
 import com.delek.lostrealm.databinding.ActivitySettingsBinding
+import com.delek.lostrealm.ui.main.MainActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -64,15 +68,23 @@ class SettingsActivity : AppCompatActivity() {
 
         binding.volumeBar.addOnChangeListener { _, value, _ ->
             CoroutineScope(Dispatchers.IO).launch {
-                audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, value.toInt(), AudioManager.FLAG_SHOW_UI)
+                audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, value.toInt(), 0)
                 runOnUiThread {
                     if (value.toInt() == 0) {
-                        binding.iconVolume.setImageResource(R.drawable.ic_mute)
+                        binding.iconMusic.setImageResource(R.drawable.ic_music_off)
                     } else {
-                        binding.iconVolume.setImageResource(R.drawable.ic_volume)
+                        binding.iconMusic.setImageResource(R.drawable.ic_music)
                     }
                 }
                 saveVolume(value.toInt())
+            }
+        }
+
+        binding.soundBar.addOnChangeListener { _, value, _ ->
+            if (value.toInt() == 0) {
+                binding.iconSound.setImageResource(R.drawable.ic_sound_off)
+            } else {
+                binding.iconSound.setImageResource(R.drawable.ic_sound)
             }
         }
 
@@ -80,6 +92,10 @@ class SettingsActivity : AppCompatActivity() {
             CoroutineScope(Dispatchers.IO).launch {
                 saveOptions(KEY_VIBRATE, value)
             }
+        }
+
+        binding.restart.setOnClickListener {
+            showRestartDialog()
         }
     }
 
@@ -102,6 +118,21 @@ class SettingsActivity : AppCompatActivity() {
                 vibrate = it[booleanPreferencesKey(KEY_VIBRATE)] ?: true
             )
         }
+    }
+
+    private fun showRestartDialog(){
+        val dialogBuilder = AlertDialog.Builder(this, R.style.AppTheme_AlertDialogStyle_NoActionBar)
+        val db = DBHelper(this)
+        dialogBuilder.setIcon(android.R.drawable.stat_sys_warning)
+        dialogBuilder.setTitle("ATENCIÓN")
+        dialogBuilder.setMessage("All data for the current game will be deleted. Do you want to continue?")
+        dialogBuilder.setNegativeButton("NO") { _, _ -> }
+        dialogBuilder.setPositiveButton("DELETE") { _, _: Int ->
+            db.onDelete()
+            getSharedPreferences("data", 0).edit().clear().apply()
+            val i = Intent(this, MainActivity::class.java)
+            startActivity(i) // To Main Activity
+        }.show()
     }
 
     private fun hideSystemBars() {

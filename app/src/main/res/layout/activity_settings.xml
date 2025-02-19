@@ -18,7 +18,6 @@
         android:textAlignment="center"
         android:textSize="36sp"/>
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -71,13 +70,13 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/icon_volume"
+            android:id="@+id/icon_music"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:contentDescription="@string/todo"
             app:tint="@color/primary"
-            android:src="@drawable/ic_volume"/>
+            android:src="@drawable/ic_music"/>
 
         <com.google.android.material.slider.RangeSlider
             android:id="@+id/volumeBar"
@@ -95,4 +94,70 @@
 
         </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/icon_sound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/todo"
+            app:tint="@color/primary"
+            android:src="@drawable/ic_sound"/>
+
+        <com.google.android.material.slider.RangeSlider
+            android:id="@+id/soundBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/todo"
+            android:progressTint="@color/primary"
+            android:thumbTint="@color/primary"
+            android:value="0"
+            android:valueFrom="0"
+            android:valueTo="100"
+            app:thumbColor="@color/primary"
+            app:trackColorActive="@color/primary" />
+
     </LinearLayout>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:dividerColor="@color/primary" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/restart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/todo"
+            android:text="@string/new_game"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:src="@drawable/ic_sound"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/todo"
+            android:text="@string/go"
+            android:textSize="30sp"
+            android:src="@drawable/ic_sound"/>
+    </LinearLayout>
+
+
+    </LinearLayout>
+

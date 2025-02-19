@@ -32,6 +32,17 @@
 
     </style>
 
+    <style name="AppTheme.AlertDialogStyle.NoActionBar" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/dialog_bg</item>
+        <!-- Used for the buttons -->
+        <item name="colorAccent">#FFC107</item>
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <!-- Used for the background -->
+        <item name="android:background">@color/primary</item>
+
+    </style>
+
     <style name="Base.Theme.LostRealm.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Base.Theme.LostRealm.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

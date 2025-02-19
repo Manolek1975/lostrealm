@@ -48,13 +48,10 @@ class MainActivity : AppCompatActivity() {
         player.setVolume(100f, 100f)
         player.start()
 
-
         db = DBHelper(this)
-        //db.onCreate(db.writableDatabase)
         binding.tvHome.text = getString(R.string.text_main_button)
         binding.tvVersion.text = getString(R.string.app_version)
         binding.tvHome.blink()
-
 
         binding.tvHome.setOnClickListener {
             if (db.isEmpty("roles")) {

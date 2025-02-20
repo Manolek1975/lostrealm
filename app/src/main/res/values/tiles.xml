@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="tile_names">
+        <item>AWFUL VALLEY</item>
+        <item>BAD VALLEY</item>
+        <item>CURST VALLEY</item>
+        <item>DARK VALLEY</item>
+        <item>EVIL VALLEY</item>
+
+        <item>LINDEN WOODS</item>
+        <item>MAPLE WOODS</item>
+        <item>NUT WOODS</item>
+        <item>OAK WOODS</item>
+        <item>PINE WOODS</item>
+
+        <item>DEEP WOODS</item>
+        <item>CLIFF</item>
+        <item>CRAG</item>
+        <item>LEDGES</item>
+        <item>MOUNTAIN</item>
+
+        <item>BORDERLAND</item>
+        <item>CAVERN</item>
+        <item>CAVES</item>
+        <item>HIGH PASS</item>
+        <item>RUINS</item>
+    </string-array>
+
+    <string-array name="tile_short">
+        <item>AV</item>
+        <item>BV</item>
+        <item>CV</item>
+        <item>DV</item>
+        <item>EV</item>
+        <item>LW</item>
+        <item>MW</item>
+        <item>NW</item>
+        <item>OW</item>
+        <item>PW</item>
+        <item>DW</item>
+        <item>CF</item>
+        <item>CG</item>
+        <item>LD</item>
+        <item>MN</item>
+        <item>BL</item>
+        <item>CN</item>
+        <item>CV</item>
+        <item>HP</item>
+        <item>RN</item>
+    </string-array>
+
+    <string-array name="tile_image">
+        <item>t_awful_valley</item>
+        <item>t_bad_valley</item>
+        <item>t_curst_valley</item>
+        <item>t_dark_valley</item>
+        <item>t_evil_valley</item>
+        <item>t_linden-woods</item>
+        <item>t_maple_woods</item>
+        <item>t_nut_woods</item>
+        <item>t_oak_woods</item>
+        <item>t_pine_woods</item>
+        <item>t_deep_woods</item>
+        <item>t_cliff</item>
+        <item>t_crag</item>
+        <item>t_ledges</item>
+        <item>t_mountain</item>
+        <item>t_borderland</item>
+        <item>t_cavern</item>
+        <item>t_caves</item>
+        <item>t_highpass</item>
+        <item>t_ruins</item>
+    </string-array>
+
+    <string-array name="tile_image_enchant">
+        <item>t_awful_valley_e</item>
+        <item>t_bad_valley_e</item>
+        <item>t_curst_valley_e</item>
+        <item>t_dark_valley_e</item>
+        <item>t_evil_valley_e</item>
+        <item>t_linden-woods_e</item>
+        <item>t_maple_woods_e</item>
+        <item>t_nut_woods_e</item>
+        <item>t_oak_woods_e</item>
+        <item>t_pine_woods_e</item>
+        <item>t_deep_woods_e</item>
+        <item>t_cliff_e</item>
+        <item>t_crag_e</item>
+        <item>t_ledges_e</item>
+        <item>t_mountain_e</item>
+        <item>t_borderland_e</item>
+        <item>t_cavern_e</item>
+        <item>t_caves_e</item>
+        <item>t_highpass_e</item>
+        <item>t_ruins_e</item>
+    </string-array>
+
+    <string-array name="tile_type">
+        <item>VALLEY</item>
+        <item>VALLEY</item>
+        <item>VALLEY</item>
+        <item>VALLEY</item>
+        <item>VALLEY</item>
+        <item>WOOD</item>
+        <item>WOOD</item>
+        <item>WOOD</item>
+        <item>WOOD</item>
+        <item>WOOD</item>
+        <item>MOUNTAIN</item>
+        <item>MOUNTAIN</item>
+        <item>MOUNTAIN</item>
+        <item>MOUNTAIN</item>
+        <item>MOUNTAIN</item>
+        <item>CAVE</item>
+        <item>CAVE</item>
+        <item>CAVE</item>
+        <item>CAVE</item>
+        <item>CAVE</item>
+    </string-array>
+
+
+</resources>

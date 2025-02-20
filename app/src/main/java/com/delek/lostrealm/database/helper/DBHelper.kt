@@ -26,6 +26,7 @@ class DBHelper(context: Context) :
         db?.execSQL(SpellHelper.SQL_CREATE_ENTRIES)
         db?.execSQL(StartSpellHelper.SQL_CREATE_ENTRIES)
         db?.execSQL(PlayerHelper.SQL_CREATE_ENTRIES)
+        db?.execSQL(TileHelper.SQL_CREATE_ENTRIES)
 
     }
 
@@ -42,6 +43,7 @@ class DBHelper(context: Context) :
         db?.execSQL(SpellHelper.SQL_DELETE_ENTRIES)
         db?.execSQL(StartSpellHelper.SQL_DELETE_ENTRIES)
         db?.execSQL(PlayerHelper.SQL_DELETE_ENTRIES)
+        db?.execSQL(TileHelper.SQL_DELETE_ENTRIES)
         onCreate(db)
     }
 
@@ -59,6 +61,7 @@ class DBHelper(context: Context) :
         db?.execSQL(SpellHelper.SQL_DELETE_ENTRIES)
         db?.execSQL(StartSpellHelper.SQL_DELETE_ENTRIES)
         db?.execSQL(PlayerHelper.SQL_DELETE_ENTRIES)
+        db?.execSQL(TileHelper.SQL_DELETE_ENTRIES)
         onCreate(db)
     }
 

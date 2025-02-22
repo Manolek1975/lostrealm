@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.delek.lostrealm.databinding.FragmentMapBinding
 
 class MapFragment : Fragment() {
@@ -19,18 +17,12 @@ class MapFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val galleryViewModel =
-            ViewModelProvider(this).get(MapViewModel::class.java)
-
         _binding = FragmentMapBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
-        val textView: TextView = binding.textMap
-        galleryViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+        val map = DrawMap(requireContext())
+        return map
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

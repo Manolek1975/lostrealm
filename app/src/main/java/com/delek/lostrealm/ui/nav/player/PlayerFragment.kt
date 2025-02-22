@@ -8,10 +8,15 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.delek.lostrealm.R
 import com.delek.lostrealm.database.dao.PlayerDAO
 import com.delek.lostrealm.databinding.FragmentPlayerBinding
+import com.delek.lostrealm.ui.nav.PlayerActivity
 import com.delek.lostrealm.ui.role.RoleActivity
+import com.google.android.material.navigation.NavigationView
 
 class PlayerFragment : Fragment() {
 
@@ -54,7 +59,10 @@ class PlayerFragment : Fragment() {
     }
 
     private fun createMap() {
-        TODO("Not yet implemented")
+        val nv: NavigationView = (context as PlayerActivity).findViewById(R.id.nav_view)
+        val item = nv.menu.getItem(1) // To Map
+        val navController = requireActivity().findNavController(R.id.nav_host)
+        NavigationUI.onNavDestinationSelected(item, navController)
     }
 
     override fun onDestroyView() {

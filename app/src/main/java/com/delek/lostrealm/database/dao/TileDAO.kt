@@ -2,6 +2,7 @@ package com.delek.lostrealm.database.dao
 
 import android.content.ContentValues
 import android.content.Context
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.delek.lostrealm.database.helper.DBHelper
@@ -28,6 +29,31 @@ class TileDAO(context: Context) : SQLiteOpenHelper(
         }
         db.insert(TileHelper.TABLE_NAME, null, values)
         db.close()
+    }
+
+    private fun getColumns(cursor: Cursor): Tile {
+        val id = cursor.getInt(cursor.getColumnIndexOrThrow(TileHelper.COLUMN_ID))
+        val name = cursor.getString(cursor.getColumnIndexOrThrow(TileHelper.COLUMN_NAME))
+        val short = cursor.getString(cursor.getColumnIndexOrThrow(TileHelper.COLUMN_SHORT))
+        val image = cursor.getString(cursor.getColumnIndexOrThrow(TileHelper.COLUMN_IMAGE))
+        val imageEnchant = cursor.getString(cursor.getColumnIndexOrThrow(TileHelper.COLUMN_IMAGE_ENCHANT))
+        val type = cursor.getString(cursor.getColumnIndexOrThrow(TileHelper.COLUMN_TYPE))
+        val tile = Tile(id, name, short, image, imageEnchant, type)
+        return tile
+    }
+
+    fun getAllTiles(): List<Tile> {
+        val db = this.readableDatabase
+        val query = "SELECT * FROM tiles"
+        val cursor = db.rawQuery(query, null)
+        val tileList = mutableListOf<Tile>()
+        while (cursor.moveToNext()) {
+            val tile = getColumns(cursor)
+            tileList.add(tile)
+        }
+        cursor.close()
+        db.close()
+        return tileList
     }
 
 }

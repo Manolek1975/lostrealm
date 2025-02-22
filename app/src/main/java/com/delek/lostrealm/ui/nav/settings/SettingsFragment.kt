@@ -16,7 +16,6 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.delek.lostrealm.R
 import com.delek.lostrealm.database.helper.DBHelper
 import com.delek.lostrealm.database.model.SettingsModel
@@ -50,7 +49,7 @@ class SettingsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val settingsViewModel = ViewModelProvider(this).get(SettingsViewModel::class.java)
+        //val settingsViewModel = ViewModelProvider(this).get(SettingsViewModel::class.java)
         _binding = FragmentSettingsBinding.inflate(inflater, container, false)
         val root: View = binding.root
         context = requireContext()

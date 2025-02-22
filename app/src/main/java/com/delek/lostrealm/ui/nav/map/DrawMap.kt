@@ -57,7 +57,7 @@ class DrawMap(context: Context) : View(context) {
             scale(mScaleFactor, mScaleFactor)
             canvas.drawBitmap(tile, x, y, paint)
             for (id in tileImages) {
-                canvas.drawBitmap(id, x + 40, y + 40, paint)
+                canvas.drawBitmap(id, x + 590, y + 340, paint)
             }
 
             restore()

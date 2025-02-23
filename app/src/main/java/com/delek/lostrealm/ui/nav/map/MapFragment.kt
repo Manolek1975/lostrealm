@@ -10,7 +10,7 @@ import com.delek.lostrealm.databinding.FragmentMapBinding
 class MapFragment : Fragment() {
 
     private var _binding: FragmentMapBinding? = null
-    private val binding get() = _binding!!
+    //private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -22,7 +22,6 @@ class MapFragment : Fragment() {
         val map = DrawMap(requireContext())
         return map
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()

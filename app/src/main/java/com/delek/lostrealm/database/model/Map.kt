@@ -5,6 +5,6 @@ data class Map(
     val tileId: Int,
     val posX: Int,
     val posY: Int,
-    val rotate: Float,
+    val rotate: Int,
     val enchant: Int
 )

@@ -11,39 +11,31 @@ import android.view.MotionEvent
 import android.view.ScaleGestureDetector
 import android.view.View
 import com.delek.lostrealm.R
+import com.delek.lostrealm.database.dao.MapDAO
 import com.delek.lostrealm.database.dao.TileDAO
 import java.lang.reflect.Field
 
 
 class DrawMap(context: Context) : View(context) {
 
-
     private val tileImages = mutableListOf<Bitmap>()
+    private val tileList = TileDAO(context).getAllTiles()
+    private val mapList = MapDAO(context).getAllMap()
 
     init {
-        val tileList = TileDAO(context).getAllTiles()
-        var rnd: Int
-        var result: Float
-        for (tile in tileList) {
-            rnd = (1..6).random()
-            result = rnd * 30f
-            val id = getResId(tile.image, R.drawable::class.java)
-            tileImages.add(BitmapFactory.decodeResource(resources, id))
+        for (map in mapList) {
+            val id = getResId(tileList[map.tileId].image, R.drawable::class.java)
+            val bm = BitmapFactory.decodeResource(resources, id)
+            tileImages.add(bm)
+            //tileImages.add(bm.rotate(map.rotate.toFloat()))
         }
-
     }
 
-
-    //private val tile = BitmapFactory.decodeResource(resources, R.drawable.t_borderland)
-    private val zoomIn = BitmapFactory.decodeResource(resources, R.drawable.zoom_in)
-    private val zoomOut = BitmapFactory.decodeResource(resources, R.drawable.zoom_out)
     private val paint = Paint()
-
-    //Set Borderland at middle of Screen
     private val dm: DisplayMetrics = resources.displayMetrics
-    private var x = (dm.widthPixels / 2) - tileImages[15].width.toFloat()
-    private var y = (dm.heightPixels / 2) - tileImages[15].height.toFloat()
-    private var mScaleFactor = 0.9f
+    private var x = (dm.widthPixels / 2f) - tileImages[0].width / 2
+    private var y = (dm.heightPixels / 2f) - tileImages[0].height / 2
+    private var mScaleFactor = 0.5f
 
     private val scaleListener = object : ScaleGestureDetector.SimpleOnScaleGestureListener() {
         override fun onScale(detector: ScaleGestureDetector): Boolean {
@@ -58,42 +50,34 @@ class DrawMap(context: Context) : View(context) {
     private val mScaleDetector = ScaleGestureDetector(context, scaleListener)
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        println("${tileImages[15]}")
+        //canvas.translate(cx, cy)
         canvas.apply {
             save()
             scale(mScaleFactor, mScaleFactor)
-            //tile.rotate(90f)
-            canvas.drawBitmap(tileImages[15], x, y, paint)
-            /*            for (id in tileImages) {
-                            canvas.drawBitmap(id, x + 590, y + 340, paint)
-                        }*/
+            for (map in mapList) {
+                canvas.drawCircle(x + map.posX.toFloat(), y + map.posY.toFloat(), 10f, paint)
+                canvas.drawBitmap(tileImages[map.id - 1],x + map.posX.toFloat(),y + map.posY.toFloat(), paint)
+                //canvas.rotate(map.rotate.toFloat())
 
+            }
             restore()
-
         }
-
-        canvas.drawBitmap(
-            zoomIn,
-            dm.widthPixels - zoomIn.width * 2F,
-            dm.heightPixels / 2F - 120, paint
-        )
-
-        canvas.drawBitmap(
-            zoomOut,
-            dm.widthPixels - zoomIn.width * 2F,
-            dm.heightPixels / 2F, paint
-        )
-
         invalidate()
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
         mScaleDetector.onTouchEvent(event)
         when (event.action) {
-            MotionEvent.ACTION_MOVE -> {
-                x = (event.x / mScaleFactor - tileImages[15].width / 2)
-                y = (event.y / mScaleFactor - tileImages[15].height / 2)
+            MotionEvent.ACTION_DOWN -> {
+/*                x = (event.x / mScaleFactor - tileImages[0].width / 2)
+                y = (event.y / mScaleFactor - tileImages[0].height / 2)*/
                 performClick()
+                return true
+            }
+            MotionEvent.ACTION_MOVE -> {
+                x = (event.x / mScaleFactor - tileImages[0].width / 2)
+                y = (event.y / mScaleFactor - tileImages[0].height / 2)
+                invalidate()
                 return true
             }
         }
@@ -102,11 +86,13 @@ class DrawMap(context: Context) : View(context) {
 
     override fun performClick(): Boolean {
         super.performClick()
-        val rnd = (1..6).random()
-        val result = rnd * 30f
-        tileImages[15].rotate(result)
-        println("--------------$rnd--------------$result")
+        println("X: $x, --- Y: $y")
         return true
+    }
+
+    private fun Bitmap.rotate(degrees: Float): Bitmap {
+        val matrix = Matrix().apply { postRotate(degrees) }
+        return Bitmap.createBitmap(this, 0, 0, width, height, matrix, true)
     }
 
     private fun getResId(resName: String?, c: Class<*>): Int {
@@ -119,10 +105,6 @@ class DrawMap(context: Context) : View(context) {
         }
     }
 
-    private fun Bitmap.rotate(degrees: Float): Bitmap {
-        val matrix = Matrix().apply { postRotate(degrees) }
-        return Bitmap.createBitmap(this, 0, 0, width, height, matrix, true)
-    }
 
 
     /*           MotionEvent.ACTION_DOWN -> {

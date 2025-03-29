@@ -6,9 +6,7 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.delek.lostrealm.database.helper.DBHelper
-import com.delek.lostrealm.database.helper.MapHelper
 import com.delek.lostrealm.database.helper.TileHelper
-import com.delek.lostrealm.database.model.Map
 import com.delek.lostrealm.database.model.Tile
 
 class TileDAO(context: Context) : SQLiteOpenHelper(
@@ -17,8 +15,8 @@ class TileDAO(context: Context) : SQLiteOpenHelper(
     DBHelper.DATABASE_VERSION
 
 ) {
-    override fun onCreate(p0: SQLiteDatabase?) { }
-    override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) { }
+    override fun onCreate(p0: SQLiteDatabase?) {}
+    override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {}
 
     fun insertTile(tile: Tile) {
         val db = this.writableDatabase
@@ -33,26 +31,13 @@ class TileDAO(context: Context) : SQLiteOpenHelper(
         db.close()
     }
 
-    fun insertMap(map: Map) {
-        val db = this.writableDatabase
-        val values = ContentValues().apply {
-            put(MapHelper.COLUMN_TILE_ID, map.tileId)
-            put(MapHelper.COLUMN_POS_X, map.posX)
-            put(MapHelper.COLUMN_POS_Y, map.posY)
-            put(MapHelper.COLUMN_ROTATE, map.rotate)
-            put(MapHelper.COLUMN_ENCHANT, map.enchant)
-        }
-        db.insert(MapHelper.TABLE_NAME, null, values)
-        db.close()
-    }
-
-
     private fun getColumns(cursor: Cursor): Tile {
         val id = cursor.getInt(cursor.getColumnIndexOrThrow(TileHelper.COLUMN_ID))
         val name = cursor.getString(cursor.getColumnIndexOrThrow(TileHelper.COLUMN_NAME))
         val short = cursor.getString(cursor.getColumnIndexOrThrow(TileHelper.COLUMN_SHORT))
         val image = cursor.getString(cursor.getColumnIndexOrThrow(TileHelper.COLUMN_IMAGE))
-        val imageEnchant = cursor.getString(cursor.getColumnIndexOrThrow(TileHelper.COLUMN_IMAGE_ENCHANT))
+        val imageEnchant =
+            cursor.getString(cursor.getColumnIndexOrThrow(TileHelper.COLUMN_IMAGE_ENCHANT))
         val type = cursor.getString(cursor.getColumnIndexOrThrow(TileHelper.COLUMN_TYPE))
         val tile = Tile(id, name, short, image, imageEnchant, type)
         return tile

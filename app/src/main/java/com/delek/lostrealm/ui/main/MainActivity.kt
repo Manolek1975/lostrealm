@@ -1,5 +1,6 @@
 package com.delek.lostrealm.ui.main
 
+import android.content.Context
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
@@ -40,6 +41,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var data: android.content.SharedPreferences
     private lateinit var db: DBHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -76,6 +78,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadTables() {
+        data = this.getSharedPreferences("data", Context.MODE_PRIVATE)
+        data.edit().putInt("initial", 0).apply()
         RoleHelper.loadCharacters(this)
         AdvantageHelper.loadAdvantages(this)
         RoleAdvantageHelper.loadRoleAdvantages(this)
